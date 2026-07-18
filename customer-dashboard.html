@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMCOL Hardware Trinidad | Client Dashboard</title>
+  <meta name="description" content="AMCOL Hardware client dashboard for purchase history, quotes, invoices, and delivery tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2" rel="stylesheet">
+  <link rel="stylesheet" href="hardware-styles.css">
+</head>
+
+<body>
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="dashboard-brand">
+        <span class="dashboard-brand-mark">A</span>
+        <span>AMCOL <strong>Hardware</strong></span>
+      </a>
+      <nav class="dashboard-nav" aria-label="Client dashboard">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#orders">Orders</a>
+        <a href="#history">Purchase History</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#account">Account</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div>
+          <p class="dashboard-kicker">Client Dashboard</p>
+          <h1>Welcome back, Penal Contractors Ltd.</h1>
+        </div>
+        <div class="dashboard-top-actions">
+          <a href="index.html" class="dashboard-home-btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Home
+          </a>
+          <a href="products.html">Browse Products</a>
+          <a href="contact.html" class="dashboard-primary-action">Request Quote</a>
+          <a href="customer.html" class="dashboard-logout-top">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Sign Out
+          </a>
+        </div>
+      </header>
+
+      <section class="dashboard-metrics" id="overview" aria-label="Account summary">
+        <article>
+          <span>Open Orders</span>
+          <strong>4</strong>
+          <p>2 ready for pickup</p>
+        </article>
+        <article>
+          <span>Pending Quotes</span>
+          <strong>3</strong>
+          <p>Awaiting sales desk review</p>
+        </article>
+        <article>
+          <span>Account Balance</span>
+          <strong>TT $8,420</strong>
+          <p>Due by July 30</p>
+        </article>
+        <article>
+          <span>Loyalty Savings</span>
+          <strong>TT $1,135</strong>
+          <p>Year to date</p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="dashboard-panel dashboard-span-2" id="orders">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Order Tracking</p>
+              <h2>Current hardware orders</h2>
+            </div>
+            <a href="contact.html">Need help?</a>
+          </div>
+          <div class="order-timeline">
+            <div class="order-row">
+              <div>
+                <strong>AM-10458</strong>
+                <span>DeWalt drill kits, fasteners, safety vests</span>
+              </div>
+              <span class="status-pill ready">Ready for Pickup</span>
+              <small>Penal counter - Today</small>
+            </div>
+            <div class="order-row">
+              <div>
+                <strong>AM-10422</strong>
+                <span>PVC fittings, solvent cement, copper pipe</span>
+              </div>
+              <span class="status-pill transit">Out for Delivery</span>
+              <small>South route - 2:30 PM</small>
+            </div>
+            <div class="order-row">
+              <div>
+                <strong>AM-10397</strong>
+                <span>Lumber, galvanize sheets, concrete mix</span>
+              </div>
+              <span class="status-pill processing">Being Packed</span>
+              <small>Warehouse bay 3</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="dashboard-panel">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Quick Actions</p>
+              <h2>Customer tools</h2>
+            </div>
+          </div>
+          <div class="quick-action-list">
+            <a href="products.html">Reorder common supplies</a>
+            <a href="contact.html">Request contractor pricing</a>
+            <a href="cart.html">Review saved cart</a>
+            <a href="contact.html">Update delivery contact</a>
+          </div>
+        </article>
+
+        <article class="dashboard-panel dashboard-span-2" id="history">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Purchase History</p>
+              <h2>Recent purchases</h2>
+            </div>
+            <button class="dashboard-ghost-button" type="button">Export CSV</button>
+          </div>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Date</th>
+                  <th>Items</th>
+                  <th>Category</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>INV-88291</td>
+                  <td>Jul 6, 2026</td>
+                  <td>18</td>
+                  <td>Power Tools</td>
+                  <td>TT $5,870.00</td>
+                  <td><span class="status-pill paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>INV-88144</td>
+                  <td>Jun 28, 2026</td>
+                  <td>42</td>
+                  <td>Building Materials</td>
+                  <td>TT $12,430.00</td>
+                  <td><span class="status-pill paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>INV-87903</td>
+                  <td>Jun 14, 2026</td>
+                  <td>9</td>
+                  <td>Plumbing</td>
+                  <td>TT $1,945.00</td>
+                  <td><span class="status-pill due">Due</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="dashboard-panel" id="quotes">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Quotes</p>
+              <h2>Sourcing requests</h2>
+            </div>
+          </div>
+          <div class="quote-stack">
+            <div><strong>Q-2208</strong><span>Roofing package - awaiting price</span></div>
+            <div><strong>Q-2197</strong><span>Milwaukee tool bundle - sent</span></div>
+            <div><strong>Q-2189</strong><span>Commercial paint order - draft</span></div>
+          </div>
+        </article>
+
+        <article class="dashboard-panel dashboard-span-3" id="account">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Account</p>
+              <h2>Billing and delivery profile</h2>
+            </div>
+          </div>
+          <div class="profile-grid">
+            <div><span>Primary Contact</span><strong>Marsha Singh</strong></div>
+            <div><span>Account Type</span><strong>Contractor Credit</strong></div>
+            <div><span>Default Pickup</span><strong>Penal Store Counter</strong></div>
+            <div><span>Delivery Zone</span><strong>South Trinidad</strong></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+{
+  "description": "Homepage featured products are selected by productId from data/products.json. Do not add products here unless they already exist in the catalogue.",
+  "productIds": [
+    "1282",
+    "5611",
+    "2620",
+    "38843",
+    "38847"
+  ]
+}

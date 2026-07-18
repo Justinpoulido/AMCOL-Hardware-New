@@ -1,0 +1,1562 @@
+[
+  {
+    "name": "Automotive",
+    "slug": "automotive",
+    "subcategories": [
+      {
+        "name": "Automotive Cleaning Supplies",
+        "slug": "automotive-cleaning-supplies"
+      },
+      {
+        "name": "Automotive Tools",
+        "slug": "automotive-tools"
+      },
+      {
+        "name": "Batteries, Chargers & Cables",
+        "slug": "batteries-chargers-and-cables"
+      },
+      {
+        "name": "Cargo Equipment, Tie Downs & Accessories",
+        "slug": "cargo-equipment-tie-downs-and-accessories"
+      },
+      {
+        "name": "Fluids & Lubricants",
+        "slug": "fluids-and-lubricants"
+      },
+      {
+        "name": "Fuel Cans, Fluid Containers & Accessories",
+        "slug": "fuel-cans-fluid-containers-and-accessories"
+      },
+      {
+        "name": "Ignition & Engine Parts",
+        "slug": "ignition-and-engine-parts"
+      },
+      {
+        "name": "Interior Auto Storage & Accessories",
+        "slug": "interior-auto-storage-and-accessories"
+      },
+      {
+        "name": "Jacks, Ramps & Stands",
+        "slug": "jacks-ramps-and-stands"
+      },
+      {
+        "name": "Lights, Lamps & Fuses",
+        "slug": "lights-lamps-and-fuses"
+      },
+      {
+        "name": "Mirrors & Reflectors",
+        "slug": "mirrors-and-reflectors"
+      },
+      {
+        "name": "Repair & Maintenance Supplies",
+        "slug": "repair-and-maintenance-supplies"
+      },
+      {
+        "name": "Safety Products",
+        "slug": "safety-products"
+      },
+      {
+        "name": "Tires & Wheels",
+        "slug": "tires-and-wheels"
+      },
+      {
+        "name": "Towing",
+        "slug": "towing"
+      },
+      {
+        "name": "Trailer Parts & Accessories",
+        "slug": "trailer-parts-and-accessories"
+      }
+    ]
+  },
+  {
+    "name": "Food & Snacks",
+    "slug": "food-and-snacks",
+    "subcategories": [
+      {
+        "name": "Beverages",
+        "slug": "beverages"
+      },
+      {
+        "name": "Candy & Snacks",
+        "slug": "candy-and-snacks"
+      }
+    ]
+  },
+  {
+    "name": "Hardware",
+    "slug": "hardware",
+    "subcategories": [
+      {
+        "name": "Angle, Bar & Rod Stock",
+        "slug": "angle-bar-and-rod-stock"
+      },
+      {
+        "name": "Builder's Hardware",
+        "slug": "builder-s-hardware"
+      },
+      {
+        "name": "Cabinet & Drawer Hardware",
+        "slug": "cabinet-and-drawer-hardware"
+      },
+      {
+        "name": "Collated Fasteners",
+        "slug": "collated-fasteners"
+      },
+      {
+        "name": "Fasteners",
+        "slug": "fasteners"
+      },
+      {
+        "name": "Furniture Parts & Accessories",
+        "slug": "furniture-parts-and-accessories"
+      },
+      {
+        "name": "Hinges",
+        "slug": "hinges"
+      },
+      {
+        "name": "Key Accessories, Rings & Chains",
+        "slug": "key-accessories-rings-and-chains"
+      },
+      {
+        "name": "Key Blanks",
+        "slug": "key-blanks"
+      },
+      {
+        "name": "Lockset Parts & Accessories",
+        "slug": "lockset-parts-and-accessories"
+      },
+      {
+        "name": "Locksets and Door Knobs",
+        "slug": "locksets-and-door-knobs"
+      },
+      {
+        "name": "Mailboxes & Accessories",
+        "slug": "mailboxes-and-accessories"
+      },
+      {
+        "name": "Metal Sheets",
+        "slug": "metal-sheets"
+      },
+      {
+        "name": "Mobile Home Hardware & Accessories",
+        "slug": "mobile-home-hardware-and-accessories"
+      },
+      {
+        "name": "Padlocks & Accessories",
+        "slug": "padlocks-and-accessories"
+      },
+      {
+        "name": "RV Hardware & Accessories",
+        "slug": "rv-hardware-and-accessories"
+      },
+      {
+        "name": "Signs, Numbers & Letters",
+        "slug": "signs-numbers-and-letters"
+      },
+      {
+        "name": "Steel",
+        "slug": "steel"
+      },
+      {
+        "name": "Steel Rods",
+        "slug": "steel-rods"
+      },
+      {
+        "name": "Tags",
+        "slug": "tags"
+      },
+      {
+        "name": "Tie Downs & Earth Anchors",
+        "slug": "tie-downs-and-earth-anchors"
+      },
+      {
+        "name": "Weatherproofing & Weatherstripping",
+        "slug": "weatherproofing-and-weatherstripping"
+      },
+      {
+        "name": "Window Films",
+        "slug": "window-films"
+      },
+      {
+        "name": "Wire & Wire Tools",
+        "slug": "wire-and-wire-tools"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Living",
+    "slug": "outdoor-living",
+    "subcategories": [
+      {
+        "name": "Boat & Marine Supplies",
+        "slug": "boat-and-marine-supplies"
+      },
+      {
+        "name": "Coolers, Ice Chests & Water Jugs",
+        "slug": "coolers-ice-chests-and-water-jugs"
+      },
+      {
+        "name": "Grills & Accessories",
+        "slug": "grills-and-accessories"
+      },
+      {
+        "name": "Hinges",
+        "slug": "hinges"
+      },
+      {
+        "name": "Outdoor Decor",
+        "slug": "outdoor-decor"
+      },
+      {
+        "name": "Patio Furniture",
+        "slug": "patio-furniture"
+      },
+      {
+        "name": "Playground Equipment",
+        "slug": "playground-equipment"
+      },
+      {
+        "name": "Swimming Aids & Pool Toys",
+        "slug": "swimming-aids-and-pool-toys"
+      },
+      {
+        "name": "Swimming Pools & Supplies",
+        "slug": "swimming-pools-and-supplies"
+      },
+      {
+        "name": "Weather Centers & Thermometers",
+        "slug": "weather-centers-and-thermometers"
+      }
+    ]
+  },
+  {
+    "name": "Safety",
+    "slug": "safety",
+    "subcategories": [
+      {
+        "name": "Anti-Slip Surfaces",
+        "slug": "anti-slip-surfaces"
+      },
+      {
+        "name": "Child Safety",
+        "slug": "child-safety"
+      },
+      {
+        "name": "Emergency Preparedness & First Aid Kits",
+        "slug": "emergency-preparedness-and-first-aid-kits"
+      },
+      {
+        "name": "Face & Head Protection",
+        "slug": "face-and-head-protection"
+      },
+      {
+        "name": "Fall Protection",
+        "slug": "fall-protection"
+      },
+      {
+        "name": "Fire Protection & Accessories",
+        "slug": "fire-protection-and-accessories"
+      },
+      {
+        "name": "Hand Sanitizers",
+        "slug": "hand-sanitizers"
+      },
+      {
+        "name": "Hearing Protection",
+        "slug": "hearing-protection"
+      },
+      {
+        "name": "Home Safety Testing Kits",
+        "slug": "home-safety-testing-kits"
+      },
+      {
+        "name": "Knee Protection",
+        "slug": "knee-protection"
+      },
+      {
+        "name": "Marking Tapes & Flags",
+        "slug": "marking-tapes-and-flags"
+      },
+      {
+        "name": "Personal Safety",
+        "slug": "personal-safety"
+      },
+      {
+        "name": "Respiratory Protection",
+        "slug": "respiratory-protection"
+      },
+      {
+        "name": "Respiratory Therapy",
+        "slug": "respiratory-therapy"
+      },
+      {
+        "name": "Smoke & Carbon Monoxide Detectors",
+        "slug": "smoke-and-carbon-monoxide-detectors"
+      },
+      {
+        "name": "Traffic Safety",
+        "slug": "traffic-safety"
+      }
+    ]
+  },
+  {
+    "name": "Building Materials",
+    "slug": "building-materials",
+    "subcategories": [
+      {
+        "name": "Blocks",
+        "slug": "blocks"
+      },
+      {
+        "name": "Bricks",
+        "slug": "bricks"
+      },
+      {
+        "name": "Ceiling Materials",
+        "slug": "ceiling-materials"
+      },
+      {
+        "name": "Concrete & Mortar",
+        "slug": "concrete-and-mortar"
+      },
+      {
+        "name": "Construction Aggregate",
+        "slug": "construction-aggregate"
+      },
+      {
+        "name": "Deck Materials",
+        "slug": "deck-materials"
+      },
+      {
+        "name": "Flooring Materials",
+        "slug": "flooring-materials"
+      },
+      {
+        "name": "Gutters & Downspouts",
+        "slug": "gutters-and-downspouts"
+      },
+      {
+        "name": "Insulation & House Wrap",
+        "slug": "insulation-and-house-wrap"
+      },
+      {
+        "name": "Kitchen & Bath Cabinets",
+        "slug": "kitchen-and-bath-cabinets"
+      },
+      {
+        "name": "Lumber & Plywood",
+        "slug": "lumber-and-plywood"
+      },
+      {
+        "name": "Molding & Millwork",
+        "slug": "molding-and-millwork"
+      },
+      {
+        "name": "Plastic & Vinyl Sheeting",
+        "slug": "plastic-and-vinyl-sheeting"
+      },
+      {
+        "name": "Roof & Driveway Coatings",
+        "slug": "roof-and-driveway-coatings"
+      },
+      {
+        "name": "Roofing Materials",
+        "slug": "roofing-materials"
+      },
+      {
+        "name": "Siding, Trim Coil & Accessories",
+        "slug": "siding-trim-coil-and-accessories"
+      },
+      {
+        "name": "Stairs and Railings",
+        "slug": "stairs-and-railings"
+      },
+      {
+        "name": "Steel Beams",
+        "slug": "steel-beams"
+      },
+      {
+        "name": "Tile Installation Supplies",
+        "slug": "tile-installation-supplies"
+      },
+      {
+        "name": "Ventilation",
+        "slug": "ventilation"
+      },
+      {
+        "name": "Wall Materials",
+        "slug": "wall-materials"
+      },
+      {
+        "name": "Window Wells and Covers",
+        "slug": "window-wells-and-covers"
+      }
+    ]
+  },
+  {
+    "name": "Holiday Decorations & Supplies",
+    "slug": "holiday-decorations-and-supplies",
+    "subcategories": [
+      {
+        "name": "Christmas Trees",
+        "slug": "christmas-trees"
+      },
+      {
+        "name": "Gift Wrapping Supplies",
+        "slug": "gift-wrapping-supplies"
+      },
+      {
+        "name": "Holiday Lighting",
+        "slug": "holiday-lighting"
+      }
+    ]
+  },
+  {
+    "name": "Housewares",
+    "slug": "housewares",
+    "subcategories": [
+      {
+        "name": "Appliances",
+        "slug": "appliances"
+      },
+      {
+        "name": "Bakeware",
+        "slug": "bakeware"
+      },
+      {
+        "name": "Bathroom Accessories",
+        "slug": "bathroom-accessories"
+      },
+      {
+        "name": "Beds and Mattresses",
+        "slug": "beds-and-mattresses"
+      },
+      {
+        "name": "Canning Equipment & Supplies",
+        "slug": "canning-equipment-and-supplies"
+      },
+      {
+        "name": "Cookware",
+        "slug": "cookware"
+      },
+      {
+        "name": "Food & Beverage Storage",
+        "slug": "food-and-beverage-storage"
+      },
+      {
+        "name": "Furniture",
+        "slug": "furniture"
+      },
+      {
+        "name": "Home Accents",
+        "slug": "home-accents"
+      },
+      {
+        "name": "Kitchen Small Appliances",
+        "slug": "kitchen-small-appliances"
+      },
+      {
+        "name": "Kitchen Storage & Organization",
+        "slug": "kitchen-storage-and-organization"
+      },
+      {
+        "name": "Kitchen Supplies",
+        "slug": "kitchen-supplies"
+      },
+      {
+        "name": "Kitchen Utensils & Food Prep",
+        "slug": "kitchen-utensils-and-food-prep"
+      },
+      {
+        "name": "Laundry Equipment",
+        "slug": "laundry-equipment"
+      },
+      {
+        "name": "Mats & Rugs",
+        "slug": "mats-and-rugs"
+      },
+      {
+        "name": "Personal Care",
+        "slug": "personal-care"
+      },
+      {
+        "name": "Sinkware",
+        "slug": "sinkware"
+      },
+      {
+        "name": "Tableware",
+        "slug": "tableware"
+      },
+      {
+        "name": "Textiles",
+        "slug": "textiles"
+      },
+      {
+        "name": "Trash Cans & Trash Bags",
+        "slug": "trash-cans-and-trash-bags"
+      },
+      {
+        "name": "Wall & Alarm Clocks",
+        "slug": "wall-and-alarm-clocks"
+      },
+      {
+        "name": "Window Coverings & Treatments",
+        "slug": "window-coverings-and-treatments"
+      }
+    ]
+  },
+  {
+    "name": "Power Tools & Accessories",
+    "slug": "power-tools-and-accessories",
+    "subcategories": [
+      {
+        "name": "Air Compressors, Tools & Accessories",
+        "slug": "air-compressors-tools-and-accessories"
+      },
+      {
+        "name": "Corded Power Tools",
+        "slug": "corded-power-tools"
+      },
+      {
+        "name": "Cordless Power Tools",
+        "slug": "cordless-power-tools"
+      },
+      {
+        "name": "Drill Accessories",
+        "slug": "drill-accessories"
+      },
+      {
+        "name": "Drill Bits",
+        "slug": "drill-bits"
+      },
+      {
+        "name": "Gas Power Tool",
+        "slug": "gas-power-tool"
+      },
+      {
+        "name": "Hobby Tools",
+        "slug": "hobby-tools"
+      },
+      {
+        "name": "Hole Saws & Circle Cutters",
+        "slug": "hole-saws-and-circle-cutters"
+      },
+      {
+        "name": "Nailers & Staplers",
+        "slug": "nailers-and-staplers"
+      },
+      {
+        "name": "Oscillating Tool Accessories",
+        "slug": "oscillating-tool-accessories"
+      },
+      {
+        "name": "Planer & Joiner Accessories",
+        "slug": "planer-and-joiner-accessories"
+      },
+      {
+        "name": "Rotary Tools & Accessories",
+        "slug": "rotary-tools-and-accessories"
+      },
+      {
+        "name": "Router Bits & Accessories",
+        "slug": "router-bits-and-accessories"
+      },
+      {
+        "name": "Sanding & Grinding Accessories",
+        "slug": "sanding-and-grinding-accessories"
+      },
+      {
+        "name": "Saw Blades & Accessories",
+        "slug": "saw-blades-and-accessories"
+      },
+      {
+        "name": "Screwdriver Bits, Nut Setters & Bit Holders",
+        "slug": "screwdriver-bits-nut-setters-and-bit-holders"
+      },
+      {
+        "name": "Spiral Cut-Out Saw Bits & Accessories",
+        "slug": "spiral-cut-out-saw-bits-and-accessories"
+      },
+      {
+        "name": "Stationary & Bench Top Power Tools",
+        "slug": "stationary-and-bench-top-power-tools"
+      },
+      {
+        "name": "Stationary Tool Accessories",
+        "slug": "stationary-tool-accessories"
+      }
+    ]
+  },
+  {
+    "name": "Store Supplies",
+    "slug": "store-supplies",
+    "subcategories": [
+      {
+        "name": "Checkout Supplies",
+        "slug": "checkout-supplies"
+      },
+      {
+        "name": "Do it Center Branded Products & Accessories",
+        "slug": "do-it-center-branded-products-and-accessories"
+      },
+      {
+        "name": "Flooring",
+        "slug": "flooring"
+      },
+      {
+        "name": "Store Associate Apparel & Accessories",
+        "slug": "store-associate-apparel-and-accessories"
+      },
+      {
+        "name": "Store Fixtures & Accessories",
+        "slug": "store-fixtures-and-accessories"
+      },
+      {
+        "name": "Store Floor Mats",
+        "slug": "store-floor-mats"
+      },
+      {
+        "name": "Store Signage & Tags",
+        "slug": "store-signage-and-tags"
+      },
+      {
+        "name": "Strapping Supplies",
+        "slug": "strapping-supplies"
+      }
+    ]
+  },
+  {
+    "name": "Chest Freezers",
+    "slug": "chest-freezers",
+    "subcategories": [
+      {
+        "name": "Chest Freezers",
+        "slug": "chest-freezers"
+      }
+    ]
+  },
+  {
+    "name": "Doors & Windows",
+    "slug": "doors-and-windows",
+    "subcategories": [
+      {
+        "name": "Access Doors & Panels",
+        "slug": "access-doors-and-panels"
+      },
+      {
+        "name": "Bypass Doors & Hardware",
+        "slug": "bypass-doors-and-hardware"
+      },
+      {
+        "name": "Door Hardware",
+        "slug": "door-hardware"
+      },
+      {
+        "name": "Door Thresholds & Sills",
+        "slug": "door-thresholds-and-sills"
+      },
+      {
+        "name": "Door Trim & Frames",
+        "slug": "door-trim-and-frames"
+      },
+      {
+        "name": "Doors & Windows",
+        "slug": "doors-and-windows"
+      },
+      {
+        "name": "Folding Doors & Hardware",
+        "slug": "folding-doors-and-hardware"
+      },
+      {
+        "name": "Garage Door Openers & Accessories",
+        "slug": "garage-door-openers-and-accessories"
+      },
+      {
+        "name": "Garage Doors & Accessories",
+        "slug": "garage-doors-and-accessories"
+      },
+      {
+        "name": "Glass & Plastic Panes & Accessories",
+        "slug": "glass-and-plastic-panes-and-accessories"
+      },
+      {
+        "name": "Interior Doors",
+        "slug": "interior-doors"
+      },
+      {
+        "name": "Patio Doors & Screens",
+        "slug": "patio-doors-and-screens"
+      },
+      {
+        "name": "Screens & Screen Materials",
+        "slug": "screens-and-screen-materials"
+      },
+      {
+        "name": "Storm & Screen Doors",
+        "slug": "storm-and-screen-doors"
+      },
+      {
+        "name": "Window Hardware",
+        "slug": "window-hardware"
+      },
+      {
+        "name": "Windows & Window Frames",
+        "slug": "windows-and-window-frames"
+      }
+    ]
+  },
+  {
+    "name": "Hand Tools",
+    "slug": "hand-tools",
+    "subcategories": [
+      {
+        "name": "Axes, Sledges & Mauls",
+        "slug": "axes-sledges-and-mauls"
+      },
+      {
+        "name": "Bricklaying Tools",
+        "slug": "bricklaying-tools"
+      },
+      {
+        "name": "Chisels, Punches, & Nail Sets",
+        "slug": "chisels-punches-and-nail-sets"
+      },
+      {
+        "name": "Clamps & Vises",
+        "slug": "clamps-and-vises"
+      },
+      {
+        "name": "Concrete & Masonry Tools",
+        "slug": "concrete-and-masonry-tools"
+      },
+      {
+        "name": "Drywall & Plastering Tools",
+        "slug": "drywall-and-plastering-tools"
+      },
+      {
+        "name": "Electrical Tools",
+        "slug": "electrical-tools"
+      },
+      {
+        "name": "Glazier Tools",
+        "slug": "glazier-tools"
+      },
+      {
+        "name": "Hammers",
+        "slug": "hammers"
+      },
+      {
+        "name": "Hand Drills & Accessories",
+        "slug": "hand-drills-and-accessories"
+      },
+      {
+        "name": "Hand Saws & Accessories",
+        "slug": "hand-saws-and-accessories"
+      },
+      {
+        "name": "Hand Tool Sets",
+        "slug": "hand-tool-sets"
+      },
+      {
+        "name": "Hex & Torx Keys",
+        "slug": "hex-and-torx-keys"
+      },
+      {
+        "name": "Knives",
+        "slug": "knives"
+      },
+      {
+        "name": "Laser Levels & Survey Instruments",
+        "slug": "laser-levels-and-survey-instruments"
+      },
+      {
+        "name": "Layout Tools",
+        "slug": "layout-tools"
+      },
+      {
+        "name": "Marking Tools",
+        "slug": "marking-tools"
+      },
+      {
+        "name": "Material Handling",
+        "slug": "material-handling"
+      },
+      {
+        "name": "Measuring & Calculation Tools",
+        "slug": "measuring-and-calculation-tools"
+      },
+      {
+        "name": "Mechanic's Tools",
+        "slug": "mechanic-s-tools"
+      },
+      {
+        "name": "Pick-Up Tools, Magnets & Probes",
+        "slug": "pick-up-tools-magnets-and-probes"
+      },
+      {
+        "name": "Pliers",
+        "slug": "pliers"
+      },
+      {
+        "name": "Plumbing Tools",
+        "slug": "plumbing-tools"
+      },
+      {
+        "name": "Pry & Wrecking Bars",
+        "slug": "pry-and-wrecking-bars"
+      },
+      {
+        "name": "Rivets & Rivet Tools",
+        "slug": "rivets-and-rivet-tools"
+      },
+      {
+        "name": "Screwdrivers & Nut Drivers",
+        "slug": "screwdrivers-and-nut-drivers"
+      },
+      {
+        "name": "Shaping Tools",
+        "slug": "shaping-tools"
+      },
+      {
+        "name": "Snips, Nippers & Cutters",
+        "slug": "snips-nippers-and-cutters"
+      },
+      {
+        "name": "Socket Ratchets & Sockets",
+        "slug": "socket-ratchets-and-sockets"
+      },
+      {
+        "name": "Soldering & Welding Supplies",
+        "slug": "soldering-and-welding-supplies"
+      },
+      {
+        "name": "Staple Guns & Brad Nailers",
+        "slug": "staple-guns-and-brad-nailers"
+      },
+      {
+        "name": "Tile Tools",
+        "slug": "tile-tools"
+      },
+      {
+        "name": "Tool Aprons & Pouches",
+        "slug": "tool-aprons-and-pouches"
+      },
+      {
+        "name": "Tool Storage",
+        "slug": "tool-storage"
+      },
+      {
+        "name": "Workbenches, Sawhorses & Work Supports",
+        "slug": "workbenches-sawhorses-and-work-supports"
+      },
+      {
+        "name": "Wrenches",
+        "slug": "wrenches"
+      }
+    ]
+  },
+  {
+    "name": "Sporting Goods",
+    "slug": "sporting-goods",
+    "subcategories": [
+      {
+        "name": "Basketball Equipment",
+        "slug": "basketball-equipment"
+      },
+      {
+        "name": "Camping Equipment",
+        "slug": "camping-equipment"
+      },
+      {
+        "name": "Coach & Official's Equipment",
+        "slug": "coach-and-official-s-equipment"
+      },
+      {
+        "name": "Exercise Equipment",
+        "slug": "exercise-equipment"
+      },
+      {
+        "name": "Fishing Gear",
+        "slug": "fishing-gear"
+      }
+    ]
+  },
+  {
+    "name": "Storage & Organization",
+    "slug": "storage-and-organization",
+    "subcategories": [
+      {
+        "name": "Closet Shelving",
+        "slug": "closet-shelving"
+      },
+      {
+        "name": "Hooks, Hangers & Stands",
+        "slug": "hooks-hangers-and-stands"
+      },
+      {
+        "name": "Sheds, Carports & Accessories",
+        "slug": "sheds-carports-and-accessories"
+      },
+      {
+        "name": "Shelving",
+        "slug": "shelving"
+      },
+      {
+        "name": "Storage & Space Saving Bags",
+        "slug": "storage-and-space-saving-bags"
+      },
+      {
+        "name": "Storage Cabinets",
+        "slug": "storage-cabinets"
+      },
+      {
+        "name": "Storage Totes, Drawers & Organizers",
+        "slug": "storage-totes-drawers-and-organizers"
+      },
+      {
+        "name": "Tool Racks & Storage Racks",
+        "slug": "tool-racks-and-storage-racks"
+      }
+    ]
+  },
+  {
+    "name": "Toys & Games",
+    "slug": "toys-and-games",
+    "subcategories": [
+      {
+        "name": "Indoor Toys",
+        "slug": "indoor-toys"
+      }
+    ]
+  },
+  {
+    "name": "Cleaning Supplies",
+    "slug": "cleaning-supplies",
+    "subcategories": [
+      {
+        "name": "Air Fresheners & Deodorizers",
+        "slug": "air-fresheners-and-deodorizers"
+      },
+      {
+        "name": "Cleaning Chemicals",
+        "slug": "cleaning-chemicals"
+      },
+      {
+        "name": "Cleaning Tools & Supplies",
+        "slug": "cleaning-tools-and-supplies"
+      },
+      {
+        "name": "Janitorial Supplies",
+        "slug": "janitorial-supplies"
+      },
+      {
+        "name": "Laundry Supplies",
+        "slug": "laundry-supplies"
+      },
+      {
+        "name": "Vacuums & Floor Care",
+        "slug": "vacuums-and-floor-care"
+      }
+    ]
+  },
+  {
+    "name": "Electrical",
+    "slug": "electrical",
+    "subcategories": [
+      {
+        "name": "Batteries & Flashlights",
+        "slug": "batteries-and-flashlights"
+      },
+      {
+        "name": "Cable & Wire",
+        "slug": "cable-and-wire"
+      },
+      {
+        "name": "Cable & Wire Management",
+        "slug": "cable-and-wire-management"
+      },
+      {
+        "name": "Ceiling Fans & Accessories",
+        "slug": "ceiling-fans-and-accessories"
+      },
+      {
+        "name": "Circuit Breakers, Fuses & Load Centers",
+        "slug": "circuit-breakers-fuses-and-load-centers"
+      },
+      {
+        "name": "Conduit and Fittings",
+        "slug": "conduit-and-fittings"
+      },
+      {
+        "name": "Cords, Outlets & Accessories",
+        "slug": "cords-outlets-and-accessories"
+      },
+      {
+        "name": "Doorbells, Chimes & Accessories",
+        "slug": "doorbells-chimes-and-accessories"
+      },
+      {
+        "name": "Electrical",
+        "slug": "electrical"
+      },
+      {
+        "name": "Electrical Boxes & Accessories",
+        "slug": "electrical-boxes-and-accessories"
+      },
+      {
+        "name": "Electrical Connectors, Tape & Terminals",
+        "slug": "electrical-connectors-tape-and-terminals"
+      },
+      {
+        "name": "Generators & Accessories",
+        "slug": "generators-and-accessories"
+      },
+      {
+        "name": "Interior Light Fixtures",
+        "slug": "interior-light-fixtures"
+      },
+      {
+        "name": "Job Site Lighting",
+        "slug": "job-site-lighting"
+      },
+      {
+        "name": "Light Bulbs & Accessories",
+        "slug": "light-bulbs-and-accessories"
+      },
+      {
+        "name": "Light Fixture Parts",
+        "slug": "light-fixture-parts"
+      },
+      {
+        "name": "Networking & Media Center Components",
+        "slug": "networking-and-media-center-components"
+      },
+      {
+        "name": "Outdoor & Security Light Fixtures",
+        "slug": "outdoor-and-security-light-fixtures"
+      },
+      {
+        "name": "Switches, Outlets & Wall Plates",
+        "slug": "switches-outlets-and-wall-plates"
+      },
+      {
+        "name": "Timers",
+        "slug": "timers"
+      }
+    ]
+  },
+  {
+    "name": "Lawn & Garden",
+    "slug": "lawn-and-garden",
+    "subcategories": [
+      {
+        "name": "Decorative Landscape Structures & Accessories",
+        "slug": "decorative-landscape-structures-and-accessories"
+      },
+      {
+        "name": "Drip Irrigation",
+        "slug": "drip-irrigation"
+      },
+      {
+        "name": "Flower Pots, Planters & Accessories",
+        "slug": "flower-pots-planters-and-accessories"
+      },
+      {
+        "name": "Garden Fencing, Edging & Netting",
+        "slug": "garden-fencing-edging-and-netting"
+      },
+      {
+        "name": "Hoses & Accessories",
+        "slug": "hoses-and-accessories"
+      },
+      {
+        "name": "Indoor Gardening",
+        "slug": "indoor-gardening"
+      },
+      {
+        "name": "Insect & Pest Control",
+        "slug": "insect-and-pest-control"
+      },
+      {
+        "name": "Landscaping",
+        "slug": "landscaping"
+      },
+      {
+        "name": "Lawn & Garden Tools",
+        "slug": "lawn-and-garden-tools"
+      },
+      {
+        "name": "Lawn & Plant Care",
+        "slug": "lawn-and-plant-care"
+      },
+      {
+        "name": "Lawn Sprayers, Spreaders & Dusters",
+        "slug": "lawn-sprayers-spreaders-and-dusters"
+      },
+      {
+        "name": "Pond Accessories & Supplies",
+        "slug": "pond-accessories-and-supplies"
+      },
+      {
+        "name": "Power Equipment, Parts & Accessories",
+        "slug": "power-equipment-parts-and-accessories"
+      },
+      {
+        "name": "Soils & Soil Conditioners",
+        "slug": "soils-and-soil-conditioners"
+      },
+      {
+        "name": "Sprinklers & Accessories",
+        "slug": "sprinklers-and-accessories"
+      },
+      {
+        "name": "Tarps & Tarp Accessories",
+        "slug": "tarps-and-tarp-accessories"
+      },
+      {
+        "name": "Underground Irrigation",
+        "slug": "underground-irrigation"
+      },
+      {
+        "name": "Wheelbarrows & Carts",
+        "slug": "wheelbarrows-and-carts"
+      }
+    ]
+  },
+  {
+    "name": "Paint & Painting Supplies",
+    "slug": "paint-and-painting-supplies",
+    "subcategories": [
+      {
+        "name": "Adhesive & Glue",
+        "slug": "adhesive-and-glue"
+      },
+      {
+        "name": "Caulk & Sealant",
+        "slug": "caulk-and-sealant"
+      },
+      {
+        "name": "Caulk Guns & Accessories",
+        "slug": "caulk-guns-and-accessories"
+      },
+      {
+        "name": "Cleaners, Thinners & Solvents",
+        "slug": "cleaners-thinners-and-solvents"
+      },
+      {
+        "name": "Drop Cloths & Floor Protection",
+        "slug": "drop-cloths-and-floor-protection"
+      },
+      {
+        "name": "Ladders & Scaffolding",
+        "slug": "ladders-and-scaffolding"
+      },
+      {
+        "name": "Paint",
+        "slug": "paint"
+      },
+      {
+        "name": "Paint Applicators & Accessories",
+        "slug": "paint-applicators-and-accessories"
+      },
+      {
+        "name": "Paint & Painting Supplies",
+        "slug": "paint-and-painting-supplies"
+      },
+      {
+        "name": "Paint Colorants & Additives",
+        "slug": "paint-colorants-and-additives"
+      },
+      {
+        "name": "Paint Pails, Mixers & Accessories",
+        "slug": "paint-pails-mixers-and-accessories"
+      },
+      {
+        "name": "Patching & Repair Products",
+        "slug": "patching-and-repair-products"
+      },
+      {
+        "name": "Primers & Stain Blockers",
+        "slug": "primers-and-stain-blockers"
+      },
+      {
+        "name": "Putty Knives, Scrapers & Wire Brushes",
+        "slug": "putty-knives-scrapers-and-wire-brushes"
+      },
+      {
+        "name": "Sandpaper & Abrasives",
+        "slug": "sandpaper-and-abrasives"
+      },
+      {
+        "name": "Sealers, Waterproofers & Preservatives",
+        "slug": "sealers-waterproofers-and-preservatives"
+      },
+      {
+        "name": "Spray Paints",
+        "slug": "spray-paints"
+      },
+      {
+        "name": "Stains & Finishes",
+        "slug": "stains-and-finishes"
+      },
+      {
+        "name": "Strippers & Removers",
+        "slug": "strippers-and-removers"
+      },
+      {
+        "name": "Tapes & Dispensers",
+        "slug": "tapes-and-dispensers"
+      },
+      {
+        "name": "Wallpaper Adhesive, Removers & Tools",
+        "slug": "wallpaper-adhesive-removers-and-tools"
+      }
+    ]
+  },
+  {
+    "name": "Clothing & Apparel",
+    "slug": "clothing-and-apparel",
+    "subcategories": [
+      {
+        "name": "Clothing",
+        "slug": "clothing"
+      },
+      {
+        "name": "Footwear",
+        "slug": "footwear"
+      },
+      {
+        "name": "Gloves & Glove Accessories",
+        "slug": "gloves-and-glove-accessories"
+      },
+      {
+        "name": "Hats & Caps",
+        "slug": "hats-and-caps"
+      },
+      {
+        "name": "Rain Gear",
+        "slug": "rain-gear"
+      },
+      {
+        "name": "Winter Apparel",
+        "slug": "winter-apparel"
+      }
+    ]
+  },
+  {
+    "name": "Electronics",
+    "slug": "electronics",
+    "subcategories": [
+      {
+        "name": "Audio Components",
+        "slug": "audio-components"
+      },
+      {
+        "name": "Audio Visual Accessories",
+        "slug": "audio-visual-accessories"
+      },
+      {
+        "name": "Audio Visual Cables & Connectors",
+        "slug": "audio-visual-cables-and-connectors"
+      },
+      {
+        "name": "Communication Devices",
+        "slug": "communication-devices"
+      },
+      {
+        "name": "Power Adapters & Converters",
+        "slug": "power-adapters-and-converters"
+      },
+      {
+        "name": "Telephone Cords & Connectors",
+        "slug": "telephone-cords-and-connectors"
+      },
+      {
+        "name": "TV & Video Accessories",
+        "slug": "tv-and-video-accessories"
+      }
+    ]
+  },
+  {
+    "name": "Farm & Ranch",
+    "slug": "farm-and-ranch",
+    "subcategories": [
+      {
+        "name": "Chain & Cable",
+        "slug": "chain-and-cable"
+      },
+      {
+        "name": "Fencing & Gates",
+        "slug": "fencing-and-gates"
+      },
+      {
+        "name": "Hoists, Pullers & Pulleys",
+        "slug": "hoists-pullers-and-pulleys"
+      },
+      {
+        "name": "Livestock & Poultry Supplies",
+        "slug": "livestock-and-poultry-supplies"
+      },
+      {
+        "name": "Rope, String, Strap & Twine",
+        "slug": "rope-string-strap-and-twine"
+      },
+      {
+        "name": "Tractor Parts & Accessories",
+        "slug": "tractor-parts-and-accessories"
+      }
+    ]
+  },
+  {
+    "name": "Heating, Ventilation & Air Conditioning",
+    "slug": "heating-ventilation-and-air-conditioning",
+    "subcategories": [
+      {
+        "name": "Air Conditioners & Parts",
+        "slug": "air-conditioners-and-parts"
+      },
+      {
+        "name": "Chimney Parts",
+        "slug": "chimney-parts"
+      },
+      {
+        "name": "Dryer, Range & Bath Vents",
+        "slug": "dryer-range-and-bath-vents"
+      },
+      {
+        "name": "Evaporative Coolers & Parts",
+        "slug": "evaporative-coolers-and-parts"
+      },
+      {
+        "name": "Exhaust Fans",
+        "slug": "exhaust-fans"
+      },
+      {
+        "name": "Fans",
+        "slug": "fans"
+      },
+      {
+        "name": "Fireplaces & Stoves",
+        "slug": "fireplaces-and-stoves"
+      },
+      {
+        "name": "Furnace Duct",
+        "slug": "furnace-duct"
+      },
+      {
+        "name": "Heaters",
+        "slug": "heaters"
+      },
+      {
+        "name": "Heating System Parts",
+        "slug": "heating-system-parts"
+      },
+      {
+        "name": "Range Hoods & Accessories",
+        "slug": "range-hoods-and-accessories"
+      },
+      {
+        "name": "Water Circulation Systems & Parts",
+        "slug": "water-circulation-systems-and-parts"
+      }
+    ]
+  },
+  {
+    "name": "Office Supplies",
+    "slug": "office-supplies",
+    "subcategories": [
+      {
+        "name": "Binders, Report Covers & Pocket Folders",
+        "slug": "binders-report-covers-and-pocket-folders"
+      },
+      {
+        "name": "Books & DVDs",
+        "slug": "books-and-dvds"
+      },
+      {
+        "name": "Computer & Printer Accessories",
+        "slug": "computer-and-printer-accessories"
+      },
+      {
+        "name": "Desk & Basic Supplies",
+        "slug": "desk-and-basic-supplies"
+      },
+      {
+        "name": "File Organization",
+        "slug": "file-organization"
+      },
+      {
+        "name": "Office Furniture",
+        "slug": "office-furniture"
+      },
+      {
+        "name": "Packaging & Shipping Supplies",
+        "slug": "packaging-and-shipping-supplies"
+      },
+      {
+        "name": "Paper, Pads & Notebooks",
+        "slug": "paper-pads-and-notebooks"
+      },
+      {
+        "name": "Safes & Security Boxes",
+        "slug": "safes-and-security-boxes"
+      },
+      {
+        "name": "Tape & Adhesives",
+        "slug": "tape-and-adhesives"
+      },
+      {
+        "name": "Wall Boards, Message Holders & Accessories",
+        "slug": "wall-boards-message-holders-and-accessories"
+      },
+      {
+        "name": "Writing Instruments",
+        "slug": "writing-instruments"
+      }
+    ]
+  },
+  {
+    "name": "Pet Supplies",
+    "slug": "pet-supplies",
+    "subcategories": [
+      {
+        "name": "Collars, Leashes & Tags",
+        "slug": "collars-leashes-and-tags"
+      }
+    ]
+  },
+  {
+    "name": "Plumbing Supplies",
+    "slug": "plumbing-supplies",
+    "subcategories": [
+      {
+        "name": "Bath & Shower Parts",
+        "slug": "bath-and-shower-parts"
+      },
+      {
+        "name": "Bathroom Hardware & Accessories",
+        "slug": "bathroom-hardware-and-accessories"
+      },
+      {
+        "name": "Bathtubs & Showers",
+        "slug": "bathtubs-and-showers"
+      },
+      {
+        "name": "Drain Openers & Septic Tank Treatments",
+        "slug": "drain-openers-and-septic-tank-treatments"
+      },
+      {
+        "name": "Drains & Drain Fittings",
+        "slug": "drains-and-drain-fittings"
+      },
+      {
+        "name": "Faucet & Sink Repair Parts",
+        "slug": "faucet-and-sink-repair-parts"
+      },
+      {
+        "name": "Faucets",
+        "slug": "faucets"
+      },
+      {
+        "name": "Garbage Disposers & Accessories",
+        "slug": "garbage-disposers-and-accessories"
+      },
+      {
+        "name": "Laundry Tubs & Accessories",
+        "slug": "laundry-tubs-and-accessories"
+      },
+      {
+        "name": "Pipe & Tubing",
+        "slug": "pipe-and-tubing"
+      },
+      {
+        "name": "Pipe Cements, Compounds & Sealants",
+        "slug": "pipe-cements-compounds-and-sealants"
+      },
+      {
+        "name": "Pipe Fittings",
+        "slug": "pipe-fittings"
+      },
+      {
+        "name": "Pipe Hangers, Brackets & Guards",
+        "slug": "pipe-hangers-brackets-and-guards"
+      },
+      {
+        "name": "Pipe Insulation & Heat Tape",
+        "slug": "pipe-insulation-and-heat-tape"
+      },
+      {
+        "name": "Pipe Repair",
+        "slug": "pipe-repair"
+      },
+      {
+        "name": "Pumps & Accessories",
+        "slug": "pumps-and-accessories"
+      },
+      {
+        "name": "Showerheads",
+        "slug": "showerheads"
+      },
+      {
+        "name": "Sinks",
+        "slug": "sinks"
+      },
+      {
+        "name": "Supply Lines & Connectors",
+        "slug": "supply-lines-and-connectors"
+      },
+      {
+        "name": "Toilet Parts",
+        "slug": "toilet-parts"
+      },
+      {
+        "name": "Toilet Seats",
+        "slug": "toilet-seats"
+      },
+      {
+        "name": "Toilet Sets",
+        "slug": "toilet-sets"
+      },
+      {
+        "name": "Toilets & Urinals",
+        "slug": "toilets-and-urinals"
+      },
+      {
+        "name": "Valves & Parts",
+        "slug": "valves-and-parts"
+      },
+      {
+        "name": "Washing Machine Accessories",
+        "slug": "washing-machine-accessories"
+      },
+      {
+        "name": "Water Coolers",
+        "slug": "water-coolers"
+      },
+      {
+        "name": "Water Filters & Accessories",
+        "slug": "water-filters-and-accessories"
+      },
+      {
+        "name": "Water Heaters, Parts & Accessories",
+        "slug": "water-heaters-parts-and-accessories"
+      },
+      {
+        "name": "Water Tanks",
+        "slug": "water-tanks"
+      }
+    ]
+  },
+  {
+    "name": "Miscellaneous",
+    "slug": "miscellaneous",
+    "subcategories": [
+      {
+        "name": "Miscellaneous",
+        "slug": "miscellaneous"
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+node_modules/
+npm-debug.log*
+data/products.json
+data/product-import-report.json
+data/image-update-report.json

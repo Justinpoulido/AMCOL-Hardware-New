@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMCOL Hardware Trinidad | Admin Dashboard</title>
+  <meta name="description" content="AMCOL Hardware admin dashboard for products, orders, quotes, inventory, and customer accounts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2" rel="stylesheet">
+  <link rel="stylesheet" href="hardware-styles.css">
+</head>
+
+<body>
+  <div class="dashboard-layout admin-dashboard">
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="dashboard-brand">
+        <span class="dashboard-brand-mark">A</span>
+        <span>AMCOL <strong>Admin</strong></span>
+      </a>
+      <nav class="dashboard-nav" aria-label="Admin dashboard">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#products">Products</a>
+        <a href="#orders">Orders</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#customers">Customers</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div>
+          <p class="dashboard-kicker">Admin Dashboard</p>
+          <h1>Store operations command center</h1>
+        </div>
+        <div class="dashboard-top-actions">
+          <a href="index.html" class="dashboard-home-btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Home
+          </a>
+          <a href="products.html">View Products</a>
+          <a href="#products" class="dashboard-primary-action">Edit Product</a>
+          <a href="admin/admin.html" class="dashboard-logout-top">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Sign Out
+          </a>
+        </div>
+      </header>
+
+      <section class="dashboard-metrics" id="overview" aria-label="Operations summary">
+        <article>
+          <span>Orders Today</span>
+          <strong>27</strong>
+          <p>8 pickup, 19 delivery</p>
+        </article>
+        <article>
+          <span>Quotes Open</span>
+          <strong>18</strong>
+          <p>5 contractor priority</p>
+        </article>
+        <article>
+          <span>Low Stock</span>
+          <strong>9</strong>
+          <p>3 critical SKUs</p>
+        </article>
+        <article>
+          <span>Sales Today</span>
+          <strong>TT $42k</strong>
+          <p>+12% vs yesterday</p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="dashboard-panel dashboard-span-2 product-editor-panel" id="products">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Product Manager</p>
+              <h2>Edit product detail page</h2>
+            </div>
+            <button class="dashboard-ghost-button" type="button">Save Draft</button>
+          </div>
+          <form class="product-editor-form">
+            <label>
+              <span>Product Title</span>
+              <input type="text" value="DeWalt 20V MAX Cordless Drill Kit (DCD771C2)">
+            </label>
+            <div class="editor-two-col">
+              <label>
+                <span>Brand</span>
+                <input type="text" value="DeWalt">
+              </label>
+              <label>
+                <span>Model Number</span>
+                <input type="text" value="DCD771C2">
+              </label>
+            </div>
+            <div class="editor-three-col">
+              <label>
+                <span>Price</span>
+                <input type="text" value="TT $1,299.00">
+              </label>
+              <label>
+                <span>Stock Status</span>
+                <select>
+                  <option>In Stock at Penal Warehouse</option>
+                  <option>Low Stock</option>
+                  <option>Out of Stock</option>
+                  <option>Special Order</option>
+                </select>
+              </label>
+              <label>
+                <span>Category</span>
+                <select>
+                  <option>Power Tools</option>
+                  <option>Hand Tools</option>
+                  <option>Building Materials</option>
+                  <option>Plumbing</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Product Description</span>
+              <textarea rows="4">The DeWalt 20V MAX Cordless Drill/Driver Kit is designed with a high-performance motor, compact body, and 2-speed transmission for fastening and drilling applications.</textarea>
+            </label>
+            <label>
+              <span>Key Features</span>
+              <textarea rows="4">High-performance motor delivers 300 UWO
+2-speed transmission for varied applications
+Compact lightweight design
+1/2-inch ratcheting chuck</textarea>
+            </label>
+            <div class="editor-actions">
+              <button type="button" class="dashboard-primary-action">Publish Changes</button>
+              <button type="button" class="dashboard-secondary-button">Preview Product Page</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="dashboard-panel" id="inventory">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Inventory</p>
+              <h2>Stock alerts</h2>
+            </div>
+          </div>
+          <div class="stock-list">
+            <div><strong>PVC Elbows 1/2 in.</strong><span>12 left</span></div>
+            <div><strong>Galvanize Sheets 12 ft.</strong><span>8 left</span></div>
+            <div><strong>Safety Vests XL</strong><span>15 left</span></div>
+            <div><strong>Concrete Mix 40kg</strong><span>24 left</span></div>
+          </div>
+        </article>
+
+        <article class="dashboard-panel dashboard-span-2" id="orders">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Orders</p>
+              <h2>Fulfillment queue</h2>
+            </div>
+            <button class="dashboard-ghost-button" type="button">Print Pick List</button>
+          </div>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Type</th>
+                  <th>Value</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AM-10458</td>
+                  <td>Penal Contractors Ltd.</td>
+                  <td>Pickup</td>
+                  <td>TT $5,870</td>
+                  <td><span class="status-pill ready">Ready</span></td>
+                </tr>
+                <tr>
+                  <td>AM-10422</td>
+                  <td>R. Mohammed</td>
+                  <td>Delivery</td>
+                  <td>TT $1,945</td>
+                  <td><span class="status-pill transit">Out</span></td>
+                </tr>
+                <tr>
+                  <td>AM-10397</td>
+                  <td>South Build Crew</td>
+                  <td>Warehouse</td>
+                  <td>TT $12,430</td>
+                  <td><span class="status-pill processing">Packing</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="dashboard-panel" id="customers">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Accounts</p>
+              <h2>Customer actions</h2>
+            </div>
+          </div>
+          <div class="quick-action-list">
+            <a href="customer-dashboard.html#account">Approve contractor account</a>
+            <a href="customer-dashboard.html#account">Update credit limit</a>
+            <a href="cart.html">Create quote from cart</a>
+            <a href="customer-dashboard.html#history">Review invoice payments</a>
+          </div>
+        </article>
+
+        <article class="dashboard-panel dashboard-span-3">
+          <div class="dashboard-panel-header">
+            <div>
+              <p class="dashboard-kicker">Catalog Tools</p>
+              <h2>Hardware admin functions</h2>
+            </div>
+          </div>
+          <div class="admin-tool-grid">
+            <div><strong>Product Images</strong><span>Upload gallery, thumbnails, and brand assets.</span></div>
+            <div><strong>Pricing Rules</strong><span>Set retail, wholesale, contractor, and sale pricing.</span></div>
+            <div><strong>Department Mapping</strong><span>Assign products to hardware departments and filters.</span></div>
+            <div><strong>Delivery Settings</strong><span>Flag pickup-only, heavy goods, and delivery zones.</span></div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

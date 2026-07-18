@@ -1,0 +1,19 @@
+{
+  "name": "amcol-hardware-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AMCOL Hardware website product catalogue tools",
+  "scripts": {
+    "import:products": "node scripts/import-products.js",
+    "update:product-images": "node scripts/update-product-images.js",
+    "validate:products": "node scripts/validate-products.js",
+    "generate:homepage": "node scripts/generate-homepage-departments.js",
+    "serve": "node scripts/serve-static.js"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

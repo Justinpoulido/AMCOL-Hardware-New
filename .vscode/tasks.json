@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve AMCOL Hardware",
+            "type": "shell",
+            "command": "npm run serve",
+            "options": {
+                "cwd": "${workspaceFolder}/Hardware Website"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "amcol-serve",
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "AMCOL dev server running",
+                    "endsPattern": "AMCOL dev server running"
+                }
+            }
+        }
+    ]
+}

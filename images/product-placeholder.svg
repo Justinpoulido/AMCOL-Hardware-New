@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Product image unavailable</title>
+  <desc id="desc">A neutral AMCOL Hardware placeholder for catalogue products without images.</desc>
+  <rect width="640" height="480" fill="#f3f5f4"/>
+  <rect x="36" y="36" width="568" height="408" rx="10" fill="#ffffff" stroke="#d9dfdc" stroke-width="3"/>
+  <path d="M188 299h264l-75-94-52 62-35-42-102 124Z" fill="#cfd8d3"/>
+  <circle cx="242" cy="162" r="35" fill="#d9a15f"/>
+  <text x="320" y="365" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#263238">Image unavailable</text>
+  <text x="320" y="402" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#66736d">AMCOL Hardware</text>
+</svg>

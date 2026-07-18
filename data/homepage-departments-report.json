@@ -1,0 +1,1015 @@
+{
+  "generatedAt": "2026-07-15T03:09:47.751Z",
+  "departmentsGenerated": 10,
+  "selectedDepartments": [
+    {
+      "department": "Building Materials",
+      "displayTitle": "Building Materials",
+      "brand": "DAP",
+      "productId": "441",
+      "productName": "Dap Dap 3 Lb. Pre-mixed Latex Wallboard Drywall Joint Compound",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/441/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Hand Tools",
+      "displayTitle": "Hand Tools",
+      "brand": "Stanley",
+      "productId": "1282",
+      "productName": "Stanley 10LBS Hickory Handle Sledge Hammer",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/1282/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Power Tools & Accessories",
+      "displayTitle": "Power Tools",
+      "brand": "Makita",
+      "productId": "2620",
+      "productName": "14\" Chopsaw & 4 1/2\" Grinder Combo [makita]",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/2620/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Plumbing Supplies",
+      "displayTitle": "Plumbing Supplies",
+      "brand": "Moen",
+      "productId": "38843",
+      "productName": "Moen Moen Rihn Chrome Single Lever Shower Valve",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/38843/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Electrical",
+      "displayTitle": "Electrical",
+      "brand": "Stanley",
+      "productId": "1423",
+      "productName": "Stanley Maxlife 369 LED Flash Light (6 L.e.d) Bulbs",
+      "imageUrl": "https://bynder.sbdinc.com/m/3f4dcbe4c38e4f12/Drupal_Large-ST_stanley-category-fallbackat2x_GEB1.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Paint & Painting Supplies",
+      "displayTitle": "Paint & Painting",
+      "brand": "Stanley",
+      "productId": "913",
+      "productName": "Stanley 4 1/2\" Glueshot Mini Hot Melt Glue Gun 14W 110V #GR10",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/913/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Lawn & Garden",
+      "displayTitle": "Lawn & Garden",
+      "brand": "Makita",
+      "productId": "13203",
+      "productName": "Makita Makita 24.5CC Brush Cutter",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/13203/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Hardware",
+      "displayTitle": "Hardware",
+      "brand": "Stanley",
+      "productId": "905",
+      "productName": "Stanley Stanley Solid Brass Padlock (S826-990)",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/905/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Cleaning Supplies",
+      "displayTitle": "Cleaning Supplies",
+      "brand": "Black & Decker",
+      "productId": "38847",
+      "productName": "Black Black & Decker Dustbuster 10.8V 2.0AH Chili Red Cordless Handheld Vacuum Cleaner",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/38847/1_thumb.jpg",
+      "fallback": ""
+    },
+    {
+      "department": "Housewares",
+      "displayTitle": "Housewares",
+      "brand": "Rubbermaid",
+      "productId": "8334",
+      "productName": "Grey Grey Trash Can, 34 GAL [rubbermaid]",
+      "imageUrl": "https://www.amcolhardwarett.com/products/images/8334/1_thumb.jpg",
+      "fallback": ""
+    }
+  ],
+  "rankedBrandSummary": [
+    {
+      "brand": "Stanley",
+      "productCount": 373,
+      "validImageCount": 354,
+      "departmentCount": 13,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Automotive Tools",
+        "Axes, Sledges & Mauls",
+        "Batteries & Flashlights",
+        "Batteries, Chargers & Cables",
+        "Boat & Marine Supplies",
+        "Bricklaying Tools",
+        "Cabinet & Drawer Hardware"
+      ],
+      "exampleProducts": [
+        "Stanley 4 1/2\" Glueshot Mini Hot Melt Glue Gun 14W 110V #GR10",
+        "Stanley 4\" x 1/4\" Dual Melt Glue Sticks (24 Pack)",
+        "Stanley 4\" x 7/16\" Dual Melt Glue Sticks (6 Pack) #GS230S",
+        "Stanley 8 1/2\" Glueshot Hot Melt Glue Gun H/d 30W 110V #GR20",
+        "Stanley Hand -held Grease Gun"
+      ]
+    },
+    {
+      "brand": "Makita",
+      "productCount": 163,
+      "validImageCount": 153,
+      "departmentCount": 4,
+      "mainCategoriesRepresented": [
+        "Concrete & Mortar",
+        "Corded Power Tools",
+        "Cordless Power Tools",
+        "Drill Bits",
+        "Drywall & Plastering Tools",
+        "Hammers",
+        "Hand Tool Sets",
+        "Lawn & Garden Tools"
+      ],
+      "exampleProducts": [
+        "Makita 18V Rebar Cutter with Battery",
+        "14\" Chopsaw & 4 1/2\" Grinder Combo [makita]",
+        "BO4557 BO4557 Makita Finshing Sander",
+        "Makita Makita 1 1/8\" (28MM) Rotary Hammer Drill",
+        "Makita Makita 1 3/4\" (45MM) Rotary Hammer Drill W/ Avt"
+      ]
+    },
+    {
+      "brand": "DeWalt",
+      "productCount": 115,
+      "validImageCount": 111,
+      "departmentCount": 5,
+      "mainCategoriesRepresented": [
+        "Corded Power Tools",
+        "Cordless Power Tools",
+        "Drill Bits",
+        "Electrical Tools",
+        "Hand Saws & Accessories",
+        "Hole Saws & Circle Cutters",
+        "Job Site Lighting",
+        "Knives"
+      ],
+      "exampleProducts": [
+        "Dewalt Dewalt 1/2 In. 8.5-AMP Keyed Electric Drill",
+        "Dewalt Dewalt 1/2 In. 9-AMP Keyed Electric Drill with Spade Handle",
+        "Dewalt Dewalt 1/2 In. Keyed 8.5-AMP Vsr Single-speed Electric Hammer Drill",
+        "Dewalt Dewalt 1/2 In. Keyed 8.5-AMP Vsr Single-speed Electric Hammer Drill",
+        "Dewalt Dewalt 10 In. 15-AMP Compound Miter Saw"
+      ]
+    },
+    {
+      "brand": "Milwaukee",
+      "productCount": 114,
+      "validImageCount": 112,
+      "departmentCount": 4,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Corded Power Tools",
+        "Cordless Power Tools",
+        "Drill Bits",
+        "Fans",
+        "Hand Saws & Accessories",
+        "Knives",
+        "Marking Tools"
+      ],
+      "exampleProducts": [
+        "Milwaukee Twist Focus LED Rechargeable Flashlight",
+        "Hammer Hammer Drill, 1/2\" [milwaukee]",
+        "Milwaukee Milwaukee 1/2\" Drive Hammer Drill",
+        "Milwaukee Milwaukee 14 In. 15-AMP Chop Saw",
+        "Milwaukee Milwaukee 14\" (355MM) Chop Saw"
+      ]
+    },
+    {
+      "brand": "Black & Decker",
+      "productCount": 83,
+      "validImageCount": 57,
+      "departmentCount": 8,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Cleaning Tools & Supplies",
+        "Corded Power Tools",
+        "Cordless Power Tools",
+        "Drill Accessories",
+        "Drill Bits",
+        "Fishing Gear",
+        "Hammers"
+      ],
+      "exampleProducts": [
+        "Black & Decker Auto Vac 12V Dustbuster",
+        "Black and Decker Waxer/polisher",
+        "Black & Decker 18V Cordless Power Scrubber",
+        "Black & Decker Dust Buster 12V",
+        "Black Black & Decker 1 3/4 HP Router"
+      ]
+    },
+    {
+      "brand": "3M",
+      "productCount": 51,
+      "validImageCount": 41,
+      "departmentCount": 9,
+      "mainCategoriesRepresented": [
+        "Anti-Slip Surfaces",
+        "Cable & Wire Management",
+        "Caulk & Sealant",
+        "Cleaning Chemicals",
+        "Cleaning Tools & Supplies",
+        "Electrical Connectors, Tape & Terminals",
+        "Hearing Protection",
+        "Mats & Rugs"
+      ],
+      "exampleProducts": [
+        "3M 2\" x 60FT Safety Walk Tape",
+        "3M 6\" Black Cable Tie",
+        "Black 3M Cable Tie - 8\"",
+        "Black Cable Tie 3M - 4\"",
+        "3M Auto Glass Urethane Windshield Adhesive"
+      ]
+    },
+    {
+      "brand": "Moen",
+      "productCount": 71,
+      "validImageCount": 54,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Bath & Shower Parts",
+        "Bathroom Hardware & Accessories",
+        "Bathtubs & Showers",
+        "Faucet & Sink Repair Parts",
+        "Faucets",
+        "Shelving",
+        "Showerheads",
+        "Store Fixtures & Accessories"
+      ],
+      "exampleProducts": [
+        "Moen Chrome Single Handle Shower Faucet",
+        "Moen 24\" Morley Mediterranean Bronze Towel Bar",
+        "Moen Donner 6PC Contemporary Bathroom Accessory Kit, Chrome",
+        "Moen Morley Mediterranean Bronze Robe Hook",
+        "Moen Rinza Robe Hook"
+      ]
+    },
+    {
+      "brand": "Tolsen",
+      "productCount": 64,
+      "validImageCount": 40,
+      "departmentCount": 5,
+      "mainCategoriesRepresented": [
+        "Air Compressors, Tools & Accessories",
+        "Axes, Sledges & Mauls",
+        "Caulk Guns & Accessories",
+        "Chisels, Punches, & Nail Sets",
+        "Clothing",
+        "Cordless Power Tools",
+        "Drains & Drain Fittings",
+        "Drill Accessories"
+      ],
+      "exampleProducts": [
+        "Tolsen 1/4\" Male Steel Industrial Plug",
+        "Tolsen Air Blow Gun 1/4\" Inlet",
+        "Tolsen Female 1/4\" Steel Coupling",
+        "Tolsen Spray Gun 1.4MM 1000ML",
+        "4LB Tolsen Sledge Hammer"
+      ]
+    },
+    {
+      "brand": "Bosch",
+      "productCount": 58,
+      "validImageCount": 46,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Corded Power Tools",
+        "Drill Bits",
+        "Generators & Accessories",
+        "Hammers",
+        "Hole Saws & Circle Cutters",
+        "Rotary Tools & Accessories",
+        "Router Bits & Accessories",
+        "Saw Blades & Accessories"
+      ],
+      "exampleProducts": [
+        "Bosch Bosch 1-1/8\" Reciprocating Saw 10 Amp",
+        "Bosch Bosch 1/2 In. Vsr Electric Hammer Drill",
+        "Bosch Bosch 850 RPM 6.5AMPS High Speed 1/2\" Drill/driver",
+        "1 1/2\" Bosch Dare Devil Spade Bit",
+        "1/2\" Bosch Glass & Tile Bit UV"
+      ]
+    },
+    {
+      "brand": "Rubbermaid",
+      "productCount": 32,
+      "validImageCount": 24,
+      "departmentCount": 9,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Cleaning Tools & Supplies",
+        "Coolers, Ice Chests & Water Jugs",
+        "Material Handling",
+        "Shelving",
+        "Signs, Numbers & Letters",
+        "Storage Totes, Drawers & Organizers",
+        "Tableware"
+      ],
+      "exampleProducts": [
+        "Rubbermaid Reveal Spray Mop Kit",
+        "Rubbermaid # 24 Economy Cotton Mop 1\" Head",
+        "Rubbermaid Commercial 31 Qt. Tandem Bucket and Wringer",
+        "Rubbermaid Commercial Mop Handle",
+        "Rubbermaid Commercial Products Wavebrake Bucket & Wringer"
+      ]
+    },
+    {
+      "brand": "Liberty",
+      "productCount": 37,
+      "validImageCount": 37,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Cabinet & Drawer Hardware"
+      ],
+      "exampleProducts": [
+        "Liberty 64 MM Double Magnetic Catch with Strike (2-COUNT)",
+        "Liberty Antique Brass 1-1/2 In. Cabinet Knob, (2-PACK)",
+        "Liberty Antique Brass 1-1/2 In. Cabinet Knob, (2-PACK)",
+        "Liberty Antique Brass 1-1/4 In. Cabinet Knob, (2-PACK)",
+        "Liberty Antique Brass Cabinet Pull, 2 Pack"
+      ]
+    },
+    {
+      "brand": "CRC",
+      "productCount": 23,
+      "validImageCount": 23,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Fluids & Lubricants",
+        "Insect & Pest Control",
+        "Repair & Maintenance Supplies",
+        "Spray Paints"
+      ],
+      "exampleProducts": [
+        "Crc Crc 1-GALLON Cutting Oil Thread Cutting Lubricant",
+        "Crc Crc 10 Oz. Chain and Wire Rope Lubricant",
+        "Crc Crc 10 Oz. Food Grade Silicone",
+        "Crc Crc 10 Oz. Freeze Spray",
+        "Crc Crc 10 Oz. Industrial White Lithium Grease"
+      ]
+    },
+    {
+      "brand": "Gorilla",
+      "productCount": 23,
+      "validImageCount": 18,
+      "departmentCount": 4,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Store Fixtures & Accessories",
+        "Tape & Adhesives",
+        "Tapes & Dispensers",
+        "Window Films"
+      ],
+      "exampleProducts": [
+        "Gorilla 0.11 Oz. Liquid Super Glue",
+        "Gorilla 0.11 Oz. Liquid Super Glue (2-PACK)",
+        "Gorilla 0.42 Oz. Liquid Bottle Brush & Nozzle Super Glue",
+        "Gorilla 0.42 Oz. Original All-purpose Glue Minis (4-PACK)",
+        "Gorilla 0.53 Oz. Liquid Super Glue"
+      ]
+    },
+    {
+      "brand": "Laurey",
+      "productCount": 27,
+      "validImageCount": 27,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Cabinet & Drawer Hardware"
+      ],
+      "exampleProducts": [
+        "Laurey 1 3/8\" Hollow Steel Knob - Satin Nickel 10 Pc",
+        "Laurey 1 3/8\" Ring Knob - Satin Nickel - 10 Pc",
+        "Laurey 1 3/8\" Ste Hollow Knob Bru Satin Ni 10PC",
+        "Laurey 1 3/8\"\" Ring Knob- Orb- 10 Pc",
+        "Laurey 1-3/8\" Steel Hollow Knob -polished Chrome 10 Pc"
+      ]
+    },
+    {
+      "brand": "Do",
+      "productCount": 17,
+      "validImageCount": 17,
+      "departmentCount": 4,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Bricklaying Tools",
+        "Cable & Wire Management",
+        "Cleaning Tools & Supplies",
+        "Concrete & Masonry Tools"
+      ],
+      "exampleProducts": [
+        "Do It Best 0.07 Oz. Liquid Super Glue (2-PACK)",
+        "Do It 7 In. Pointing Trowel",
+        "Do It Best Philadelphia 11 In. Steel Brick Trowel",
+        "Do It London 10 In. Steel Brick Trowel",
+        "Do It Philadelphia 10 In. Steel Brick Trowel"
+      ]
+    },
+    {
+      "brand": "DAP",
+      "productCount": 28,
+      "validImageCount": 14,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Caulk & Sealant",
+        "Patching & Repair Products",
+        "Repair & Maintenance Supplies",
+        "Roof & Driveway Coatings",
+        "Spray Paints",
+        "Wall Materials"
+      ],
+      "exampleProducts": [
+        "100% Silicone Rubber Sealant [dap]",
+        "Dap Dap Plastic Wood 4 Oz. Gold Oak Solvent Professional Wood Filler",
+        "Dap Dap Plastic Wood 4 Oz. Light Oak Solvent Professional Wood Filler",
+        "Dap Dap Plastic Wood 4 Oz. Natural Solvent Professional Wood Filler",
+        "Dap Dap Plastic Wood 4 Oz. Pine Solvent Professional Wood Filler"
+      ]
+    },
+    {
+      "brand": "Ge",
+      "productCount": 23,
+      "validImageCount": 15,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Appliances",
+        "Caulk & Sealant",
+        "Circuit Breakers, Fuses & Load Centers"
+      ],
+      "exampleProducts": [
+        "Ge 24\" Electric, Self-cleaning Oven",
+        "Ge 27\" 7.2 Cu. Ft. Electric Dryer",
+        "Ge 27\", 4.2 Cu. Ft. Top Load Washer",
+        "Ge 28” Front Load Washer 4.5 Cubic White",
+        "Ge 5.0 Cu Ft. Non Frost White Refrigerator"
+      ]
+    },
+    {
+      "brand": "HP",
+      "productCount": 22,
+      "validImageCount": 21,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Computer & Printer Accessories"
+      ],
+      "exampleProducts": [
+        "HP 950XL - Black Cartridge",
+        "HP 950XL - Black Cartridge",
+        "HP 951XL - Cyan Cartridge",
+        "HP 951XL - Magenta Cartridge",
+        "HP 951XL - Yellow Cartridge"
+      ]
+    },
+    {
+      "brand": "Crc",
+      "productCount": 15,
+      "validImageCount": 15,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Batteries, Chargers & Cables",
+        "Cleaning Chemicals",
+        "Computer & Printer Accessories"
+      ],
+      "exampleProducts": [
+        "Crc 11 Oz. Mass Air Flow Sensor Cleaner",
+        "Crc 11 Oz. Aerosol Qd Contact Electronic Parts Cleaner",
+        "Crc 12 Oz. Throttle Body & Air-intake Cleaner",
+        "Crc 14OZ 3-36 Multi-purpose Lubricant and Rust Inhibitor",
+        "Crc 16 Oz. Clean-r-carb Carburetor Cleaner"
+      ]
+    },
+    {
+      "brand": "Smart",
+      "productCount": 12,
+      "validImageCount": 12,
+      "departmentCount": 4,
+      "mainCategoriesRepresented": [
+        "Batteries, Chargers & Cables",
+        "Bricklaying Tools",
+        "Cable & Wire Management",
+        "Cleaning Tools & Supplies"
+      ],
+      "exampleProducts": [
+        "Smart Savers Terminal Brush",
+        "Smart Savers 15 CM x 8.5 CM Pointing Trowel",
+        "Smart Savers 5 In. x 2 In. Wood Margin Trowel",
+        "Smart Savers Brick Trowel",
+        "Smart Savers 12 In. x 0.19 In. Black Nylon Cable Tie (20-PACK)"
+      ]
+    },
+    {
+      "brand": "Loctite",
+      "productCount": 12,
+      "validImageCount": 12,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Caulk & Sealant",
+        "Fluids & Lubricants",
+        "Pipe Cements, Compounds & Sealants"
+      ],
+      "exampleProducts": [
+        "Loctite 495 Super Bonder Instant Adhesive 49550",
+        "Loctite 498 Super Bonder Instant Adhesive",
+        "Loctite Blue 242 0.2 Oz. Blue Threadlocker",
+        "Loctite Si 595 Clear Rtv Silicone Adhesive Sealant",
+        "Loctite Si 596 Red High Temp Rtv Silicone"
+      ]
+    },
+    {
+      "brand": "Westinghouse",
+      "productCount": 15,
+      "validImageCount": 10,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Ceiling Fans & Accessories",
+        "Fans",
+        "Interior Light Fixtures",
+        "Light Bulbs & Accessories"
+      ],
+      "exampleProducts": [
+        "Westinghouse Battery Aa 4PK W/2XAAA",
+        "Westinghouse H/duty Aa Battery - 4PK",
+        "Westinghouse H/duty Aaa Battery - 4PK",
+        "Westinghouse H/duty Aaa Battery - Single",
+        "Westinghouse H/duty C Battery - 2PK"
+      ]
+    },
+    {
+      "brand": "Amerock",
+      "productCount": 12,
+      "validImageCount": 12,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Cabinet & Drawer Hardware"
+      ],
+      "exampleProducts": [
+        "Amerock 3.75 In. Satin Nickel Cabinet Drawer Pull (10-PACK)",
+        "Amerock Cyprus 3 In. Satin Nickel Cabinet Drawer Pull (10-PACK)",
+        "Amerock Double Roller Catch (10-PACK)",
+        "Amerock Edona 1.25 In. Dia. Round Oil Rubbed Bronze Cabinet Knob (10-PACK)",
+        "Amerock Edona 1.25 In. Dia. Round Satin Nickel Cabinet Knob (10-PACK)"
+      ]
+    },
+    {
+      "brand": "Duracell",
+      "productCount": 12,
+      "validImageCount": 12,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights"
+      ],
+      "exampleProducts": [
+        "Duracell 4 Pack Aa Coppertop Battery",
+        "Duracell 6V Battery",
+        "Duracell 9V 2 Pack Coppertop Alkaline Battery",
+        "Duracell Alkaline Battery C - Singles",
+        "Duracell Alkaline Battery- D PACK/2"
+      ]
+    },
+    {
+      "brand": "Christle",
+      "productCount": 11,
+      "validImageCount": 8,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Cleaners, Thinners & Solvents",
+        "Cleaning Chemicals"
+      ],
+      "exampleProducts": [
+        "Christle Oil Paint Thinner Pint",
+        "Christle Oil Paint Thinner Qt",
+        "Christle Oil Paint Thinners",
+        "Christle Black Disinfectant - Gallon (4LT)",
+        "Christle GAL (4LT) Cherry Disinfectant"
+      ]
+    },
+    {
+      "brand": "Dap",
+      "productCount": 12,
+      "validImageCount": 11,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Caulk & Sealant"
+      ],
+      "exampleProducts": [
+        "Dap Beat the Nails Construction Adhesivedir",
+        "Dap Beats the Nail 10.3 Oz. All-purpose Construction Adhesive",
+        "Dap High Strength Spray Adhesive",
+        "Dap Weldwood Spray Adhesive 16OZ",
+        "Dap 100% Silicone Rubber Sealant (clear)"
+      ]
+    },
+    {
+      "brand": "Rayovac",
+      "productCount": 8,
+      "validImageCount": 8,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Camping Equipment"
+      ],
+      "exampleProducts": [
+        "Rayovac 30PK Aa Battery",
+        "Rayovac High Energy Aa Alkaline Battery (30-PACK)",
+        "Rayovac High Energy Aaa Alkaline Battery (30-PACK)",
+        "Rayovac High Energy Aaa Alkaline Battery (30-PACK)",
+        "Rayovac High Energy D Alkaline Battery (12-PACK)"
+      ]
+    },
+    {
+      "brand": "Coleman",
+      "productCount": 5,
+      "validImageCount": 4,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Camping Equipment",
+        "Rain Gear"
+      ],
+      "exampleProducts": [
+        "Coleman Classic Personal-size Lantern",
+        "Coleman LED Rechargeable Lantern",
+        "Coleman Lantern Battery Powered",
+        "Coleman Sundome 4-PERSON Tent",
+        "Coleman Coleman Polyester Gulf Umbrella 38.5\""
+      ]
+    },
+    {
+      "brand": "GE",
+      "productCount": 7,
+      "validImageCount": 3,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Cookware",
+        "Fireplaces & Stoves",
+        "Heaters",
+        "Ventilation"
+      ],
+      "exampleProducts": [
+        "Ge Ge 36\" Gas Cooktop",
+        "Ge Ge 30\" Electric Range Black Stove",
+        "Ge Ge 36\" Cast Iron Griddle",
+        "Ge Ge 5 Gas Cooktop Knobs",
+        "Abb Abb Ge Heater Element - 15 HP"
+      ]
+    },
+    {
+      "brand": "Purple",
+      "productCount": 4,
+      "validImageCount": 4,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Binders, Report Covers & Pocket Folders",
+        "Cleaning Chemicals",
+        "Cleaning Tools & Supplies"
+      ],
+      "exampleProducts": [
+        "Purple Blaster 32 0Z.",
+        "Purple Twin Pocket Folder - BOX/25",
+        "Purple Activ Multi-purpose DEGREASER-1 Litre",
+        "Purple Broom & Handle (M61)"
+      ]
+    },
+    {
+      "brand": "Kreg",
+      "productCount": 8,
+      "validImageCount": 6,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Cabinet & Drawer Hardware",
+        "Clamps & Vises"
+      ],
+      "exampleProducts": [
+        "Kreg Cabinet Hardware Jig Pro",
+        "Kreg Drawer Slide Jig",
+        "Kreg Versagrip Clamp 12\"",
+        "Kreg Versagrip Clamp 6\"",
+        "Kreg Automaxx 3 In. Face Clamp"
+      ]
+    },
+    {
+      "brand": "Rkg",
+      "productCount": 7,
+      "validImageCount": 2,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Cleaners, Thinners & Solvents",
+        "Cleaning Chemicals"
+      ],
+      "exampleProducts": [
+        "Rkg Brand GAL Magic Kleen Degreaser",
+        "Rkg Brand Litre/quart Magic Kleen Degreaser",
+        "Rkg Brand Gallon Lacquer Thinners",
+        "Rkg Brand Lacquer Thinners 1 Lt - Quart",
+        "Rkg Brand Oil Paint Thinners - 500ML"
+      ]
+    },
+    {
+      "brand": "Chinese",
+      "productCount": 3,
+      "validImageCount": 3,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Caulk Guns & Accessories",
+        "Closet Shelving"
+      ],
+      "exampleProducts": [
+        "Chinese 4ROW Steel Brush W/scraper",
+        "Chinese Blue 9\" Caulking Gun",
+        "Chinese 10\" x 12\" Black Shelf Bracket (pair)"
+      ]
+    },
+    {
+      "brand": "Glass",
+      "productCount": 3,
+      "validImageCount": 3,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Automotive Cleaning Supplies",
+        "Cable & Wire Management",
+        "Cleaning Chemicals"
+      ],
+      "exampleProducts": [
+        "Glass Cleaner - Gallon",
+        "Glass Bell Suspension ,15000LB 5-3/4\" x 10\"",
+        "Glass Cleaner - Lanher 650ML Ea"
+      ]
+    },
+    {
+      "brand": "Lysol",
+      "productCount": 9,
+      "validImageCount": 9,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Cleaning Chemicals",
+        "Cleaning Tools & Supplies"
+      ],
+      "exampleProducts": [
+        "Lysol 10OZ Neutra Air Treatment",
+        "Lysol 12.5OZ.DISINFECTING Spray, Crisp Linen Scent",
+        "Lysol 19 Oz Disinfectant Spray Crisp Linen Scent",
+        "Lysol 190Z Disinfectant Spray Crisp Linen Scent",
+        "Lysol 32OZ All Purpose Household Cleaner, Brand New Day Scent"
+      ]
+    },
+    {
+      "brand": "Maxsonic",
+      "productCount": 6,
+      "validImageCount": 6,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Appliances",
+        "Chest Freezers"
+      ],
+      "exampleProducts": [
+        "Maxsonic 12 Cubic Ft Non Frost White Refrigerator",
+        "Maxsonic 12 Cubic Ft Sls Non Frost Refrigerator",
+        "Maxsonic 14 Cubic Ft Silver Non Frost Refrigerator",
+        "Maxsonic 16 Cubic Ft Sls Non Frost Refrigerator",
+        "Maxsonic 20KG Twin Tub Machine"
+      ]
+    },
+    {
+      "brand": "Stainless",
+      "productCount": 3,
+      "validImageCount": 3,
+      "departmentCount": 3,
+      "mainCategoriesRepresented": [
+        "Bathroom Accessories",
+        "Cabinet & Drawer Hardware",
+        "Cleaning Tools & Supplies"
+      ],
+      "exampleProducts": [
+        "Stainless Steel Soap Dispenser-bobrick B4112",
+        "Stainless Steel Cupboard Handle - 3 1/2\"",
+        "Stainless Steel Scrubber - Ea"
+      ]
+    },
+    {
+      "brand": "Toner",
+      "productCount": 9,
+      "validImageCount": 9,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Computer & Printer Accessories"
+      ],
+      "exampleProducts": [
+        "Toner Cartridge Canon 128 - Black",
+        "Toner Cartridge HP 85A CE285A (single) - Black",
+        "Toner Cartridge HP CF226A - Black",
+        "Toner Cartridge HP CF280A - Black",
+        "Toner Cartridge HP CF381A - Cyan"
+      ]
+    },
+    {
+      "brand": "Arrowking",
+      "productCount": 8,
+      "validImageCount": 8,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Cable & Wire Management"
+      ],
+      "exampleProducts": [
+        "Arrowking 10\" x 50LB Nylon Black Cable Tie 100/PK",
+        "Arrowking 17\" x 50LB Nylon Black Cable Tie 100/PK",
+        "Arrowking 4\" Nylon Black Cable Tie 100/PK",
+        "Arrowking 8\" x 50LB Nylon Black Cable Tie 100/PK",
+        "Arrowking Nylon Cable Tie"
+      ]
+    },
+    {
+      "brand": "J-b",
+      "productCount": 8,
+      "validImageCount": 8,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue"
+      ],
+      "exampleProducts": [
+        "J-b Weld (2) 0.76 Oz. Woodweld Epoxy",
+        "J-b Weld (2) 1 Oz. Kwikweld Epoxy",
+        "J-b Weld (2) 1 Oz. Marineweld Epoxy",
+        "J-b Weld (2) 1 Oz. Original Coldweld Epoxy",
+        "J-b Weld 1 Oz. Kwikwood Epoxy"
+      ]
+    },
+    {
+      "brand": "Lotus",
+      "productCount": 8,
+      "validImageCount": 8,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Bathroom Hardware & Accessories"
+      ],
+      "exampleProducts": [
+        "Lotus Bag Fittings C. Couple",
+        "Lotus Bag Fittings Low Level",
+        "Lotus Burgundy Soap Dish",
+        "Lotus Soap Dish Coloured",
+        "Lotus Soap Dish White"
+      ]
+    },
+    {
+      "brand": "Nebo",
+      "productCount": 5,
+      "validImageCount": 5,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Camping Equipment"
+      ],
+      "exampleProducts": [
+        "Nebo Big Poppy Rechargeable LED Lantern",
+        "Nebo Franklin 600LM Rechargeable LED Flashlight",
+        "Nebo Mini-larry 500LM Rechargeable Pocket Light",
+        "Nebo Poppy Lantern/spot Light",
+        "Nebo Galileo 1000 Flex Rechargeable Lantern"
+      ]
+    },
+    {
+      "brand": "Whirlpool",
+      "productCount": 8,
+      "validImageCount": 8,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Appliances"
+      ],
+      "exampleProducts": [
+        "Whirlpool 11 Cubic Non Frost White Refrigerator",
+        "Whirlpool 11.8 Cu. Ft Non Frost White Refrigerator",
+        "Whirlpool 14 Cubic Ft Sls Non Frost Refrigerator",
+        "Whirlpool 14 Cubic Ft White Non Frost Refrigerator",
+        "Whirlpool 21KG Front Load Washer"
+      ]
+    },
+    {
+      "brand": "Cpml",
+      "productCount": 4,
+      "validImageCount": 4,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Concrete & Mortar"
+      ],
+      "exampleProducts": [
+        "Cpml Multi Bond Adhesive, 4 Liter (gallon)",
+        "Cpml Multi Bond Adhesive, Quart",
+        "Cpml Poly V7 Cement Binder, 1 Liter",
+        "Cpml Poly V7 Cement Binder, 4 Liter (gallon)"
+      ]
+    },
+    {
+      "brand": "Evo-stik",
+      "productCount": 7,
+      "validImageCount": 7,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Adhesive & Glue",
+        "Caulk & Sealant"
+      ],
+      "exampleProducts": [
+        "Evo-stik Liquid Nails Interior Adhesive 290ML",
+        "Evo-stik Ultra Strenght Liquid Nails 310ML",
+        "Evo-stik Wod Adhesive (1LITRE)",
+        "Evo-stik Wood Adhesive (125ML)",
+        "Evo-stik Wood Adhesive (250ML)"
+      ]
+    },
+    {
+      "brand": "Industrial",
+      "productCount": 4,
+      "validImageCount": 4,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Caulk Guns & Accessories",
+        "Cleaning Tools & Supplies"
+      ],
+      "exampleProducts": [
+        "Industrial Caulk Gun, 20OZ [newborn]",
+        "Industrial Mop Bucket W/wringer & Wheels - 35 Qt",
+        "Industrial Mop Head 20 Ounce - Rubbermaid",
+        "Industrial Mop Refill (AM-IND.32)"
+      ]
+    },
+    {
+      "brand": "Single",
+      "productCount": 4,
+      "validImageCount": 4,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Cable & Wire",
+        "Collars, Leashes & Tags"
+      ],
+      "exampleProducts": [
+        "Single Single Wire 120MM Green - Meter",
+        "Single Dog Collar Large",
+        "Single Dog Collar Medium",
+        "Single Dog Collar Small"
+      ]
+    },
+    {
+      "brand": "Wagan",
+      "productCount": 4,
+      "validImageCount": 4,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Batteries & Flashlights",
+        "Batteries, Chargers & Cables"
+      ],
+      "exampleProducts": [
+        "Wagan Brite-nite Tech Wr 600 LED Spotlight",
+        "Wagan Tech 15A Intelligent Battery Charger",
+        "Wagan Tech Ionboost V10 Torque Jump Starter",
+        "Wagan Tech Ionboost V8 Air"
+      ]
+    },
+    {
+      "brand": "Gypman",
+      "productCount": 6,
+      "validImageCount": 6,
+      "departmentCount": 1,
+      "mainCategoriesRepresented": [
+        "Ceiling Materials"
+      ],
+      "exampleProducts": [
+        "Gypman 10-FOOT Suspended Ceiling Main Tee - White",
+        "Gypman 10-FOOT Suspended Ceiling Wall Angle - White",
+        "Gypman 2-FOOT Suspended Ceiling Cross Tee - White",
+        "Gypman 24\" x 24\" Suspended Ceiling Gypsum Tile - Design 238 Circle Pebble",
+        "Gypman 24\" x 24\" Suspended Ceiling Gypsum Tile - Design 975 Granular Textured"
+      ]
+    },
+    {
+      "brand": "Klein",
+      "productCount": 3,
+      "validImageCount": 3,
+      "departmentCount": 2,
+      "mainCategoriesRepresented": [
+        "Cable & Wire Management",
+        "Cargo Equipment, Tie Downs & Accessories"
+      ],
+      "exampleProducts": [
+        "Klein 0.2-0.4\" Bare Cable Chicago Grip",
+        "Klein 0.31-0.53\" Bare Cable Chicago Grip",
+        "Klein 1-MAN Bucket Cover"
+      ]
+    }
+  ]
+}
