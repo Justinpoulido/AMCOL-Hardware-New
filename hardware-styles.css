@@ -5736,8 +5736,40 @@ body {
 }
 
 .pickup-dashboard[hidden],
+.pickup-form[hidden],
 .pickup-confirmation[hidden] {
   display: none !important;
+}
+
+.collection-type-panel {
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 14px;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.collection-type-panel label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.collection-type-panel span {
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.collection-type-panel select {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0.75rem 0.85rem;
 }
 
 .pickup-dashboard-header {
@@ -5800,7 +5832,8 @@ body {
 }
 
 .pickup-form input,
-.pickup-form select {
+.pickup-form select,
+.pickup-form textarea {
   width: 100%;
   min-height: 3rem;
   border: 1px solid #cbd5e1;
@@ -5811,10 +5844,32 @@ body {
   outline: none;
 }
 
+.pickup-form textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
 .pickup-form input:focus,
-.pickup-form select:focus {
+.pickup-form select:focus,
+.pickup-form textarea:focus,
+.collection-type-panel select:focus {
   border-color: var(--brand-cyan);
   box-shadow: 0 0 0 3px rgba(57, 217, 205, 0.16);
+}
+
+.pickup-form-wide {
+  grid-column: 1 / -1;
+}
+
+.delivery-notice {
+  border: 1px solid rgba(204, 31, 49, 0.24);
+  border-left: 5px solid #cc1f31;
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(255, 241, 242, 0.82);
+  color: #7f1d1d;
+  font-weight: 800;
+  line-height: 1.55;
 }
 
 .pickup-form-summary {
