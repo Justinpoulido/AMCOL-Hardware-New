@@ -6,6 +6,7 @@
   var PLACEHOLDER_IMAGE = "images/product-placeholder.svg";
   var PAGE_SIZE = 24;
   var LAST_PRODUCT_ROUTE_KEY = "amcolLastProductRoute";
+  var CART_KEY = "amcolCartItems";
   var productCache = null;
   var hierarchyCache = null;
   var slugUtils = window.amcolSlugUtils;
@@ -56,6 +57,53 @@
 
   function imageAlt(product) {
     return text(product.altImageDescription) || text(product.productName) || "Product image unavailable";
+  }
+
+  function readCartItems() {
+    try {
+      var items = JSON.parse(window.localStorage.getItem(CART_KEY) || "[]");
+      return Array.isArray(items) ? items : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeCartItems(items) {
+    try {
+      window.localStorage.setItem(CART_KEY, JSON.stringify(items));
+    } catch (error) {
+      return;
+    }
+  }
+
+  function addProductToCart(product) {
+    var productId = text(product.productId);
+    var productSlug = text(product.slug);
+    var items = readCartItems();
+    var existing = items.find(function (item) {
+      return (productId && item.productId === productId) || (productSlug && item.slug === productSlug);
+    });
+
+    if (existing) {
+      existing.quantity = Math.max(1, Number(existing.quantity) || 1) + 1;
+    } else {
+      items.push({
+        productId: productId,
+        slug: productSlug,
+        productName: text(product.productName),
+        brand: text(product.brand),
+        department: text(product.department),
+        price: text(product.price),
+        currency: text(product.currency),
+        stockStatus: text(product.stockStatus),
+        imageUrl: imageSrc(product),
+        imageAlt: imageAlt(product),
+        href: productHref(product),
+        quantity: 1,
+      });
+    }
+
+    writeCartItems(items);
   }
 
   function safeImageError(img) {
@@ -873,6 +921,7 @@
           ? '<div class="catalog-detail-price">' + escapeHtml(product.price) + (text(product.currency) ? " " + escapeHtml(product.currency) : "") + "</div>"
           : "";
         var stock = text(product.stockStatus) ? '<div class="catalog-detail-stock">' + escapeHtml(product.stockStatus) + "</div>" : "";
+        var addToCartButton = '<button class="btn-copper catalog-detail-cart-button" type="button" data-add-to-cart>Add to cart</button>';
 
         root.innerHTML =
           '<nav aria-label="breadcrumb" class="pdp-breadcrumb"><a href="index.html">Home</a> &gt; <a href="products.html">Products</a>' +
@@ -892,6 +941,7 @@
           "</h1>" +
           price +
           stock +
+          addToCartButton +
           (product.description ? '<div class="catalog-detail-description"><h2>Description</h2><p>' + escapeHtml(product.description) + "</p></div>" : "") +
           '<dl class="catalog-detail-specs">' +
           details.map(function (row) { return "<dt>" + escapeHtml(row[0]) + "</dt><dd>" + escapeHtml(row[1]) + "</dd>"; }).join("") +
@@ -921,6 +971,17 @@
         script.type = "application/ld+json";
         script.text = JSON.stringify(schema);
         document.head.appendChild(script);
+
+        var addToCart = root.querySelector("[data-add-to-cart]");
+        if (addToCart) {
+          addToCart.addEventListener("click", function () {
+            addProductToCart(product);
+            addToCart.textContent = "Added to cart";
+            window.setTimeout(function () {
+              window.location.href = "cart.html";
+            }, 350);
+          });
+        }
       })
       .catch(function (error) {
         root.innerHTML = '<div class="catalog-not-found"><h1>Catalogue unavailable</h1><p>' + escapeHtml(error.message) + "</p></div>";

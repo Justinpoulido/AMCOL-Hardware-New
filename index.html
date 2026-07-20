@@ -236,13 +236,15 @@
             <h2>Featured Products</h2>
             <p>Explore popular products from trusted brands available through AMCOL Hardware.</p>
           </div>
-          <div class="featured-product-grid" id="featuredProductGrid" aria-live="polite">
-            <article class="homepage-product-card skeleton-card">
-              <span class="homepage-product-image"></span>
-              <span class="homepage-product-body">
-                <span class="homepage-product-name">Loading products</span>
-              </span>
-            </article>
+          <div class="featured-product-carousel" aria-label="Featured products">
+            <div class="featured-product-grid" id="featuredProductGrid" aria-live="polite">
+              <article class="homepage-product-card skeleton-card">
+                <span class="homepage-product-image"></span>
+                <span class="homepage-product-body">
+                  <span class="homepage-product-name">Loading products</span>
+                </span>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -686,16 +688,18 @@
         .then(([featured, products]) => {
           const ids = Array.isArray(featured.productIds) ? featured.productIds.map(String) : [];
           const productMap = new Map(products.map(product => [String(product.productId), product]));
-          const selectedProducts = ids.map(id => productMap.get(id)).filter(Boolean).slice(0, 5);
+          const selectedProducts = ids.map(id => productMap.get(id)).filter(Boolean);
           if (!selectedProducts.length) throw new Error("No featured products matched the catalogue.");
-          grid.innerHTML = selectedProducts.map(product => {
+          const carouselProducts = selectedProducts.concat(selectedProducts);
+          grid.innerHTML = carouselProducts.map((product, index) => {
             const brand = text(product.brand) || text(product.department) || "AMCOL Hardware";
             const price = text(product.price);
             const currency = text(product.currency);
             const stock = text(product.stockStatus) || "Contact for availability";
+            const duplicate = index >= selectedProducts.length;
             return `
-              <article class="homepage-product-card">
-                <a class="homepage-product-link" href="${escapeHtml(productHref(product))}" data-product-id="${escapeHtml(product.productId)}" data-product-slug="${escapeHtml(product.slug)}">
+              <article class="homepage-product-card"${duplicate ? ' aria-hidden="true"' : ""}>
+                <a class="homepage-product-link" href="${escapeHtml(productHref(product))}" data-product-id="${escapeHtml(product.productId)}" data-product-slug="${escapeHtml(product.slug)}"${duplicate ? ' tabindex="-1"' : ""}>
                   <span class="homepage-product-image">
                     <img src="${escapeHtml(product.imageUrl || PLACEHOLDER_IMAGE)}" alt="${escapeHtml(product.altImageDescription || product.productName)}" loading="lazy" width="320" height="240" onerror="handleHomepageImageError(this)">
                   </span>
@@ -811,7 +815,7 @@
       const badge = document.getElementById("cartCountBadge");
       const cartLink = document.querySelector(".hero-cart-button");
       let count = 0;
-      ["amcolCart", "cart", "cartItems"].some(key => {
+      ["amcolCartItems", "amcolCart", "cart", "cartItems"].some(key => {
         try {
           const stored = JSON.parse(window.localStorage.getItem(key) || "null");
           if (Array.isArray(stored)) {
@@ -860,6 +864,7 @@
     initHeroSlider();
     updateCartBadge();
   </script>
+  <script src="scripts/cart-checkout-button.js" defer></script>
 </body>
 
 </html>
