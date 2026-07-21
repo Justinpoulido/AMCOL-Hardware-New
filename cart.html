@@ -107,7 +107,7 @@
       <div class="section-shell">
         <div class="section-header">
           <p class="section-badge">Checkout</p>
-          <h2>Your Sourcing Cart</h2>
+          <h2>Your Cart</h2>
           <p>Review the items in your list before submitting for confirmation or proceeding to Penal store checkout.</p>
         </div>
         
@@ -419,14 +419,6 @@
             ? "Delivery request submitted. Reference " + reference + ". AMCOL will call to confirm delivery fees and dispatch details."
             : "Pickup request submitted. Reference " + reference + ". AMCOL will prepare your order for pickup at the Penal store.";
         });
-      }
-
-      if (window.location.hash === "#checkoutPanel" && checkoutPanel && checkoutMethod) {
-        checkoutPanel.hidden = false;
-        window.setTimeout(function () {
-          checkoutPanel.scrollIntoView({ behavior: "smooth", block: "start" });
-          checkoutMethod.focus();
-        }, 0);
       }
     }
 
