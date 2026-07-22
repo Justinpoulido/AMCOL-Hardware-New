@@ -578,12 +578,12 @@
       </div>
       <div class="footer-bottom">
         <span>Copyright 2026 Americas Marketing Company Limited (AMCOL) Hardware.</span>
-        <span class="footer-policy-note">Privacy Policy and Terms of Service pending.</span>
+        <span class="footer-policy-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></span>
       </div>
     </footer>
   </div>
 
-  <script src="scripts/slug-utils.js?v=slug-routing-20260717"></script>
+  <script src="scripts/slug-utils.js?v=clean-product-urls-20260722"></script>
   <script>
     const PLACEHOLDER_IMAGE = "images/product-placeholder.svg";
     const featuredBrands = [
@@ -673,12 +673,20 @@
     }
 
     function productHref(product) {
-      const id = text(product.productId);
-      const slug = text(product.slug);
-      const params = new URLSearchParams();
-      if (id) params.set("id", id);
-      if (slug) params.set("slug", slug);
-      return "product-detail.html" + (params.toString() ? "?" + params.toString() : "");
+      return window.amcolSlugUtils.createProductUrl(product);
+    }
+
+    function legacyProductHref(product) {
+      return window.amcolSlugUtils.createLegacyProductUrl(product);
+    }
+
+    function canLoadCleanProductUrl(path) {
+      if (!path || path === "product-detail.html" || window.location.protocol === "file:") {
+        return Promise.resolve(false);
+      }
+      return fetch(path, { method: "HEAD", cache: "no-store" })
+        .then(response => response.ok)
+        .catch(() => false);
     }
 
     function departmentProductsHref(departmentSlug) {
@@ -922,7 +930,7 @@
     });
 
     document.addEventListener("click", function (event) {
-      const link = event.target.closest(".homepage-product-link[href*='product-detail']");
+      const link = event.target.closest(".homepage-product-link[data-product-id]");
       if (!link) return;
       try {
         const href = new URL(link.getAttribute("href"), window.location.href);
@@ -933,6 +941,12 @@
         if (route.id || route.slug) {
           window.sessionStorage.setItem("amcolLastProductRoute", JSON.stringify(route));
         }
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        const cleanPath = productHref({ productId: route.id, slug: route.slug });
+        canLoadCleanProductUrl(cleanPath).then(canLoad => {
+          window.location.href = canLoad ? cleanPath : legacyProductHref({ productId: route.id, slug: route.slug });
+        });
       } catch (error) {
         return;
       }

@@ -34,12 +34,24 @@
   }
 
   function productHref(product) {
-    var id = text(product.productId);
-    var slug = text(product.slug);
-    var params = new URLSearchParams();
-    if (id) params.set("id", id);
-    if (slug) params.set("slug", slug);
-    return "product-detail.html" + (params.toString() ? "?" + params.toString() : "");
+    return slugUtils.createProductUrl(product);
+  }
+
+  function legacyProductHref(product) {
+    return slugUtils.createLegacyProductUrl(product);
+  }
+
+  function canLoadCleanProductUrl(path) {
+    if (!path || path === "product-detail.html" || window.location.protocol === "file:") {
+      return Promise.resolve(false);
+    }
+    return fetch(path, { method: "HEAD", cache: "no-store" })
+      .then(function (response) {
+        return response.ok;
+      })
+      .catch(function () {
+        return false;
+      });
   }
 
   function listingHref(filters) {
@@ -827,8 +839,10 @@
     if (!root) return;
 
     var params = new URLSearchParams(window.location.search);
-    var id = text(params.get("id") || params.get("productId") || params.get("product") || params.get("sku"));
-    var slug = text(params.get("slug") || params.get("amp;slug"));
+    var cleanRoute = getProductRouteFromCleanPath();
+    var id = text(params.get("id") || params.get("productId") || params.get("product") || params.get("sku") || cleanRoute.id);
+    var slug = text(params.get("slug") || params.get("amp;slug") || cleanRoute.slug);
+
     if (!id && !slug) {
       try {
         var storedRoute = JSON.parse(window.sessionStorage.getItem(LAST_PRODUCT_ROUTE_KEY) || "null");
@@ -842,6 +856,17 @@
       }
     }
     if (!slug && id && !/^\d+$/.test(id)) slug = id;
+    var canRedirectLegacyUrl = isLegacyProductDetailPath() && text(params.get("id")) && text(params.get("slug") || params.get("amp;slug"));
+
+    function isLegacyProductDetailPath() {
+      return /\/product-detail(?:\.html)?$/i.test(window.location.pathname);
+    }
+
+    function getProductRouteFromCleanPath() {
+      var match = decodeURIComponent(window.location.pathname).match(/\/([^\/]+)-(\d+)\.html$/);
+      if (!match) return { id: "", slug: "" };
+      return { id: match[2], slug: match[1] + "-" + match[2] };
+    }
 
     function routeMatchesProduct(product) {
       var productId = text(product.productId);
@@ -868,20 +893,25 @@
           return;
         }
 
-        if (!window.location.search && (product.productId || product.slug)) {
-          var routeParams = new URLSearchParams();
-          if (product.productId) routeParams.set("id", product.productId);
-          if (product.slug) routeParams.set("slug", product.slug);
-          window.history.replaceState({}, "", "product-detail.html?" + routeParams.toString());
+        var cleanProductPath = productHref(product);
+        var cleanProductUrl = new URL(cleanProductPath, window.location.origin).href;
+        if (canRedirectLegacyUrl) {
+          canLoadCleanProductUrl(cleanProductPath).then(function (canLoad) {
+            if (canLoad) window.location.replace(cleanProductPath);
+          });
+        }
+        if (window.location.pathname !== cleanProductPath || window.location.search) {
+          window.history.replaceState({}, "", cleanProductPath);
         }
 
         var title = text(product.seoTitle) || text(product.productName);
         var description = text(product.metaDescription) || text(product.description);
-        var productUrl = window.location.href.split("#")[0];
+        var productUrl = cleanProductUrl;
         document.title = title + " | AMCOL Hardware";
         setMeta("description", description);
         setMeta("og:title", title, true);
         setMeta("og:description", description, true);
+        setMeta("og:url", productUrl, true);
         if (product.imageUrl) setMeta("og:image", product.imageUrl, true);
 
         var canonical = document.head.querySelector('link[rel="canonical"]');
@@ -990,7 +1020,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
-      var link = event.target.closest(".catalog-card-link[data-product-id], .homepage-product-link[href*='product-detail']");
+      var link = event.target.closest(".catalog-card-link[data-product-id], .homepage-product-link[data-product-id]");
       if (!link) return;
       try {
         var href = new URL(link.getAttribute("href"), window.location.href);
@@ -1001,6 +1031,12 @@
         if (route.id || route.slug) {
           window.sessionStorage.setItem(LAST_PRODUCT_ROUTE_KEY, JSON.stringify(route));
         }
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        var cleanPath = productHref({ productId: route.id, slug: route.slug });
+        canLoadCleanProductUrl(cleanPath).then(function (canLoad) {
+          window.location.href = canLoad ? cleanPath : legacyProductHref({ productId: route.id, slug: route.slug });
+        });
       } catch (error) {
         return;
       }

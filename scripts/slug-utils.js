@@ -28,6 +28,42 @@
       .replace(/^-+|-+$/g, "");
   }
 
+  function escapeRegExp(value) {
+    return text(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function createProductSlug(product) {
+    var item = product || {};
+    var productId = text(item.id || item.productId || item.product_id);
+    var slugSource = text(item.slug || item.productSlug || item.productName || item.name);
+    var slug = createSlug(slugSource);
+
+    if (!productId) return slug;
+
+    var idSuffixPattern = new RegExp("(-" + escapeRegExp(productId) + ")+$");
+    slug = slug.replace(idSuffixPattern, "") || "product";
+    var brandSlug = createSlug(item.brand);
+    if (brandSlug && !new RegExp("(^|-)" + escapeRegExp(brandSlug) + "(-|$)").test(slug)) {
+      slug += "-" + brandSlug;
+    }
+    return slug + "-" + productId;
+  }
+
+  function createProductUrl(product) {
+    var slug = createProductSlug(product);
+    return slug ? "/" + slug + ".html" : "product-detail.html";
+  }
+
+  function createLegacyProductUrl(product) {
+    var item = product || {};
+    var productId = text(item.id || item.productId || item.product_id);
+    var slug = createProductSlug(item);
+    var params = new URLSearchParams();
+    if (productId) params.set("id", productId);
+    if (slug) params.set("slug", slug);
+    return "product-detail.html" + (params.toString() ? "?" + params.toString() : "");
+  }
+
   function isValidSlug(value) {
     return SLUG_PATTERN.test(text(value));
   }
@@ -100,6 +136,9 @@
 
   return {
     createSlug: createSlug,
+    createProductSlug: createProductSlug,
+    createProductUrl: createProductUrl,
+    createLegacyProductUrl: createLegacyProductUrl,
     isValidSlug: isValidSlug,
     createUniqueSlugRecords: createUniqueSlugRecords,
     SLUG_PATTERN: SLUG_PATTERN,

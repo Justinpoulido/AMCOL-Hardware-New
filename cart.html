@@ -162,7 +162,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 Americas Marketing Company Limited (AMCOL) Hardware.</span>
-        <span class="footer-policy-note">Privacy Policy and Terms of Service pending.</span>
+        <span class="footer-policy-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></span>
       </div>
     </footer>
 
@@ -183,6 +183,32 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+    }
+
+    function createCartSlug(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/\+/g, " ")
+        .replace(/['']/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function cartProductHref(item) {
+      const productId = String(item.productId || item.id || "").trim();
+      const slugSource = item.slug || item.productSlug || item.productName || item.name || "";
+      let slug = createCartSlug(slugSource);
+      if (!productId) return item.href || "product-detail.html";
+      slug = slug.replace(new RegExp("(-" + productId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")+$"), "") || "product";
+      const brandSlug = createCartSlug(item.brand);
+      if (brandSlug && !new RegExp("(^|-)" + brandSlug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(-|$)").test(slug)) {
+        slug += "-" + brandSlug;
+      }
+      return "/" + slug + "-" + productId + ".html";
     }
 
     function getCartItems() {
@@ -326,7 +352,7 @@
               const quantity = itemQuantity(item);
               return `
                 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e2e8f0; background: #fff; align-items: center; box-shadow: var(--shadow-card);">
-                  <a href="${escapeCartHtml(item.href || "product-detail.html")}" style="display: block; width: 88px; height: 88px; border-radius: 0.5rem; border: 1px solid #f1f5f9; background: #f8fafc; overflow: hidden;">
+                  <a href="${escapeCartHtml(cartProductHref(item))}" style="display: block; width: 88px; height: 88px; border-radius: 0.5rem; border: 1px solid #f1f5f9; background: #f8fafc; overflow: hidden;">
                     <img src="${escapeCartHtml(item.imageUrl || "images/product-placeholder.svg")}" alt="${escapeCartHtml(item.imageAlt || item.productName || "Product image")}" style="width: 100%; height: 100%; object-fit: contain;">
                   </a>
                   <div style="flex: 1 1 16rem; min-width: 0;">

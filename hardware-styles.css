@@ -5947,6 +5947,28 @@ input:focus-visible {
   color: rgba(226, 232, 240, 0.62);
 }
 
+.footer-policy-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  align-items: center;
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.footer-policy-links a {
+  color: rgba(226, 232, 240, 0.82);
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.footer-policy-links a:hover,
+.footer-policy-links a:focus-visible,
+.footer-policy-links a.active {
+  color: #fff;
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

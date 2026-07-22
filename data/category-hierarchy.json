@@ -70,20 +70,6 @@
     ]
   },
   {
-    "name": "Food & Snacks",
-    "slug": "food-and-snacks",
-    "subcategories": [
-      {
-        "name": "Beverages",
-        "slug": "beverages"
-      },
-      {
-        "name": "Candy & Snacks",
-        "slug": "candy-and-snacks"
-      }
-    ]
-  },
-  {
     "name": "Hardware",
     "slug": "hardware",
     "subcategories": [
@@ -93,7 +79,7 @@
       },
       {
         "name": "Builder's Hardware",
-        "slug": "builder-s-hardware"
+        "slug": "builders-hardware"
       },
       {
         "name": "Cabinet & Drawer Hardware",
@@ -789,7 +775,7 @@
       },
       {
         "name": "Mechanic's Tools",
-        "slug": "mechanic-s-tools"
+        "slug": "mechanics-tools"
       },
       {
         "name": "Pick-Up Tools, Magnets & Probes",
@@ -871,7 +857,7 @@
       },
       {
         "name": "Coach & Official's Equipment",
-        "slug": "coach-and-official-s-equipment"
+        "slug": "coach-and-officials-equipment"
       },
       {
         "name": "Exercise Equipment",
@@ -918,16 +904,6 @@
       {
         "name": "Tool Racks & Storage Racks",
         "slug": "tool-racks-and-storage-racks"
-      }
-    ]
-  },
-  {
-    "name": "Toys & Games",
-    "slug": "toys-and-games",
-    "subcategories": [
-      {
-        "name": "Indoor Toys",
-        "slug": "indoor-toys"
       }
     ]
   },

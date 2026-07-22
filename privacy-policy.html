@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | AMCOL Hardware Trinidad</title>
+  <meta name="description"
+    content="Learn how AMCOL Hardware collects, uses, protects and manages customer information submitted through the AMCOL Hardware website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2" rel="stylesheet">
+  <link rel="stylesheet" href="hardware-styles.css">
+
+  <style>
+    /* Privacy policy page */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .policy-hero {
+      padding: clamp(4rem, 8vw, 6.5rem) 1.5rem clamp(2.75rem, 6vw, 4.5rem);
+      background:
+        linear-gradient(135deg, rgba(239, 246, 255, 0.98) 0%, rgba(219, 234, 254, 0.92) 48%, rgba(255, 228, 232, 0.96) 100%);
+    }
+
+    .policy-hero-inner,
+    .policy-shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .policy-hero h1 {
+      margin: 0.75rem 0 0;
+      color: var(--brand-charcoal);
+      font-size: clamp(2.35rem, 6vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .policy-hero p {
+      max-width: 760px;
+      margin: 1rem 0 0;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.75;
+    }
+
+    .policy-updated {
+      display: inline-flex;
+      margin-top: 1.4rem;
+      padding: 0.58rem 0.85rem;
+      border: 1px solid rgba(29, 124, 255, 0.24);
+      border-radius: 0.55rem;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--brand-charcoal);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .policy-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+    }
+
+    .policy-layout {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.32fr) minmax(0, 0.68fr);
+      gap: clamp(1.4rem, 4vw, 2.5rem);
+      align-items: start;
+    }
+
+    .policy-toc,
+    .policy-card,
+    .policy-contact-card {
+      border: 1px solid rgba(29, 124, 255, 0.18);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-card);
+    }
+
+    .policy-toc {
+      position: sticky;
+      top: 1.25rem;
+      padding: 1.25rem;
+    }
+
+    .policy-toc h2 {
+      margin: 0 0 1rem;
+      color: var(--brand-charcoal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .policy-toc ol {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .policy-toc a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+
+    .policy-toc a:hover,
+    .policy-toc a:focus-visible {
+      color: #0b66d8;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .policy-content {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .policy-card {
+      scroll-margin-top: 1.5rem;
+      padding: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .policy-card h2 {
+      margin: 0 0 0.85rem;
+      color: var(--brand-charcoal);
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      line-height: 1.25;
+    }
+
+    .policy-card h3 {
+      margin: 1.2rem 0 0.5rem;
+      color: var(--brand-charcoal);
+      font-size: 1rem;
+    }
+
+    .policy-card p,
+    .policy-card li,
+    .policy-contact-card p {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      line-height: 1.75;
+    }
+
+    .policy-card p {
+      margin: 0.7rem 0 0;
+    }
+
+    .policy-card ul {
+      margin: 0.7rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .policy-card li + li {
+      margin-top: 0.35rem;
+    }
+
+    .policy-notice {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid var(--brand-red);
+      border-radius: 0.55rem;
+      background: rgba(255, 241, 243, 0.92);
+      color: var(--brand-charcoal);
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .policy-contact-card {
+      margin-top: 1rem;
+      padding: 1.25rem;
+    }
+
+    .policy-contact-card h3 {
+      margin: 0 0 0.75rem;
+      color: var(--brand-charcoal);
+      font-size: 1.1rem;
+    }
+
+    .policy-contact-card p {
+      margin: 0.6rem 0 0;
+    }
+
+    .policy-contact-card a {
+      color: #0b66d8;
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .policy-contact-card a:hover,
+    .policy-contact-card a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .policy-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .policy-hero,
+      .policy-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .policy-card,
+      .policy-contact-card,
+      .policy-toc {
+        border-radius: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen">
+    <header class="hero-header">
+      <div class="hero-topbar">
+        <div class="hero-topbar-inner">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+            class="hero-topbar-item" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"></path>
+              <circle cx="12" cy="9" r="2.4"></circle>
+            </svg>
+            <span>#22 Ramjohn Trace, Penal</span>
+          </a>
+          <a href="tel:+18686477653" class="hero-topbar-item">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z">
+              </path>
+            </svg>
+            <span>Store: 647-7653 &middot; Office: +1 (868) 288-5800</span>
+          </a>
+          <span class="hero-topbar-item">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3.2 1.9"></path>
+            </svg>
+            <span>Mon-Fri: 7am - 5pm &middot; Sat: 7am - 4pm</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-mainnav" style="position:relative;">
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+        <div class="hero-mainnav-inner">
+          <div class="hero-brand-panel">
+            <a href="index.html" aria-label="AMCOL Hardware Home">
+              <img src="./images/AMCOL_Logo.webp" alt="AMCOL Hardware Logo" class="hero-brand-logo" width="420"
+                height="104">
+            </a>
+          </div>
+          <div class="hero-links-panel" id="mobileNav">
+            <div class="hero-nav-row">
+              <div class="hero-nav-main">
+                <nav class="hero-primary-nav" aria-label="Primary navigation">
+                  <a href="index.html" class="hero-nav-link">Home</a>
+                  <a href="products.html" class="hero-nav-link">Products</a>
+                  <a href="industrial.html" class="hero-nav-link">Business Services</a>
+                  <a href="departments.html" class="hero-nav-link">Departments</a>
+                  <a href="faq.html" class="hero-nav-link">FAQ</a>
+                  <a href="contact.html" class="hero-nav-link">Contact Us</a>
+                </nav>
+                <form class="hero-nav-search" action="products.html" method="get">
+                  <label for="site-header-product-search" class="sr-only">Search products</label>
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.8-3.8"></path>
+                  </svg>
+                  <input id="site-header-product-search" type="search" name="query" placeholder="Search products...">
+                </form>
+              </div>
+              <div class="hero-actions">
+                <a href="admin/admin.html" class="hero-admin-button" aria-label="Admin Login">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 22s8-3.8 8-10V5l-8-3-8 3v7c0 6.2 8 10 8 10Z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                  </svg>
+                </a>
+                <a href="customer.html" class="hero-login-button" aria-label="Login Portal">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </a>
+                <a href="cart.html" class="hero-cart-button" aria-label="View cart">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="policy-hero">
+        <div class="policy-hero-inner">
+          <p class="section-badge">Legal &amp; Privacy</p>
+          <h1>Privacy Policy</h1>
+          <p>AMCOL Hardware respects your privacy and is committed to protecting the personal information you provide
+            when using our website.</p>
+          <span class="policy-updated">Last updated: July 22, 2026</span>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <div class="policy-shell policy-layout">
+          <nav class="policy-toc" aria-labelledby="policy-toc-heading">
+            <h2 id="policy-toc-heading">Contents</h2>
+            <ol>
+              <li><a href="#information-we-may-collect">Information We May Collect</a></li>
+              <li><a href="#how-we-use-your-information">How We Use Your Information</a></li>
+              <li><a href="#customer-accounts">Customer Accounts</a></li>
+              <li><a href="#cookies-and-similar-technologies">Cookies and Similar Technologies</a></li>
+              <li><a href="#google-maps-and-embedded-content">Google Maps and Embedded Content</a></li>
+              <li><a href="#analytics">Analytics</a></li>
+              <li><a href="#how-we-share-information">How We Share Information</a></li>
+              <li><a href="#external-links">External Links</a></li>
+              <li><a href="#data-security">Data Security</a></li>
+              <li><a href="#data-retention">Data Retention</a></li>
+              <li><a href="#access-correction-and-deletion">Access, Correction and Deletion</a></li>
+              <li><a href="#account-deletion">Account Deletion</a></li>
+              <li><a href="#childrens-privacy">Children's Privacy</a></li>
+              <li><a href="#marketing-communications">Marketing Communications</a></li>
+              <li><a href="#changes-to-this-privacy-policy">Changes to This Privacy Policy</a></li>
+              <li><a href="#contact-us">Contact Us</a></li>
+            </ol>
+          </nav>
+
+          <div class="policy-content">
+            <article class="policy-card">
+              <h2>Privacy Policy</h2>
+              <p>This Privacy Policy explains what information we may collect, how we use it, when it may be shared,
+                and the choices available to you.</p>
+              <p>This Privacy Policy applies to the website at <a href="https://www.amcolhardwarett.com/"
+                  target="_blank" rel="noopener noreferrer">www.amcolhardwarett.com</a> and to AMCOL Hardware,
+                Americas Marketing Company Limited, 22 Ramjohn Trace, Penal, Trinidad and Tobago.</p>
+              <p>By using this website or submitting information through it, you acknowledge the practices described in
+                this Privacy Policy.</p>
+            </article>
+
+            <section class="policy-card" id="information-we-may-collect">
+              <h2>1. Information We May Collect</h2>
+              <p>The information we collect depends on how you use the website.</p>
+              <h3>Information you provide</h3>
+              <p>You may provide personal information when you:</p>
+              <ul>
+                <li>Submit an online inquiry</li>
+                <li>Request information about a product</li>
+                <li>Request a quotation</li>
+                <li>Create or manage a customer account</li>
+                <li>Add products to your cart</li>
+                <li>Submit an order, pickup or delivery request</li>
+                <li>Contact us by telephone or email</li>
+                <li>Communicate with our customer service or sales team</li>
+              </ul>
+              <p>This information may include:</p>
+              <ul>
+                <li>Full name, email address and telephone number</li>
+                <li>Account login information</li>
+                <li>Billing, pickup or delivery address</li>
+                <li>Products, quantities and brands requested</li>
+                <li>Preferred pickup or delivery details</li>
+                <li>Information included in your inquiry or message</li>
+                <li>Business or company information</li>
+                <li>Any other information you voluntarily provide</li>
+              </ul>
+              <div class="policy-notice">Please do not submit confidential or sensitive personal information unless it
+                is necessary for your request.</div>
+              <h3>Information collected automatically</h3>
+              <p>When a visitor uses the website, certain technical information may be collected automatically,
+                including:</p>
+              <ul>
+                <li>Internet Protocol address</li>
+                <li>Browser type, device type and operating system</li>
+                <li>Referring website</li>
+                <li>Pages viewed</li>
+                <li>Date and time of visits</li>
+                <li>General website interaction and usage information</li>
+                <li>Cookie and session information</li>
+              </ul>
+              <p>This information helps AMCOL understand website usage, maintain security and improve performance.</p>
+            </section>
+
+            <section class="policy-card" id="how-we-use-your-information">
+              <h2>2. How We Use Your Information</h2>
+              <p>AMCOL Hardware may use collected information to:</p>
+              <ul>
+                <li>Respond to inquiries and customer requests</li>
+                <li>Check product availability and prepare quotations</li>
+                <li>Process and review order requests</li>
+                <li>Arrange pickup or delivery</li>
+                <li>Contact customers regarding an inquiry, quotation or order</li>
+                <li>Create and manage customer accounts</li>
+                <li>Maintain products placed in a customer's cart</li>
+                <li>Provide customer service</li>
+                <li>Improve website content, navigation and performance</li>
+                <li>Diagnose technical problems</li>
+                <li>Prevent fraud, misuse and unauthorized access</li>
+                <li>Maintain business, accounting and transaction records</li>
+                <li>Comply with applicable legal and regulatory requirements</li>
+              </ul>
+              <div class="policy-notice">Submitting an inquiry or order request does not automatically confirm product
+                availability, final pricing or acceptance of an order. AMCOL Hardware may contact you to verify those
+                details.</div>
+            </section>
+
+            <section class="policy-card" id="customer-accounts">
+              <h2>3. Customer Accounts</h2>
+              <p>Customers may be able to create an account to manage personal details, saved products, carts or order
+                requests.</p>
+              <p>Users are responsible for:</p>
+              <ul>
+                <li>Providing accurate information</li>
+                <li>Keeping login details confidential</li>
+                <li>Protecting access to their device and account</li>
+                <li>Informing AMCOL if they believe their account has been accessed without authorization</li>
+              </ul>
+              <p>AMCOL may suspend or restrict an account where fraud, misuse or a security risk is reasonably
+                suspected.</p>
+            </section>
+
+            <section class="policy-card" id="cookies-and-similar-technologies">
+              <h2>4. Cookies and Similar Technologies</h2>
+              <p>The website may use cookies and similar technologies to keep the website functioning properly,
+                remember user preferences, maintain login sessions, preserve cart information, understand website usage,
+                and improve performance and security.</p>
+              <p>A cookie is a small data file stored on a visitor's device by their browser. Users may block or delete
+                cookies, but some website features may not function correctly. Where legally required, visitors may be
+                given a choice regarding optional cookies.</p>
+            </section>
+
+            <section class="policy-card" id="google-maps-and-embedded-content">
+              <h2>5. Google Maps and Embedded Content</h2>
+              <p>The Contact page may include an embedded Google Maps preview. When users interact with the map, Google
+                may collect device information, browser information, IP address, map interaction information, cookies or
+                similar tracking information.</p>
+              <p>Embedded third-party content may behave similarly to visiting the third party's website directly.
+                AMCOL Hardware does not control how Google or other third parties process information through their
+                services.</p>
+            </section>
+
+            <section class="policy-card" id="analytics">
+              <h2>6. Analytics</h2>
+              <p>Analytics tools may be used to understand which pages are visited, how visitors navigate the website,
+                which devices and browsers are used, and general traffic and performance trends.</p>
+              <p>Where possible, this information is reviewed in aggregated form.</p>
+            </section>
+
+            <section class="policy-card" id="how-we-share-information">
+              <h2>7. How We Share Information</h2>
+              <div class="policy-notice">AMCOL Hardware does not sell or rent personal information to advertisers.</div>
+              <p>Information may be shared only when reasonably necessary with service providers that assist with:</p>
+              <ul>
+                <li>Website hosting and database storage</li>
+                <li>Customer account management</li>
+                <li>Email delivery</li>
+                <li>Website security and technical support</li>
+                <li>Order fulfilment, pickup or delivery services</li>
+                <li>Payment processing, where applicable</li>
+                <li>Analytics and performance monitoring</li>
+              </ul>
+              <p>Information may also be disclosed with customer consent, to complete a requested service, to comply
+                with a legal obligation, in response to a lawful request from an authority, to protect the rights,
+                safety or property of AMCOL Hardware, its customers or others, or in connection with a business
+                restructuring, merger or transfer.</p>
+            </section>
+
+            <section class="policy-card" id="external-links">
+              <h2>8. External Links</h2>
+              <p>The website may contain links to Google Maps, manufacturer websites, supplier websites, social media
+                platforms and external service providers.</p>
+              <p>AMCOL does not control those websites and is not responsible for their content, security or privacy
+                practices.</p>
+            </section>
+
+            <section class="policy-card" id="data-security">
+              <h2>9. Data Security</h2>
+              <p>Reasonable administrative, technical and organisational safeguards may be used to protect personal
+                information from unauthorized access, loss, misuse, alteration, disclosure and destruction.</p>
+              <div class="policy-notice">No method of transmission over the Internet or method of electronic storage is
+                completely secure. AMCOL Hardware cannot guarantee absolute security.</div>
+            </section>
+
+            <section class="policy-card" id="data-retention">
+              <h2>10. Data Retention</h2>
+              <p>Personal information is retained only as long as reasonably necessary to respond to requests, manage
+                customer accounts, complete orders or quotations, maintain business and transaction records, resolve
+                disputes, prevent fraud, and meet legal, accounting or regulatory obligations.</p>
+              <p>Retention periods may vary based on the type of information and why it was collected.</p>
+            </section>
+
+            <section class="policy-card" id="access-correction-and-deletion">
+              <h2>11. Access, Correction and Deletion</h2>
+              <p>Customers may contact AMCOL Hardware to request access to personal information, correction of
+                inaccurate information, updating of incomplete information, deletion where legally and operationally
+                permitted, restriction of certain uses, or withdrawal of marketing consent.</p>
+              <p>Some information may still need to be retained for completed transactions, accounting records, legal
+                obligations, fraud prevention, security investigations, dispute resolution, or protection of another
+                person's rights.</p>
+            </section>
+
+            <section class="policy-card" id="account-deletion">
+              <h2>12. Account Deletion</h2>
+              <p>To request deletion of your customer account, contact AMCOL Hardware using the details provided in the
+                Contact Us section of this Privacy Policy.</p>
+              <p>Account deletion may be permanent and may remove access to saved account information. Certain
+                transaction, legal, security or accounting records may be retained even after the account itself is
+                deleted.</p>
+            </section>
+
+            <section class="policy-card" id="childrens-privacy">
+              <h2>13. Children's Privacy</h2>
+              <p>The website is intended for general retail and business customers and is not specifically directed to
+                children. AMCOL does not knowingly seek personal information from children without appropriate
+                authorization.</p>
+            </section>
+
+            <section class="policy-card" id="marketing-communications">
+              <h2>14. Marketing Communications</h2>
+              <p>Customers who choose to receive marketing communications may withdraw consent by using an unsubscribe
+                option, contacting AMCOL Hardware, or updating communication preferences where available.</p>
+              <p>Service-related messages about active inquiries, quotations, accounts or orders may still be sent where
+                necessary.</p>
+            </section>
+
+            <section class="policy-card" id="changes-to-this-privacy-policy">
+              <h2>15. Changes to This Privacy Policy</h2>
+              <p>This Privacy Policy may be updated due to website changes, new services, business-process changes,
+                security improvements, or legal and regulatory requirements.</p>
+              <p>The latest version will be posted with an updated revision date.</p>
+            </section>
+
+            <section class="policy-card" id="contact-us">
+              <h2>16. Contact Us</h2>
+              <p>For privacy questions, requests or account-deletion inquiries, contact AMCOL Hardware using the details
+                below.</p>
+              <div class="policy-contact-card">
+                <h3>AMCOL Hardware</h3>
+                <p>Americas Marketing Company Limited<br>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+                    target="_blank" rel="noopener noreferrer">22 Ramjohn Trace, Penal, Trinidad and Tobago</a>
+                </p>
+                <p><strong>Telephone:</strong><br>
+                  <a href="tel:+18686477653">647-7653</a><br>
+                  <a href="tel:+18682885800">+1 (868) 288-5800</a>
+                </p>
+                <p><strong>Email:</strong><br>
+                  <a href="mailto:sales1@amcolgroup.com">sales1@amcolgroup.com</a>
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-grid">
+      <div>
+        <img src="./images/AMCOL_Logo.webp" alt="AMCOL Hardware" class="footer-logo">
+        <p>Americas Marketing Company Limited (AMCOL) Hardware - tools, building supplies, and home improvement for
+          Trinidad &amp; Tobago.</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>
+          <strong>Telephone:</strong><br>
+          <a href="tel:+18686477653">647-7653</a> (22-AMCOL)<br>
+          <a href="tel:+18682885800">+1 (868) 288-5800</a>
+        </p>
+        <p>
+          <strong>Address:</strong><br>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+            target="_blank" rel="noopener noreferrer">22 Ramjohn Trace, Penal, Trinidad, W.I.</a>
+        </p>
+      </div>
+      <div>
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 7am - 5pm<br>Saturday: 7am - 4pm<br>Sunday / Public Holiday: Closed</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="products.html?department=building-materials">Construction Supplies</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#how-to-order">How To Order</a></li>
+          <li><a href="customer.html">My Account</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Americas Marketing Company Limited (AMCOL) Hardware.</span>
+      <span class="footer-policy-links">
+        <a href="privacy-policy.html" class="active" aria-current="page">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("menuToggle").addEventListener("click", function () {
+      const nav = document.getElementById("mobileNav");
+      const open = nav.classList.toggle("open");
+      this.setAttribute("aria-expanded", open);
+    });
+  </script>
+</body>
+
+</html>

@@ -40,6 +40,12 @@ function resolveRequestPath(urlPath) {
   return absolutePath;
 }
 
+function productDetailFallbackPath(urlPath) {
+  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+  if (!/^\/.+-[0-9]+\.html$/i.test(decoded)) return null;
+  return path.join(ROOT, "product-detail.html");
+}
+
 const server = http.createServer((req, res) => {
   const filePath = resolveRequestPath(req.url || "/");
   if (!filePath) {
@@ -49,6 +55,15 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (statError, stat) => {
     if (statError || !stat.isFile()) {
+      const fallbackPath = productDetailFallbackPath(req.url || "/");
+      if (fallbackPath) {
+        res.writeHead(200, {
+          "Content-Type": TYPES[".html"],
+          "Cache-Control": "no-store",
+        });
+        fs.createReadStream(fallbackPath).pipe(res);
+        return;
+      }
       send(res, 404, "Not found");
       return;
     }

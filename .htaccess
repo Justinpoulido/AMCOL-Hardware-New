@@ -1,0 +1,11 @@
+RewriteEngine On
+Options -MultiViews
+RewriteBase /
+
+DirectoryIndex index.html index.php
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^(.+)-([0-9]+)\.html$ product-detail.html?id=$2&slug=$1-$2 [L,QSA]
