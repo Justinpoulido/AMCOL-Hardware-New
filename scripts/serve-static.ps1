@@ -51,6 +51,22 @@ function Get-SafePath {
     return $candidate
 }
 
+function Get-FallbackPath {
+    param([string]$RequestPath)
+
+    $pathOnly = [System.Uri]::UnescapeDataString(($RequestPath -split "\?")[0])
+    if ($pathOnly -match "^/products/?$") {
+        return Join-Path $root "products.html"
+    }
+    if ($pathOnly -match "^/brand-[a-z0-9-]+\.html$") {
+        return Join-Path $root "products.html"
+    }
+    if ($pathOnly -match "^/.+-[0-9]+\.html$") {
+        return Join-Path $root "product-detail.html"
+    }
+    return $null
+}
+
 try {
     $listener.Start()
     Write-Host "AMCOL dev server running at http://127.0.0.1:3000/index.html"
@@ -77,8 +93,12 @@ try {
             }
 
             if (-not (Test-Path -LiteralPath $filePath -PathType Leaf)) {
-                Send-Response $stream 404 "Not Found" ([System.Text.Encoding]::UTF8.GetBytes("Not found"))
-                continue
+                $fallbackPath = Get-FallbackPath $requestPath
+                if ($null -eq $fallbackPath -or -not (Test-Path -LiteralPath $fallbackPath -PathType Leaf)) {
+                    Send-Response $stream 404 "Not Found" ([System.Text.Encoding]::UTF8.GetBytes("Not found"))
+                    continue
+                }
+                $filePath = $fallbackPath
             }
 
             $extension = [System.IO.Path]::GetExtension($filePath).ToLowerInvariant()

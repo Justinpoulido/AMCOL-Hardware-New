@@ -8,4 +8,6 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+RewriteRule ^products/?$ products.html [L,QSA]
+RewriteRule ^brand-([a-z0-9-]+)\.html$ products.html?brand=$1 [L,QSA]
 RewriteRule ^(.+)-([0-9]+)\.html$ product-detail.html?id=$2&slug=$1-$2 [L,QSA]

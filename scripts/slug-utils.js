@@ -50,8 +50,7 @@
   }
 
   function createProductUrl(product) {
-    var slug = createProductSlug(product);
-    return slug ? "/" + slug + ".html" : "product-detail.html";
+    return createLegacyProductUrl(product);
   }
 
   function createLegacyProductUrl(product) {
@@ -62,6 +61,16 @@
     if (productId) params.set("id", productId);
     if (slug) params.set("slug", slug);
     return "product-detail.html" + (params.toString() ? "?" + params.toString() : "");
+  }
+
+  function createBrandUrl(brand) {
+    var slug = createSlug(brand);
+    return slug ? "products.html?brand=" + encodeURIComponent(slug) : "products.html";
+  }
+
+  function getBrandSlugFromPath(pathname) {
+    var match = text(pathname).match(/^\/brand-([a-z0-9]+(?:-[a-z0-9]+)*)\.html$/i);
+    return match ? createSlug(match[1]) : "";
   }
 
   function isValidSlug(value) {
@@ -139,6 +148,8 @@
     createProductSlug: createProductSlug,
     createProductUrl: createProductUrl,
     createLegacyProductUrl: createLegacyProductUrl,
+    createBrandUrl: createBrandUrl,
+    getBrandSlugFromPath: getBrandSlugFromPath,
     isValidSlug: isValidSlug,
     createUniqueSlugRecords: createUniqueSlugRecords,
     SLUG_PATTERN: SLUG_PATTERN,

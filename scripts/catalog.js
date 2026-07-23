@@ -1,23 +1,76 @@
 (function () {
   "use strict";
 
-  var PRODUCTS_URL = "data/products.json";
-  var HIERARCHY_URL = "data/category-hierarchy.json";
+  var PRODUCTS_URL = sitePath("data/products.json");
+  var HIERARCHY_URL = sitePath("data/category-hierarchy.json");
   var PLACEHOLDER_IMAGE = "images/product-placeholder.svg";
   var PAGE_SIZE = 24;
   var LAST_PRODUCT_ROUTE_KEY = "amcolLastProductRoute";
   var CART_KEY = "amcolCartItems";
+  var PENDING_BRAND_FILTER_KEY = "amcolPendingBrandFilter";
   var productCache = null;
   var hierarchyCache = null;
   var slugUtils = window.amcolSlugUtils;
+  var BRAND_SLUG_ALIASES = {
+    "tuff-tank": "tuff",
+    "black-decker": "black-and-decker",
+    "black-plus-decker": "black-and-decker",
+  };
 
   function text(value) {
     if (value === null || value === undefined) return "";
     return String(value).trim();
   }
 
+  function sitePath(path) {
+    var cleanPath = text(path).replace(/^\/+/, "");
+    if (!cleanPath) return "";
+    if (window.location.protocol === "file:") return cleanPath;
+    return new URL("/" + cleanPath, window.location.origin).href;
+  }
+
+  function safeAssetUrl(value) {
+    var url = text(value);
+    if (window.location.protocol === "https:" && /^http:\/\//i.test(url)) {
+      return "https://" + url.slice(7);
+    }
+    return url;
+  }
+
   function createSlug(value) {
     return slugUtils.createSlug(value);
+  }
+
+  function normalizeBrandSlug(value) {
+    var slug = createSlug(value);
+    return BRAND_SLUG_ALIASES[slug] || slug;
+  }
+
+  function readPendingBrandFilter() {
+    try {
+      var stored = window.sessionStorage.getItem(PENDING_BRAND_FILTER_KEY);
+      if (!stored) return "";
+      try {
+        var record = JSON.parse(stored);
+        if (!record || Date.now() - Number(record.timestamp || 0) > 10000) {
+          clearPendingBrandFilter();
+          return "";
+        }
+        return normalizeBrandSlug(record.brand);
+      } catch (error) {
+        return normalizeBrandSlug(stored);
+      }
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function clearPendingBrandFilter() {
+    try {
+      window.sessionStorage.removeItem(PENDING_BRAND_FILTER_KEY);
+    } catch (error) {
+      return;
+    }
   }
 
   function hasOwn(object, key) {
@@ -41,6 +94,14 @@
     return slugUtils.createLegacyProductUrl(product);
   }
 
+  function brandHref(brand) {
+    return slugUtils.createBrandUrl(brand);
+  }
+
+  function cleanBrandSlugFromPath() {
+    return slugUtils.getBrandSlugFromPath(window.location.pathname);
+  }
+
   function canLoadCleanProductUrl(path) {
     if (!path || path === "product-detail.html" || window.location.protocol === "file:") {
       return Promise.resolve(false);
@@ -58,13 +119,13 @@
     var params = new URLSearchParams();
     if (filters.departmentSlug) params.set("department", createSlug(filters.departmentSlug));
     if (filters.categorySlug) params.set("category", createSlug(filters.categorySlug));
-    if (filters.brand) params.set("brand", createSlug(filters.brand));
+    if (filters.brand) params.set("brand", normalizeBrandSlug(filters.brand));
     if (filters.search) params.set("search", filters.search);
     return "products.html" + (params.toString() ? "?" + params.toString() : "") + "#catalogResults";
   }
 
   function imageSrc(product) {
-    return text(product.imageUrl) || PLACEHOLDER_IMAGE;
+    return safeAssetUrl(product.imageUrl) || PLACEHOLDER_IMAGE;
   }
 
   function imageAlt(product) {
@@ -126,25 +187,39 @@
 
   window.amcolProductImageError = safeImageError;
 
-  function loadJson(url) {
+  function loadJson(url, label) {
+    console.info("[AMCOL catalogue] Requesting " + label + ":", url);
     return fetch(url, { cache: "no-store" }).then(function (response) {
-      if (!response.ok) throw new Error("Could not load " + url + ".");
-      return response.json();
+      if (!response.ok) {
+        throw new Error("Failed to load " + label + ": " + response.status + " " + response.statusText);
+      }
+      return response.json().then(function (data) {
+        console.info("[AMCOL catalogue] Loaded " + label + ".");
+        return data;
+      });
     });
   }
 
   function loadProducts() {
     if (productCache) return Promise.resolve(productCache);
-    return loadJson(PRODUCTS_URL).then(function (products) {
-      productCache = Array.isArray(products) ? products : [];
+    return loadJson(PRODUCTS_URL, "product catalogue").then(function (products) {
+      if (!Array.isArray(products)) {
+        throw new Error("Product catalogue JSON must be an array.");
+      }
+      productCache = products;
+      console.info("[AMCOL catalogue] Products loaded:", productCache.length);
       return productCache;
     });
   }
 
   function loadHierarchy() {
     if (hierarchyCache) return Promise.resolve(hierarchyCache);
-    return loadJson(HIERARCHY_URL).then(function (hierarchy) {
-      hierarchyCache = Array.isArray(hierarchy) ? hierarchy : [];
+    return loadJson(HIERARCHY_URL, "category hierarchy").then(function (hierarchy) {
+      if (!Array.isArray(hierarchy)) {
+        throw new Error("Category hierarchy JSON must be an array.");
+      }
+      hierarchyCache = hierarchy;
+      console.info("[AMCOL catalogue] Departments loaded:", hierarchyCache.length);
       return hierarchyCache;
     });
   }
@@ -259,6 +334,11 @@
 
   function updateUrl(state) {
     var url = new URL(window.location.href);
+
+    if (/^\/brand-[a-z0-9-]+\.html$/i.test(url.pathname)) {
+      url = new URL("products.html", window.location.origin);
+    }
+
     if (state.search) {
       url.searchParams.set("search", state.search);
       url.searchParams.delete("query");
@@ -270,7 +350,7 @@
     else url.searchParams.delete("department");
     if (state.categorySlug) url.searchParams.set("category", createSlug(state.categorySlug));
     else url.searchParams.delete("category");
-    if (state.brandSlug) url.searchParams.set("brand", createSlug(state.brandSlug));
+    if (state.brandSlug) url.searchParams.set("brand", normalizeBrandSlug(state.brandSlug));
     else {
       url.searchParams.delete("brand");
       url.searchParams.delete("brandSearch");
@@ -321,7 +401,9 @@
 
     var params = new URLSearchParams(window.location.search);
     var selectedDepartment = createSlug(params.get("department"));
-    var requestedBrandSlug = createSlug(params.get("brandSearch") || params.get("brand"));
+    var urlBrandSlug = normalizeBrandSlug(cleanBrandSlugFromPath() || params.get("brandSearch") || params.get("brand"));
+    var requestedBrandSlug = urlBrandSlug || readPendingBrandFilter();
+    if (urlBrandSlug) clearPendingBrandFilter();
     var state = {
       search: text(params.get("search") || params.get("query")),
       departmentSlug: selectedDepartment,
@@ -340,11 +422,27 @@
     var debounceTimer = null;
     var shouldScrollToResults = Boolean(state.departmentSlug || state.categorySlug || state.brandSlug || window.location.hash === "#catalogResults");
 
+    function setCatalogState(status, message) {
+      var isLoading = status === "loading";
+      var isError = status === "error";
+      var isEmpty = status === "empty";
+
+      controls.loading.hidden = !isLoading && !isError;
+      controls.loading.classList.toggle("catalog-error", isError);
+      controls.loading.textContent = message || (isLoading ? "Loading products..." : "");
+      controls.empty.hidden = !isEmpty;
+      if (isEmpty && message) controls.empty.textContent = message;
+      if (isLoading || isError) {
+        controls.grid.innerHTML = "";
+        controls.pagination.innerHTML = "";
+      }
+    }
+
     function createBrandRecords(products) {
       var recordsBySlug = new Map();
       products.forEach(function (product) {
         var name = text(product.brand);
-        var slug = createSlug(name);
+        var slug = normalizeBrandSlug(name);
         if (!name || !slug) return;
         if (!recordsBySlug.has(slug)) {
           recordsBySlug.set(slug, { name: name, slug: slug, count: 0 });
@@ -362,7 +460,7 @@
     }
 
     function resolveBrandSlug(value) {
-      var requested = createSlug(value);
+      var requested = normalizeBrandSlug(value);
       if (!requested) return "";
       if (brandBySlug.has(requested)) return requested;
       var resolved = "";
@@ -464,7 +562,8 @@
       state.search = text(currentParams.get("search") || currentParams.get("query"));
       state.departmentSlug = createSlug(currentParams.get("department"));
       state.categorySlug = createSlug(currentParams.get("category"));
-      state.brandSlug = resolveBrandSlug(currentParams.get("brandSearch") || currentParams.get("brand"));
+      state.brandSlug = resolveBrandSlug(cleanBrandSlugFromPath() || currentParams.get("brandSearch") || currentParams.get("brand"));
+      if (state.brandSlug) clearPendingBrandFilter();
       state.page = Math.max(parseInt(currentParams.get("page") || "1", 10) || 1, 1);
       state.pushHistory = false;
       controls.search.value = state.search;
@@ -495,7 +594,7 @@
 
     function productMatchesBrand(product, brandSlug) {
       if (!brandSlug) return true;
-      return createSlug(product.brand) === createSlug(brandSlug);
+      return normalizeBrandSlug(product.brand) === normalizeBrandSlug(brandSlug);
     }
 
     function applyFilters() {
@@ -598,7 +697,7 @@
       controls.grid.innerHTML = pageProducts.map(function (product) {
         return createProductCard(product);
       }).join("");
-      controls.empty.hidden = filtered.length > 0;
+      setCatalogState(filtered.length ? "success" : "empty", "No products match the current search and filters.");
 
       controls.pagination.innerHTML =
         '<button type="button" class="catalog-page-button" data-page="' +
@@ -634,7 +733,7 @@
 
     function changeFilter() {
       state.search = text(controls.search.value);
-      state.brandSlug = createSlug(controls.brand.value);
+      state.brandSlug = normalizeBrandSlug(controls.brand.value);
       state.page = 1;
       state.pushHistory = true;
       updateSearchSuggestions();
@@ -719,7 +818,7 @@
         var link = event.target.closest(".ticker-item");
         if (!link) return;
         var url = new URL(link.href, window.location.href);
-        var brandSlug = resolveBrandSlug(url.searchParams.get("brandSearch") || url.searchParams.get("brand"));
+        var brandSlug = resolveBrandSlug(slugUtils.getBrandSlugFromPath(url.pathname) || url.searchParams.get("brandSearch") || url.searchParams.get("brand"));
         if (!brandSlug) return;
         event.preventDefault();
         controls.search.value = "";
@@ -735,6 +834,14 @@
         controls.results.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
+
+    setCatalogState("loading", "Loading products...");
+    console.info("[AMCOL catalogue] Active URL filters:", {
+      department: state.departmentSlug,
+      category: state.categorySlug,
+      brand: state.brandSlug,
+      search: state.search,
+    });
 
     Promise.all([loadProducts(), loadHierarchy()])
       .then(function (values) {
@@ -803,11 +910,11 @@
         searchSuggestions = buildSearchSuggestions(allProducts, hierarchy, brandRecords);
 
         state.brandSlug = resolveBrandSlug(state.brandSlug);
+        if (state.brandSlug) clearPendingBrandFilter();
         if (state.brandSlug) state.search = "";
         controls.search.value = state.search;
         controls.brand.value = brandBySlug.has(state.brandSlug) ? state.brandSlug : "";
         updateSearchSuggestions();
-        controls.loading.hidden = true;
         render();
         if (shouldScrollToResults) {
           window.setTimeout(function () {
@@ -816,8 +923,8 @@
         }
       })
       .catch(function (error) {
-        controls.loading.textContent = error.message;
-        controls.loading.classList.add("catalog-error");
+        console.error("[AMCOL catalogue] Catalogue render failed:", error);
+        setCatalogState("error", "We could not load the product catalogue. Please refresh the page or try again.");
       });
   }
 
@@ -912,7 +1019,7 @@
         setMeta("og:title", title, true);
         setMeta("og:description", description, true);
         setMeta("og:url", productUrl, true);
-        if (product.imageUrl) setMeta("og:image", product.imageUrl, true);
+        if (product.imageUrl) setMeta("og:image", imageSrc(product), true);
 
         var canonical = document.head.querySelector('link[rel="canonical"]');
         if (!canonical) {
@@ -990,7 +1097,7 @@
           description: description,
           category: text(product.category) || undefined,
           model: text(product.model) || undefined,
-          image: text(product.imageUrl) || undefined,
+          image: text(imageSrc(product)) || undefined,
           url: productUrl,
         };
         if (product.brand) schema.brand = { "@type": "Brand", name: product.brand };

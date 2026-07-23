@@ -185,6 +185,14 @@
         .replace(/'/g, "&#039;");
     }
 
+    function safeCartAssetUrl(value) {
+      const url = String(value || "").trim();
+      if (window.location.protocol === "https:" && /^http:\/\//i.test(url)) {
+        return "https://" + url.slice(7);
+      }
+      return url;
+    }
+
     function createCartSlug(value) {
       return String(value || "")
         .normalize("NFD")
@@ -208,7 +216,10 @@
       if (brandSlug && !new RegExp("(^|-)" + brandSlug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(-|$)").test(slug)) {
         slug += "-" + brandSlug;
       }
-      return "/" + slug + "-" + productId + ".html";
+      const params = new URLSearchParams();
+      params.set("id", productId);
+      params.set("slug", slug + "-" + productId);
+      return "product-detail.html?" + params.toString();
     }
 
     function getCartItems() {
@@ -353,7 +364,7 @@
               return `
                 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e2e8f0; background: #fff; align-items: center; box-shadow: var(--shadow-card);">
                   <a href="${escapeCartHtml(cartProductHref(item))}" style="display: block; width: 88px; height: 88px; border-radius: 0.5rem; border: 1px solid #f1f5f9; background: #f8fafc; overflow: hidden;">
-                    <img src="${escapeCartHtml(item.imageUrl || "images/product-placeholder.svg")}" alt="${escapeCartHtml(item.imageAlt || item.productName || "Product image")}" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="${escapeCartHtml(safeCartAssetUrl(item.imageUrl) || "images/product-placeholder.svg")}" alt="${escapeCartHtml(item.imageAlt || item.productName || "Product image")}" style="width: 100%; height: 100%; object-fit: contain;">
                   </a>
                   <div style="flex: 1 1 16rem; min-width: 0;">
                     <span style="font-size: 0.8rem; font-weight: 700; color: var(--brand-copper); text-transform: uppercase;">${escapeCartHtml(item.brand || item.department || "Product")}</span>

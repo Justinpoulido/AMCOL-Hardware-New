@@ -46,6 +46,18 @@ function productDetailFallbackPath(urlPath) {
   return path.join(ROOT, "product-detail.html");
 }
 
+function productsFallbackPath(urlPath) {
+  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+  if (!/^\/products\/?$/i.test(decoded)) return null;
+  return path.join(ROOT, "products.html");
+}
+
+function brandListingFallbackPath(urlPath) {
+  const decoded = decodeURIComponent(urlPath.split("?")[0]);
+  if (!/^\/brand-[a-z0-9-]+\.html$/i.test(decoded)) return null;
+  return path.join(ROOT, "products.html");
+}
+
 const server = http.createServer((req, res) => {
   const filePath = resolveRequestPath(req.url || "/");
   if (!filePath) {
@@ -55,6 +67,24 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (statError, stat) => {
     if (statError || !stat.isFile()) {
+      const productsFallbackPathResult = productsFallbackPath(req.url || "/");
+      if (productsFallbackPathResult) {
+        res.writeHead(200, {
+          "Content-Type": TYPES[".html"],
+          "Cache-Control": "no-store",
+        });
+        fs.createReadStream(productsFallbackPathResult).pipe(res);
+        return;
+      }
+      const brandFallbackPath = brandListingFallbackPath(req.url || "/");
+      if (brandFallbackPath) {
+        res.writeHead(200, {
+          "Content-Type": TYPES[".html"],
+          "Cache-Control": "no-store",
+        });
+        fs.createReadStream(brandFallbackPath).pipe(res);
+        return;
+      }
       const fallbackPath = productDetailFallbackPath(req.url || "/");
       if (fallbackPath) {
         res.writeHead(200, {
