@@ -12,12 +12,225 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2" rel="stylesheet">
   <link rel="stylesheet" href="hardware-styles.css">
+
+  <style>
+    /* Contact page improvements */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.88fr) minmax(420px, 1.12fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 3.5rem auto 0;
+      align-items: start;
+    }
+
+    .contact-info-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      min-height: 122px;
+      padding: 1.5rem;
+      border-radius: 1.15rem;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(239, 35, 72, 0.22);
+      box-shadow: 0 18px 38px rgba(15, 35, 65, 0.11);
+    }
+
+    .contact-info-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 0.85rem;
+      color: var(--brand-red);
+      background: rgba(239, 35, 72, 0.08);
+    }
+
+    .contact-info-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .contact-info-card h3 {
+      margin: 0 0 0.45rem;
+      color: var(--brand-charcoal);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .contact-info-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    .contact-info-card a {
+      color: var(--brand-copper);
+      font-weight: 650;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-info-card a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-form-card {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-radius: 1.35rem;
+    }
+
+    .contact-form-card h3 {
+      margin: 0;
+      color: var(--brand-charcoal);
+      font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+    }
+
+    .contact-form-intro {
+      margin: 0.5rem 0 1.6rem;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .contact-field label {
+      color: var(--brand-charcoal);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.82rem 0.9rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.55rem;
+      outline: none;
+      background: #f8fafc;
+      color: var(--brand-charcoal);
+      font: inherit;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .contact-field input:focus,
+    .contact-field select:focus,
+    .contact-field textarea:focus {
+      border-color: #3478ed;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(52, 120, 237, 0.12);
+    }
+
+    .contact-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .contact-form-note {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .contact-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.75rem 1.65rem;
+      border: 0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .contact-submit svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .contact-layout {
+        margin-top: 2.25rem;
+      }
+
+      .contact-form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-submit-row {
+        align-items: stretch;
+        flex-direction: column-reverse;
+      }
+
+      .contact-submit {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
 <body>
 <div class="min-h-screen">
     <header class="hero-header">
       <div class="hero-topbar">
         <div class="hero-topbar-inner">
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=%2322+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
             class="hero-topbar-item" target="_blank" rel="noopener">
             <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"></path>
@@ -76,6 +289,12 @@
                 </form>
               </div>
               <div class="hero-actions">
+                <a href="admin/admin.html" class="hero-admin-button" aria-label="Admin Login">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 22s8-3.8 8-10V5l-8-3-8 3v7c0 6.2 8 10 8 10Z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                  </svg>
+                </a>
                 <a href="customer.html" class="hero-login-button"
                   aria-label="Login Portal">
                   <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -101,60 +320,259 @@
       <div class="section-shell">
         <div class="section-header">
           <p class="section-badge">Get in Touch</p>
-          <h1>Contact AMCOL Hardware</h1>
+          <h2>Contact AMCOL Hardware</h2>
           <p>Reach out to our customer desk for material quotes, bulk account applications, and inventory checks.</p>
         </div>
         
-        <div style="margin-top: 3.5rem; display: grid; grid-template-columns: 0.90fr 1.10fr; gap: 3rem; max-width: 1100px; margin-left: auto; margin-right: auto;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="padding: 2rem; border-radius: 1.25rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card);">
-              <h3 style="margin-top: 0; color: var(--brand-charcoal); font-size: 1.15rem; font-weight: 600;">Telephone Contacts</h3>
-              <p style="margin-top: 0.5rem; line-height: 1.6; font-size: 0.95rem;">
-                Main Counter: <a href="tel:+18686477653" style="color: var(--brand-copper); font-weight: 600;">647-7653</a> (22-AMCOL)<br>
-                Sales Office: <a href="tel:+18682885800" style="color: var(--brand-copper); font-weight: 600;">+1 (868) 288-5800</a>
-              </p>
-            </div>
-            <div style="padding: 2rem; border-radius: 1.25rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card);">
-              <h3 style="margin-top: 0; color: var(--brand-charcoal); font-size: 1.15rem; font-weight: 600;">Email</h3>
-              <p style="margin-top: 0.5rem; line-height: 1.6; font-size: 0.95rem;">
-                Sales Inquiries: <a href="mailto:sales1@amcolgroup.com" style="color: var(--brand-copper); font-weight: 600;">sales1@amcolgroup.com</a>
-              </p>
-            </div>
-            <div style="padding: 2rem; border-radius: 1.25rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card);">
-              <h3 style="margin-top: 0; color: var(--brand-charcoal); font-size: 1.15rem; font-weight: 600;">Store Address</h3>
-              <p style="margin-top: 0.5rem; line-height: 1.6; font-size: 0.95rem;">
-                <a href="https://www.google.com/maps/search/?api=1&amp;query=%2322+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago" target="_blank" rel="noopener" style="color: var(--brand-copper); font-weight: 600;">22 Ramjohn Trace, Penal, Trinidad, W.I.</a>
-              </p>
-            </div>
-            <div style="padding: 2rem; border-radius: 1.25rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card);">
-              <h3 style="margin-top: 0; color: var(--brand-charcoal); font-size: 1.15rem; font-weight: 600;">Store Hours</h3>
-              <p style="margin-top: 0.5rem; line-height: 1.6; font-size: 0.95rem; color: var(--text-muted);">
-                Monday – Friday: 7am – 5pm<br>
-                Saturday: 7am – 4pm<br>
-                Sunday &amp; Public Holidays: Closed
-              </p>
-            </div>
+        <div class="contact-layout">
+          <div class="contact-info-list">
+            <article class="contact-info-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Telephone Contacts</h3>
+                <p>
+                  Main Counter: <a href="tel:+18686477653">647-7653</a> (22-AMCOL)<br>
+                  Sales Office: <a href="tel:+18682885800">+1 (868) 288-5800</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="contact-info-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m3 7 9 6 9-6"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>
+                  Sales Inquiries:
+                  <a href="mailto:sales1@amcolgroup.com">sales1@amcolgroup.com</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="contact-info-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"></path>
+                  <circle cx="12" cy="9" r="2.4"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3>Store Address</h3>
+                <p>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+                    target="_blank" rel="noopener noreferrer">
+                    22 Ramjohn Trace, Penal, Trinidad, W.I.
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <article class="contact-info-card">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3.2 1.9"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Store Hours</h3>
+                <p>
+                  Monday – Friday: 7am – 5pm<br>
+                  Saturday: 7am – 4pm<br>
+                  Sunday &amp; Public Holidays: Closed
+                </p>
+              </div>
+            </article>
           </div>
 
-          <div style="padding: 2.5rem; border-radius: 1.5rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card);">
-            <h3 style="font-size: 1.35rem; font-weight: 600; margin-top: 0; margin-bottom: 1.5rem; color: var(--brand-charcoal);">Submit an Online Inquiry</h3>
-            <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.25rem;" onsubmit="event.preventDefault(); alert('Your message has been sent. Thank you!');">
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <label style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Full Name</label>
-                <input type="text" required style="padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; outline: none; background: #f8fafc;" placeholder="John Doe">
+          <div class="contact-form-card">
+            <h3>Submit an Online Inquiry</h3>
+            <p class="contact-form-intro">
+              Tell us what you need and a member of the AMCOL team will follow up with you.
+            </p>
+
+            <form id="contact-form" class="contact-form"
+              onsubmit="event.preventDefault(); alert('Your message has been sent. Thank you!');">
+              <div class="contact-form-row">
+                <div class="contact-field">
+                  <label for="contact-name">Full Name</label>
+                  <input id="contact-name" name="name" type="text" autocomplete="name"
+                    placeholder="John Doe" required>
+                </div>
+
+                <div class="contact-field">
+                  <label for="contact-phone">Phone Number</label>
+                  <input id="contact-phone" name="phone" type="tel" autocomplete="tel"
+                    placeholder="+1 (868) 000-0000">
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <label style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Email Address</label>
-                <input type="email" required style="padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; outline: none; background: #f8fafc;" placeholder="johndoe@email.com">
+
+              <div class="contact-form-row">
+                <div class="contact-field">
+                  <label for="contact-email">Email Address</label>
+                  <input id="contact-email" name="email" type="email" autocomplete="email"
+                    placeholder="johndoe@email.com" required>
+                </div>
+
+                <div class="contact-field">
+                  <label for="inquiry-type">Inquiry Type</label>
+                  <select id="inquiry-type" name="inquiry_type" required>
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="product">Product Inquiry</option>
+                    <option value="quotation">Request a Quotation</option>
+                    <option value="availability">Product Availability</option>
+                    <option value="delivery">Delivery Inquiry</option>
+                    <option value="account">Business Account</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <label style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Message / Query</label>
-                <textarea required style="padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; outline: none; min-height: 120px; font-family: inherit; background: #f8fafc;" placeholder="Please type details of your request here..."></textarea>
+
+              <div class="contact-field">
+                <label for="contact-message">Message / Query</label>
+                <textarea id="contact-message" name="message"
+                  placeholder="Include product names, quantities, preferred brands, or any other details..."
+                  required></textarea>
               </div>
-              <button type="submit" class="btn-copper" style="align-self: flex-start; padding: 0.75rem 2.5rem; margin-top: 0.5rem; border-radius: 0.375rem;">Send Message</button>
+
+              <div class="contact-submit-row">
+                <p class="contact-form-note">
+                  Fields marked as required must be completed before submitting.
+                </p>
+                <button type="submit" class="btn-copper contact-submit">
+                  <span>Send Message</span>
+                  <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+                    <path d="M22 2 11 13"></path>
+                  </svg>
+                </button>
+              </div>
             </form>
           </div>
         </div>
+        <div
+        style="
+          margin-top: 4.5rem;
+          border-radius: 1.5rem;
+          border: 1px solid #e2e8f0;
+          background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+          position: relative;
+          overflow: hidden;
+          box-shadow: var(--shadow-card);
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+              circle at center,
+              rgba(57, 217, 205, 0.08) 0%,
+              transparent 70%
+            );
+            pointer-events: none;
+            z-index: 1;
+          "
+        ></div>
+
+        <!-- Google Maps Preview -->
+        <div
+          style="
+            width: 100%;
+            height: 320px;
+            position: relative;
+            z-index: 2;
+            background: #e2e8f0;
+          "
+        >
+          <iframe
+            src="https://www.google.com/maps?q=22%20Ramjohn%20Trace%2C%20Penal%2C%20Trinidad%20and%20Tobago&output=embed"
+            title="AMCOL Hardware Location"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="
+              width: 100%;
+              height: 100%;
+              border: 0;
+              display: block;
+            "
+          ></iframe>
+        </div>
+
+        <!-- Location Details -->
+        <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1.15rem 1.5rem 1.35rem;
+          position: relative;
+          text-align: center;
+        "
+      >
+        <svg
+          width="32"
+          height="32"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          style="color: var(--brand-red);"
+          aria-hidden="true"
+        >
+          <path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"></path>
+          <circle cx="12" cy="9" r="2.4"></circle>
+        </svg>
+
+        <h4
+          style="
+            margin-top: 0.55rem;
+            margin-bottom: 0.15rem;
+            font-size: 1.1rem;
+            color: var(--brand-charcoal);
+            font-weight: 600;
+          "
+        >
+          AMCOL Hardware Location
+        </h4>
+
+        <p
+          style="
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.15rem 0 0;
+          "
+        >
+          22 Ramjohn Trace, Penal, Trinidad &amp; Tobago
+        </p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-copper"
+          style="
+            margin-top: 0.75rem;
+            padding: 0.45rem 1.25rem;
+            font-size: 0.8rem;
+            border-radius: 0.25rem;
+          "
+        >
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
 
         <section id="how-to-order" style="margin-top: 3rem; padding: 2.5rem; border-radius: 1.25rem; border: 1px solid #e2e8f0; background: #fff; box-shadow: var(--shadow-card); max-width: 1100px; margin-left: auto; margin-right: auto;">
           <p class="section-badge" style="margin-bottom: 0.75rem;">How to Order</p>
@@ -168,16 +586,9 @@
             <li>Submit the order request. AMCOL will confirm product availability, final pricing, and any delivery fee by phone.</li>
           </ul>
         </section>
-
-        <div style="margin-top: 4.5rem; height: 350px; border-radius: 1.5rem; border: 1px solid #e2e8f0; background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: var(--shadow-card);">
-          <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(57, 217, 205, 0.08) 0%, transparent 70%);"></div>
-          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--brand-red); z-index: 10;"><path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"></path><circle cx="12" cy="9" r="2.4"></circle></svg>
-          <h4 style="margin-top: 1rem; margin-bottom: 0.25rem; font-size: 1.15rem; color: var(--brand-charcoal); font-weight: 600; z-index: 10;">AMCOL Hardware Location</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; z-index: 10;">22 Ramjohn Trace, Penal, Trinidad &amp; Tobago</p>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=%2322+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago" target="_blank" rel="noopener" class="btn-copper" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.85rem; border-radius: 0.25rem; z-index: 10;">Open in Google Maps</a>
-        </div>
       </div>
     </section>
+  </div>
 
 <footer class="site-footer" id="contact">
       <div class="footer-grid">
@@ -195,7 +606,7 @@
           </p>
           <p style="margin-top:1rem;">
             <strong>Address:</strong><br>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=%2322+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Ramjohn+Trace,+Penal,+Trinidad+and+Tobago"
               target="_blank" rel="noopener">22 Ramjohn Trace, Penal, Trinidad, W.I.</a>
           </p>
         </div>
@@ -219,7 +630,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 Americas Marketing Company Limited (AMCOL) Hardware.</span>
-        <span class="footer-policy-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></span>
+        <span class="footer-policy-note">Privacy Policy and Terms of Service pending.</span>
       </div>
     </footer>
 
@@ -230,7 +641,5 @@
       this.setAttribute("aria-expanded", open);
     });
   </script>
-  <script src="scripts/slug-utils.js?v=brand-filter-recovery-20260723" defer></script>
-  <script src="scripts/nav-search.js?v=nav-search-20260723b" defer></script>
 </body>
 </html>

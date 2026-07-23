@@ -926,7 +926,7 @@ button {
 }
 
 .section-shell {
-  max-width: 1440px;
+  max-width: 1900px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 2rem;
@@ -1478,7 +1478,7 @@ button {
 }
 
 .about-grid {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   display: grid;
   gap: 2.5rem;
@@ -1539,7 +1539,7 @@ button {
 }
 
 .footer-grid {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
   display: grid;
@@ -1588,7 +1588,7 @@ button {
 }
 
 .footer-bottom {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 1.25rem 1.5rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1783,7 +1783,7 @@ button {
 }
 
 .pdp-container {
-  max-width: 1400px;
+  max-width: 1900px;
   margin: 0 auto;
 }
 
@@ -4609,7 +4609,7 @@ input:focus-visible {
 }
 
 .service-strip-grid {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: -3.3rem auto 0;
   position: relative;
   z-index: 25;
@@ -4683,7 +4683,7 @@ input:focus-visible {
 
 .homepage-shell,
 .section-shell.homepage-shell {
-  max-width: 1240px;
+  max-width: 1900px;
   overflow: visible;
   border-radius: 0;
   border: 0;
@@ -5934,7 +5934,7 @@ input:focus-visible {
 }
 
 .final-cta-inner {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -5969,7 +5969,7 @@ input:focus-visible {
 }
 
 .footer-grid {
-  max-width: 1200px;
+  max-width: 1900px;
   gap: 2.25rem;
 }
 

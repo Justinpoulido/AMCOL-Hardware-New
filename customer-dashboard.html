@@ -3,23 +3,228 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>AMCOL Hardware Trinidad | Client Dashboard</title>
-  <meta name="description" content="AMCOL Hardware client dashboard for purchase history, quotes, invoices, and delivery tracking.">
+
+  <meta
+    name="description"
+    content="AMCOL Hardware client dashboard for purchase history, quotes, invoices, account settings, and delivery tracking."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com/"
+    crossorigin
+  >
+
+  <link
+    href="./AMCOL Hardware Trinidad _ Tools, Building Supplies &amp; Home Store_files/css2"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="hardware-styles.css">
+
+  <style>
+    .dashboard-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+      padding: 2rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .dashboard-empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      padding: 2rem;
+      border: 1px dashed #cbd5e1;
+      border-radius: 1rem;
+      background: #f8fafc;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .dashboard-empty-state strong {
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+      font-size: 1rem;
+    }
+
+    .dashboard-empty-state p {
+      max-width: 420px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .account-settings-form {
+      margin-top: 1.5rem;
+    }
+
+    .account-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .account-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .account-form-full {
+      grid-column: 1 / -1;
+    }
+
+    .account-form-group label {
+      color: #334155;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .account-form-group input,
+    .account-form-group select,
+    .account-form-group textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.75rem;
+      background: #fff;
+      color: #0f172a;
+      font: inherit;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .account-form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .account-form-group input:focus,
+    .account-form-group select:focus,
+    .account-form-group textarea:focus {
+      outline: none;
+      border-color: #0f766e;
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .account-security-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .account-security-section h3 {
+      margin: 0 0 0.35rem;
+      color: #0f172a;
+    }
+
+    .account-security-section > p {
+      margin: 0 0 1.25rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .account-form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .account-form-message {
+      min-height: 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .account-form-message.success {
+      color: #15803d;
+    }
+
+    .account-form-message.error {
+      color: #b91c1c;
+    }
+
+    .account-form-message.info {
+      color: #0369a1;
+    }
+
+    .profile-grid strong {
+      overflow-wrap: anywhere;
+    }
+
+    .dashboard-button-reset {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .dashboard-button-reset:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    .quote-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .quote-item small {
+      color: #64748b;
+    }
+
+    @media (max-width: 700px) {
+      .account-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .account-form-full {
+        grid-column: auto;
+      }
+
+      .account-form-actions {
+        flex-direction: column-reverse;
+      }
+
+      .account-form-actions button,
+      .account-form-actions a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="dashboard-layout">
+
+    <!-- Sidebar -->
     <aside class="dashboard-sidebar">
       <a href="index.html" class="dashboard-brand">
         <span class="dashboard-brand-mark">A</span>
         <span>AMCOL <strong>Hardware</strong></span>
       </a>
-      <nav class="dashboard-nav" aria-label="Client dashboard">
+
+      <nav
+        class="dashboard-nav"
+        aria-label="Client dashboard navigation"
+      >
         <a href="#overview" class="active">Overview</a>
         <a href="#orders">Orders</a>
         <a href="#history">Purchase History</a>
@@ -28,93 +233,128 @@
       </nav>
     </aside>
 
+    <!-- Main dashboard -->
     <main class="dashboard-main">
+
+      <!-- Top bar -->
       <header class="dashboard-topbar">
         <div>
           <p class="dashboard-kicker">Client Dashboard</p>
-          <h1>Welcome back, Penal Contractors Ltd.</h1>
+          <h1 id="dashboardWelcome">Welcome back!</h1>
         </div>
+
         <div class="dashboard-top-actions">
           <a href="index.html" class="dashboard-home-btn">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              style="margin-right: 6px; vertical-align: text-bottom;"
+              aria-hidden="true"
+            >
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
+
             Home
           </a>
+
           <a href="products.html">Browse Products</a>
-          <a href="contact.html" class="dashboard-primary-action">Request Quote</a>
-          <a href="customer.html" class="dashboard-logout-top">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px; vertical-align: text-bottom;">
+
+          <a
+            href="contact.html"
+            class="dashboard-primary-action"
+          >
+            Request Quote
+          </a>
+
+          <button
+            id="signOutButton"
+            type="button"
+            class="dashboard-logout-top dashboard-button-reset"
+          >
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              style="margin-right: 6px; vertical-align: text-bottom;"
+              aria-hidden="true"
+            >
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
               <polyline points="16 17 21 12 16 7"></polyline>
               <line x1="21" y1="12" x2="9" y2="12"></line>
             </svg>
+
             Sign Out
-          </a>
+          </button>
         </div>
       </header>
 
-      <section class="dashboard-metrics" id="overview" aria-label="Account summary">
+      <!-- Automated metrics -->
+      <section
+        class="dashboard-metrics"
+        id="overview"
+        aria-label="Account summary"
+      >
         <article>
           <span>Open Orders</span>
-          <strong>4</strong>
-          <p>2 ready for pickup</p>
+          <strong id="openOrdersCount">0</strong>
+          <p id="readyPickupCount">0 ready for pickup</p>
         </article>
+
         <article>
           <span>Pending Quotes</span>
-          <strong>3</strong>
-          <p>Awaiting sales desk review</p>
+          <strong id="pendingQuotesCount">0</strong>
+          <p id="pendingQuotesDescription">No quotes awaiting review</p>
         </article>
+
         <article>
           <span>Account Balance</span>
-          <strong>TT $8,420</strong>
-          <p>Due by July 30</p>
+          <strong id="accountBalance">TT $0.00</strong>
+          <p id="accountBalanceDue">No outstanding balance</p>
         </article>
+
         <article>
           <span>Loyalty Savings</span>
-          <strong>TT $1,135</strong>
-          <p>Year to date</p>
+          <strong id="loyaltySavings">TT $0.00</strong>
+          <p id="loyaltySavingsDescription">Year to date</p>
         </article>
       </section>
 
       <section class="dashboard-grid">
-        <article class="dashboard-panel dashboard-span-2" id="orders">
+
+        <!-- Orders -->
+        <article
+          class="dashboard-panel dashboard-span-2"
+          id="orders"
+        >
           <div class="dashboard-panel-header">
             <div>
               <p class="dashboard-kicker">Order Tracking</p>
               <h2>Current hardware orders</h2>
             </div>
+
             <a href="contact.html">Need help?</a>
           </div>
-          <div class="order-timeline">
-            <div class="order-row">
-              <div>
-                <strong>AM-10458</strong>
-                <span>DeWalt drill kits, fasteners, safety vests</span>
-              </div>
-              <span class="status-pill ready">Ready for Pickup</span>
-              <small>Penal counter - Today</small>
-            </div>
-            <div class="order-row">
-              <div>
-                <strong>AM-10422</strong>
-                <span>PVC fittings, solvent cement, copper pipe</span>
-              </div>
-              <span class="status-pill transit">Out for Delivery</span>
-              <small>South route - 2:30 PM</small>
-            </div>
-            <div class="order-row">
-              <div>
-                <strong>AM-10397</strong>
-                <span>Lumber, galvanize sheets, concrete mix</span>
-              </div>
-              <span class="status-pill processing">Being Packed</span>
-              <small>Warehouse bay 3</small>
+
+          <div
+            class="order-timeline"
+            id="ordersContainer"
+            aria-live="polite"
+          >
+            <div class="dashboard-loading">
+              Loading your orders...
             </div>
           </div>
         </article>
 
+        <!-- Quick actions -->
         <article class="dashboard-panel">
           <div class="dashboard-panel-header">
             <div>
@@ -122,95 +362,1348 @@
               <h2>Customer tools</h2>
             </div>
           </div>
+
           <div class="quick-action-list">
             <a href="products.html">Reorder common supplies</a>
             <a href="contact.html">Request contractor pricing</a>
             <a href="cart.html">Review saved cart</a>
-            <a href="contact.html">Update delivery contact</a>
+            <a href="#account">Update account details</a>
           </div>
         </article>
 
-        <article class="dashboard-panel dashboard-span-2" id="history">
+        <!-- Purchase history -->
+        <article
+          class="dashboard-panel dashboard-span-2"
+          id="history"
+        >
           <div class="dashboard-panel-header">
             <div>
               <p class="dashboard-kicker">Purchase History</p>
               <h2>Recent purchases</h2>
             </div>
-            <button class="dashboard-ghost-button" type="button">Export CSV</button>
+
+            <button
+              class="dashboard-ghost-button"
+              id="exportHistoryButton"
+              type="button"
+              disabled
+            >
+              Export CSV
+            </button>
           </div>
-          <div class="dashboard-table-wrap">
-            <table class="dashboard-table">
-              <thead>
-                <tr>
-                  <th>Invoice</th>
-                  <th>Date</th>
-                  <th>Items</th>
-                  <th>Category</th>
-                  <th>Total</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>INV-88291</td>
-                  <td>Jul 6, 2026</td>
-                  <td>18</td>
-                  <td>Power Tools</td>
-                  <td>TT $5,870.00</td>
-                  <td><span class="status-pill paid">Paid</span></td>
-                </tr>
-                <tr>
-                  <td>INV-88144</td>
-                  <td>Jun 28, 2026</td>
-                  <td>42</td>
-                  <td>Building Materials</td>
-                  <td>TT $12,430.00</td>
-                  <td><span class="status-pill paid">Paid</span></td>
-                </tr>
-                <tr>
-                  <td>INV-87903</td>
-                  <td>Jun 14, 2026</td>
-                  <td>9</td>
-                  <td>Plumbing</td>
-                  <td>TT $1,945.00</td>
-                  <td><span class="status-pill due">Due</span></td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div
+            class="dashboard-table-wrap"
+            id="purchaseHistoryContainer"
+            aria-live="polite"
+          >
+            <div class="dashboard-loading">
+              Loading your purchase history...
+            </div>
           </div>
         </article>
 
-        <article class="dashboard-panel" id="quotes">
+        <!-- Quotes -->
+        <article
+          class="dashboard-panel"
+          id="quotes"
+        >
           <div class="dashboard-panel-header">
             <div>
               <p class="dashboard-kicker">Quotes</p>
               <h2>Sourcing requests</h2>
             </div>
           </div>
-          <div class="quote-stack">
-            <div><strong>Q-2208</strong><span>Roofing package - awaiting price</span></div>
-            <div><strong>Q-2197</strong><span>Milwaukee tool bundle - sent</span></div>
-            <div><strong>Q-2189</strong><span>Commercial paint order - draft</span></div>
+
+          <div
+            class="quote-stack"
+            id="quotesContainer"
+            aria-live="polite"
+          >
+            <div class="dashboard-loading">
+              Loading your quotes...
+            </div>
           </div>
         </article>
 
-        <article class="dashboard-panel dashboard-span-3" id="account">
+        <!-- Account settings -->
+        <article
+          class="dashboard-panel dashboard-span-3"
+          id="account"
+        >
           <div class="dashboard-panel-header">
             <div>
               <p class="dashboard-kicker">Account</p>
-              <h2>Billing and delivery profile</h2>
+              <h2>Profile and security settings</h2>
+            </div>
+
+            <button
+              class="dashboard-ghost-button"
+              id="editProfileButton"
+              type="button"
+            >
+              Edit Profile
+            </button>
+          </div>
+
+          <!-- Profile display -->
+          <div class="profile-grid" id="profileDisplay">
+            <div>
+              <span>Full Name</span>
+              <strong id="displayCustomerName">Not provided</strong>
+            </div>
+
+            <div>
+              <span>Email Address</span>
+              <strong id="displayCustomerEmail">Not provided</strong>
+            </div>
+
+            <div>
+              <span>Phone Number</span>
+              <strong id="displayCustomerPhone">Not provided</strong>
+            </div>
+
+            <div>
+              <span>Address</span>
+              <strong id="displayCustomerAddress">Not provided</strong>
+            </div>
+
+            <div>
+              <span>Account Type</span>
+              <strong id="displayAccountType">Customer</strong>
+            </div>
+
+            <div>
+              <span>Default Pickup</span>
+              <strong id="displayPickupLocation">Not selected</strong>
             </div>
           </div>
-          <div class="profile-grid">
-            <div><span>Primary Contact</span><strong>Marsha Singh</strong></div>
-            <div><span>Account Type</span><strong>Contractor Credit</strong></div>
-            <div><span>Default Pickup</span><strong>Penal Store Counter</strong></div>
-            <div><span>Delivery Zone</span><strong>South Trinidad</strong></div>
-          </div>
+
+          <!-- Editable account form -->
+          <form
+            id="profileForm"
+            class="account-settings-form"
+            hidden
+          >
+            <div class="account-form-grid">
+
+              <div class="account-form-group">
+                <label for="customerName">Full Name</label>
+
+                <input
+                  type="text"
+                  id="customerName"
+                  name="fullName"
+                  autocomplete="name"
+                  maxlength="120"
+                  required
+                >
+              </div>
+
+              <div class="account-form-group">
+                <label for="customerEmail">Email Address</label>
+
+                <input
+                  type="email"
+                  id="customerEmail"
+                  name="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                >
+              </div>
+
+              <div class="account-form-group">
+                <label for="customerPhone">Phone Number</label>
+
+                <input
+                  type="tel"
+                  id="customerPhone"
+                  name="phone"
+                  autocomplete="tel"
+                  maxlength="30"
+                >
+              </div>
+
+              <div class="account-form-group">
+                <label for="pickupLocation">
+                  Default Pickup Location
+                </label>
+
+                <select
+                  id="pickupLocation"
+                  name="pickupLocation"
+                >
+                  <option value="">Select a location</option>
+                  <option value="Penal Store Counter">
+                    Penal Store Counter
+                  </option>
+                  <option value="Warehouse Pickup">
+                    Warehouse Pickup
+                  </option>
+                  <option value="Delivery Only">
+                    Delivery Only
+                  </option>
+                </select>
+              </div>
+
+              <div class="account-form-group account-form-full">
+                <label for="customerAddress">
+                  Delivery Address
+                </label>
+
+                <textarea
+                  id="customerAddress"
+                  name="address"
+                  autocomplete="street-address"
+                  maxlength="500"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Password section -->
+            <div class="account-security-section">
+              <h3>Change Password</h3>
+
+              <p>
+                Leave these fields empty unless you want to
+                change your password.
+              </p>
+
+              <div class="account-form-grid">
+
+                <div class="account-form-group">
+                  <label for="currentPassword">
+                    Current Password
+                  </label>
+
+                  <input
+                    type="password"
+                    id="currentPassword"
+                    name="currentPassword"
+                    autocomplete="current-password"
+                  >
+                </div>
+
+                <div class="account-form-group">
+                  <label for="newPassword">
+                    New Password
+                  </label>
+
+                  <input
+                    type="password"
+                    id="newPassword"
+                    name="newPassword"
+                    autocomplete="new-password"
+                    minlength="8"
+                  >
+                </div>
+
+                <div class="account-form-group">
+                  <label for="confirmPassword">
+                    Confirm New Password
+                  </label>
+
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    autocomplete="new-password"
+                    minlength="8"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="profileMessage"
+              class="account-form-message"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+            <div class="account-form-actions">
+              <button
+                type="button"
+                class="dashboard-ghost-button"
+                id="cancelProfileButton"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                class="dashboard-primary-action dashboard-button-reset"
+                id="saveProfileButton"
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
         </article>
       </section>
     </main>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /*
+       * Change these API routes if your backend uses
+       * different endpoint names.
+       */
+      const API_ENDPOINTS = {
+        dashboard: "/api/customer/dashboard",
+        profile: "/api/customer/profile",
+        logout: "/api/customer/logout"
+      };
+
+      const dashboardState = {
+        customer: null,
+        orders: [],
+        purchases: [],
+        quotes: [],
+        accountBalance: 0,
+        balanceDueDate: null,
+        loyaltySavings: 0
+      };
+
+      const elements = {
+        dashboardWelcome:
+          document.getElementById("dashboardWelcome"),
+
+        openOrdersCount:
+          document.getElementById("openOrdersCount"),
+
+        readyPickupCount:
+          document.getElementById("readyPickupCount"),
+
+        pendingQuotesCount:
+          document.getElementById("pendingQuotesCount"),
+
+        pendingQuotesDescription:
+          document.getElementById("pendingQuotesDescription"),
+
+        accountBalance:
+          document.getElementById("accountBalance"),
+
+        accountBalanceDue:
+          document.getElementById("accountBalanceDue"),
+
+        loyaltySavings:
+          document.getElementById("loyaltySavings"),
+
+        ordersContainer:
+          document.getElementById("ordersContainer"),
+
+        purchaseHistoryContainer:
+          document.getElementById("purchaseHistoryContainer"),
+
+        quotesContainer:
+          document.getElementById("quotesContainer"),
+
+        exportHistoryButton:
+          document.getElementById("exportHistoryButton"),
+
+        signOutButton:
+          document.getElementById("signOutButton"),
+
+        profileDisplay:
+          document.getElementById("profileDisplay"),
+
+        profileForm:
+          document.getElementById("profileForm"),
+
+        editProfileButton:
+          document.getElementById("editProfileButton"),
+
+        cancelProfileButton:
+          document.getElementById("cancelProfileButton"),
+
+        saveProfileButton:
+          document.getElementById("saveProfileButton"),
+
+        profileMessage:
+          document.getElementById("profileMessage")
+      };
+
+      const profileFields = {
+        fullName:
+          document.getElementById("customerName"),
+
+        email:
+          document.getElementById("customerEmail"),
+
+        phone:
+          document.getElementById("customerPhone"),
+
+        address:
+          document.getElementById("customerAddress"),
+
+        pickupLocation:
+          document.getElementById("pickupLocation"),
+
+        currentPassword:
+          document.getElementById("currentPassword"),
+
+        newPassword:
+          document.getElementById("newPassword"),
+
+        confirmPassword:
+          document.getElementById("confirmPassword")
+      };
+
+      const profileDisplayFields = {
+        fullName:
+          document.getElementById("displayCustomerName"),
+
+        email:
+          document.getElementById("displayCustomerEmail"),
+
+        phone:
+          document.getElementById("displayCustomerPhone"),
+
+        address:
+          document.getElementById("displayCustomerAddress"),
+
+        pickupLocation:
+          document.getElementById("displayPickupLocation"),
+
+        accountType:
+          document.getElementById("displayAccountType")
+      };
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function normalizeNumber(value) {
+        const number = Number(value);
+        return Number.isFinite(number) ? number : 0;
+      }
+
+      function formatCurrency(value) {
+        return new Intl.NumberFormat("en-TT", {
+          style: "currency",
+          currency: "TTD",
+          currencyDisplay: "narrowSymbol",
+          minimumFractionDigits: 2
+        }).format(normalizeNumber(value));
+      }
+
+      function formatDate(value) {
+        if (!value) {
+          return "";
+        }
+
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+          return String(value);
+        }
+
+        return new Intl.DateTimeFormat("en-TT", {
+          year: "numeric",
+          month: "short",
+          day: "numeric"
+        }).format(date);
+      }
+
+      function formatDateTime(value) {
+        if (!value) {
+          return "";
+        }
+
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+          return String(value);
+        }
+
+        return new Intl.DateTimeFormat("en-TT", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function getFirstName(fullName) {
+        const cleanName = String(fullName || "").trim();
+
+        if (!cleanName) {
+          return "";
+        }
+
+        return cleanName.split(/\s+/)[0];
+      }
+
+      function normalizeStatus(status) {
+        return String(status || "")
+          .trim()
+          .toLowerCase()
+          .replaceAll("_", " ")
+          .replaceAll("-", " ");
+      }
+
+      function getStatusClass(status) {
+        const normalized = normalizeStatus(status);
+
+        if (
+          normalized.includes("ready") ||
+          normalized.includes("pickup")
+        ) {
+          return "ready";
+        }
+
+        if (
+          normalized.includes("delivery") ||
+          normalized.includes("transit") ||
+          normalized.includes("shipped")
+        ) {
+          return "transit";
+        }
+
+        if (
+          normalized.includes("processing") ||
+          normalized.includes("packed") ||
+          normalized.includes("packing")
+        ) {
+          return "processing";
+        }
+
+        if (
+          normalized.includes("paid") ||
+          normalized.includes("completed")
+        ) {
+          return "paid";
+        }
+
+        if (
+          normalized.includes("due") ||
+          normalized.includes("overdue") ||
+          normalized.includes("unpaid")
+        ) {
+          return "due";
+        }
+
+        return "processing";
+      }
+
+      function createEmptyState(title, description) {
+        return `
+          <div class="dashboard-empty-state">
+            <strong>${escapeHtml(title)}</strong>
+            <p>${escapeHtml(description)}</p>
+          </div>
+        `;
+      }
+
+      function setProfileMessage(message = "", type = "") {
+        elements.profileMessage.textContent = message;
+        elements.profileMessage.className =
+          "account-form-message";
+
+        if (type) {
+          elements.profileMessage.classList.add(type);
+        }
+      }
+
+      function clearPasswordFields() {
+        profileFields.currentPassword.value = "";
+        profileFields.newPassword.value = "";
+        profileFields.confirmPassword.value = "";
+      }
+
+      function showProfileDisplay() {
+        elements.profileForm.hidden = true;
+        elements.profileDisplay.hidden = false;
+        elements.editProfileButton.hidden = false;
+        clearPasswordFields();
+        setProfileMessage();
+      }
+
+      function showProfileForm() {
+        elements.profileDisplay.hidden = true;
+        elements.profileForm.hidden = false;
+        elements.editProfileButton.hidden = true;
+        setProfileMessage();
+
+        profileFields.fullName.focus();
+      }
+
+      function populateProfile(customer = {}) {
+        const profile = {
+          fullName:
+            customer.fullName ||
+            customer.name ||
+            "",
+
+          email:
+            customer.email ||
+            "",
+
+          phone:
+            customer.phone ||
+            customer.phoneNumber ||
+            "",
+
+          address:
+            customer.address ||
+            customer.deliveryAddress ||
+            "",
+
+          pickupLocation:
+            customer.pickupLocation ||
+            customer.defaultPickup ||
+            "",
+
+          accountType:
+            customer.accountType ||
+            "Customer"
+        };
+
+        dashboardState.customer = {
+          ...customer,
+          ...profile
+        };
+
+        profileFields.fullName.value = profile.fullName;
+        profileFields.email.value = profile.email;
+        profileFields.phone.value = profile.phone;
+        profileFields.address.value = profile.address;
+        profileFields.pickupLocation.value =
+          profile.pickupLocation;
+
+        profileDisplayFields.fullName.textContent =
+          profile.fullName || "Not provided";
+
+        profileDisplayFields.email.textContent =
+          profile.email || "Not provided";
+
+        profileDisplayFields.phone.textContent =
+          profile.phone || "Not provided";
+
+        profileDisplayFields.address.textContent =
+          profile.address || "Not provided";
+
+        profileDisplayFields.pickupLocation.textContent =
+          profile.pickupLocation || "Not selected";
+
+        profileDisplayFields.accountType.textContent =
+          profile.accountType;
+
+        const firstName = getFirstName(profile.fullName);
+
+        elements.dashboardWelcome.textContent = firstName
+          ? `Welcome back, ${firstName}!`
+          : "Welcome back!";
+      }
+
+      function renderMetrics() {
+        const activeOrderStatuses = [
+          "pending",
+          "confirmed",
+          "processing",
+          "being packed",
+          "packed",
+          "ready",
+          "ready for pickup",
+          "out for delivery",
+          "in transit",
+          "shipped"
+        ];
+
+        const openOrders = dashboardState.orders.filter(order => {
+          const status = normalizeStatus(order.status);
+
+          return activeOrderStatuses.some(activeStatus =>
+            status.includes(activeStatus)
+          );
+        });
+
+        const readyForPickup = dashboardState.orders.filter(order => {
+          const status = normalizeStatus(order.status);
+
+          return (
+            status.includes("ready") &&
+            status.includes("pickup")
+          );
+        });
+
+        const pendingQuotes = dashboardState.quotes.filter(quote => {
+          const status = normalizeStatus(quote.status);
+
+          return [
+            "pending",
+            "awaiting",
+            "review",
+            "draft",
+            "submitted"
+          ].some(pendingStatus =>
+            status.includes(pendingStatus)
+          );
+        });
+
+        elements.openOrdersCount.textContent =
+          String(openOrders.length);
+
+        elements.readyPickupCount.textContent =
+          `${readyForPickup.length} ready for pickup`;
+
+        elements.pendingQuotesCount.textContent =
+          String(pendingQuotes.length);
+
+        elements.pendingQuotesDescription.textContent =
+          pendingQuotes.length > 0
+            ? "Awaiting sales desk review"
+            : "No quotes awaiting review";
+
+        elements.accountBalance.textContent =
+          formatCurrency(dashboardState.accountBalance);
+
+        if (dashboardState.accountBalance <= 0) {
+          elements.accountBalanceDue.textContent =
+            "No outstanding balance";
+        } else if (dashboardState.balanceDueDate) {
+          elements.accountBalanceDue.textContent =
+            `Due by ${formatDate(dashboardState.balanceDueDate)}`;
+        } else {
+          elements.accountBalanceDue.textContent =
+            "Outstanding balance";
+        }
+
+        elements.loyaltySavings.textContent =
+          formatCurrency(dashboardState.loyaltySavings);
+
+        elements.loyaltySavingsDescription.textContent =
+          "Year to date";
+      }
+
+      function renderOrders() {
+        const orders = dashboardState.orders;
+
+        if (!orders.length) {
+          elements.ordersContainer.innerHTML =
+            createEmptyState(
+              "No active orders",
+              "Orders placed by this customer will appear here automatically."
+            );
+
+          return;
+        }
+
+        elements.ordersContainer.innerHTML = orders
+          .map(order => {
+            const orderNumber =
+              order.orderNumber ||
+              order.number ||
+              order.id ||
+              "Order";
+
+            const description =
+              order.description ||
+              order.itemsSummary ||
+              order.summary ||
+              "Order details unavailable";
+
+            const status =
+              order.status ||
+              "Processing";
+
+            const location =
+              order.location ||
+              order.pickupLocation ||
+              order.deliveryLocation ||
+              "";
+
+            const expectedTime =
+              order.expectedTime ||
+              order.estimatedDelivery ||
+              order.updatedAt ||
+              "";
+
+            const additionalDetails = [
+              location,
+              expectedTime
+                ? formatDateTime(expectedTime)
+                : ""
+            ]
+              .filter(Boolean)
+              .join(" - ");
+
+            return `
+              <div class="order-row">
+                <div>
+                  <strong>${escapeHtml(orderNumber)}</strong>
+                  <span>${escapeHtml(description)}</span>
+                </div>
+
+                <span
+                  class="status-pill ${getStatusClass(status)}"
+                >
+                  ${escapeHtml(status)}
+                </span>
+
+                <small>
+                  ${escapeHtml(
+                    additionalDetails || "Status updated automatically"
+                  )}
+                </small>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      function renderPurchaseHistory() {
+        const purchases = dashboardState.purchases;
+
+        elements.exportHistoryButton.disabled =
+          purchases.length === 0;
+
+        if (!purchases.length) {
+          elements.purchaseHistoryContainer.innerHTML =
+            createEmptyState(
+              "No purchase history",
+              "Completed customer purchases and invoices will appear here."
+            );
+
+          return;
+        }
+
+        const tableRows = purchases
+          .map(purchase => {
+            const invoice =
+              purchase.invoiceNumber ||
+              purchase.invoice ||
+              purchase.id ||
+              "";
+
+            const date =
+              purchase.date ||
+              purchase.createdAt ||
+              purchase.purchaseDate ||
+              "";
+
+            const itemCount =
+              purchase.itemCount ??
+              purchase.items?.length ??
+              0;
+
+            const category =
+              purchase.category ||
+              purchase.primaryCategory ||
+              "Mixed Items";
+
+            const total =
+              purchase.total ??
+              purchase.totalAmount ??
+              0;
+
+            const status =
+              purchase.status ||
+              purchase.paymentStatus ||
+              "Completed";
+
+            return `
+              <tr>
+                <td>${escapeHtml(invoice)}</td>
+                <td>${escapeHtml(formatDate(date))}</td>
+                <td>${escapeHtml(itemCount)}</td>
+                <td>${escapeHtml(category)}</td>
+                <td>${escapeHtml(formatCurrency(total))}</td>
+                <td>
+                  <span
+                    class="status-pill ${getStatusClass(status)}"
+                  >
+                    ${escapeHtml(status)}
+                  </span>
+                </td>
+              </tr>
+            `;
+          })
+          .join("");
+
+        elements.purchaseHistoryContainer.innerHTML = `
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Invoice</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Category</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
+        `;
+      }
+
+      function renderQuotes() {
+        const quotes = dashboardState.quotes;
+
+        if (!quotes.length) {
+          elements.quotesContainer.innerHTML =
+            createEmptyState(
+              "No quote requests",
+              "Quote requests submitted by this customer will appear here."
+            );
+
+          return;
+        }
+
+        elements.quotesContainer.innerHTML = quotes
+          .map(quote => {
+            const quoteNumber =
+              quote.quoteNumber ||
+              quote.number ||
+              quote.id ||
+              "Quote";
+
+            const description =
+              quote.description ||
+              quote.title ||
+              quote.itemsSummary ||
+              "Quote request";
+
+            const status =
+              quote.status ||
+              "Pending";
+
+            return `
+              <div class="quote-item">
+                <strong>${escapeHtml(quoteNumber)}</strong>
+                <span>${escapeHtml(description)}</span>
+                <small>${escapeHtml(status)}</small>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      function renderDashboard() {
+        renderMetrics();
+        renderOrders();
+        renderPurchaseHistory();
+        renderQuotes();
+      }
+
+      async function loadDashboard() {
+        try {
+          const response = await fetch(API_ENDPOINTS.dashboard, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          if (response.status === 401) {
+            window.location.href = "customer.html";
+            return;
+          }
+
+          if (!response.ok) {
+            throw new Error("Unable to load dashboard.");
+          }
+
+          const result = await response.json();
+
+          dashboardState.customer =
+            result.customer ||
+            result.profile ||
+            {};
+
+          dashboardState.orders =
+            Array.isArray(result.orders)
+              ? result.orders
+              : [];
+
+          dashboardState.purchases =
+            Array.isArray(result.purchases)
+              ? result.purchases
+              : Array.isArray(result.purchaseHistory)
+                ? result.purchaseHistory
+                : [];
+
+          dashboardState.quotes =
+            Array.isArray(result.quotes)
+              ? result.quotes
+              : [];
+
+          dashboardState.accountBalance =
+            normalizeNumber(
+              result.accountBalance ??
+              result.balance ??
+              result.customer?.accountBalance
+            );
+
+          dashboardState.balanceDueDate =
+            result.balanceDueDate ||
+            result.dueDate ||
+            result.customer?.balanceDueDate ||
+            null;
+
+          dashboardState.loyaltySavings =
+            normalizeNumber(
+              result.loyaltySavings ??
+              result.customer?.loyaltySavings
+            );
+
+          populateProfile(dashboardState.customer);
+          renderDashboard();
+        } catch (error) {
+          console.error(error);
+
+          dashboardState.orders = [];
+          dashboardState.purchases = [];
+          dashboardState.quotes = [];
+          dashboardState.accountBalance = 0;
+          dashboardState.loyaltySavings = 0;
+
+          populateProfile({});
+          renderDashboard();
+        }
+      }
+
+      function validatePasswordChange() {
+        const currentPassword =
+          profileFields.currentPassword.value;
+
+        const newPassword =
+          profileFields.newPassword.value;
+
+        const confirmPassword =
+          profileFields.confirmPassword.value;
+
+        const passwordChangeRequested =
+          Boolean(
+            currentPassword ||
+            newPassword ||
+            confirmPassword
+          );
+
+        if (!passwordChangeRequested) {
+          return {
+            valid: true,
+            passwordData: null
+          };
+        }
+
+        if (!currentPassword) {
+          return {
+            valid: false,
+            message: "Enter your current password."
+          };
+        }
+
+        if (!newPassword) {
+          return {
+            valid: false,
+            message: "Enter a new password."
+          };
+        }
+
+        if (newPassword.length < 8) {
+          return {
+            valid: false,
+            message:
+              "The new password must contain at least 8 characters."
+          };
+        }
+
+        if (newPassword !== confirmPassword) {
+          return {
+            valid: false,
+            message: "The new passwords do not match."
+          };
+        }
+
+        if (currentPassword === newPassword) {
+          return {
+            valid: false,
+            message:
+              "The new password must be different from the current password."
+          };
+        }
+
+        return {
+          valid: true,
+          passwordData: {
+            currentPassword,
+            newPassword
+          }
+        };
+      }
+
+      async function updateCustomerProfile(event) {
+        event.preventDefault();
+        setProfileMessage();
+
+        if (!elements.profileForm.checkValidity()) {
+          elements.profileForm.reportValidity();
+          return;
+        }
+
+        const passwordValidation =
+          validatePasswordChange();
+
+        if (!passwordValidation.valid) {
+          setProfileMessage(
+            passwordValidation.message,
+            "error"
+          );
+
+          return;
+        }
+
+        const payload = {
+          fullName:
+            profileFields.fullName.value.trim(),
+
+          email:
+            profileFields.email.value
+              .trim()
+              .toLowerCase(),
+
+          phone:
+            profileFields.phone.value.trim(),
+
+          address:
+            profileFields.address.value.trim(),
+
+          pickupLocation:
+            profileFields.pickupLocation.value
+        };
+
+        if (passwordValidation.passwordData) {
+          payload.currentPassword =
+            passwordValidation.passwordData.currentPassword;
+
+          payload.newPassword =
+            passwordValidation.passwordData.newPassword;
+        }
+
+        elements.saveProfileButton.disabled = true;
+        elements.saveProfileButton.textContent = "Saving...";
+
+        setProfileMessage(
+          "Updating your account...",
+          "info"
+        );
+
+        try {
+          const response = await fetch(API_ENDPOINTS.profile, {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response
+            .json()
+            .catch(() => ({}));
+
+          if (response.status === 401) {
+            window.location.href = "customer.html";
+            return;
+          }
+
+          if (!response.ok) {
+            throw new Error(
+              result.message ||
+              "Your account could not be updated."
+            );
+          }
+
+          const updatedCustomer =
+            result.customer ||
+            result.profile ||
+            {
+              ...dashboardState.customer,
+              ...payload
+            };
+
+          populateProfile(updatedCustomer);
+          clearPasswordFields();
+
+          elements.profileForm.hidden = true;
+          elements.profileDisplay.hidden = false;
+          elements.editProfileButton.hidden = false;
+
+          setProfileMessage();
+
+          window.alert(
+            result.emailVerificationRequired
+              ? "Your profile was updated. Check your new email address to verify the change."
+              : "Your account details were updated successfully."
+          );
+        } catch (error) {
+          console.error(error);
+
+          setProfileMessage(
+            error.message ||
+            "Your account could not be updated.",
+            "error"
+          );
+        } finally {
+          elements.saveProfileButton.disabled = false;
+          elements.saveProfileButton.textContent =
+            "Save Changes";
+        }
+      }
+
+      function escapeCsvValue(value) {
+        const text = String(value ?? "");
+
+        return `"${text.replaceAll('"', '""')}"`;
+      }
+
+      function exportPurchaseHistory() {
+        if (!dashboardState.purchases.length) {
+          return;
+        }
+
+        const headings = [
+          "Invoice",
+          "Date",
+          "Items",
+          "Category",
+          "Total",
+          "Status"
+        ];
+
+        const rows = dashboardState.purchases.map(purchase => [
+          purchase.invoiceNumber ||
+            purchase.invoice ||
+            purchase.id ||
+            "",
+
+          formatDate(
+            purchase.date ||
+            purchase.createdAt ||
+            purchase.purchaseDate
+          ),
+
+          purchase.itemCount ??
+            purchase.items?.length ??
+            0,
+
+          purchase.category ||
+            purchase.primaryCategory ||
+            "Mixed Items",
+
+          normalizeNumber(
+            purchase.total ??
+            purchase.totalAmount
+          ).toFixed(2),
+
+          purchase.status ||
+            purchase.paymentStatus ||
+            "Completed"
+        ]);
+
+        const csvContent = [
+          headings,
+          ...rows
+        ]
+          .map(row =>
+            row.map(escapeCsvValue).join(",")
+          )
+          .join("\r\n");
+
+        const blob = new Blob(
+          ["\uFEFF", csvContent],
+          {
+            type: "text/csv;charset=utf-8"
+          }
+        );
+
+        const downloadUrl =
+          URL.createObjectURL(blob);
+
+        const downloadLink =
+          document.createElement("a");
+
+        downloadLink.href = downloadUrl;
+        downloadLink.download =
+          `amcol-purchase-history-${new Date()
+            .toISOString()
+            .slice(0, 10)}.csv`;
+
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        downloadLink.remove();
+
+        URL.revokeObjectURL(downloadUrl);
+      }
+
+      async function signOutCustomer() {
+        elements.signOutButton.disabled = true;
+
+        try {
+          await fetch(API_ENDPOINTS.logout, {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              Accept: "application/json"
+            }
+          });
+        } catch (error) {
+          console.error("Sign-out request failed:", error);
+        } finally {
+          window.location.href = "customer.html";
+        }
+      }
+
+      elements.editProfileButton.addEventListener(
+        "click",
+        showProfileForm
+      );
+
+      elements.cancelProfileButton.addEventListener(
+        "click",
+        () => {
+          populateProfile(
+            dashboardState.customer || {}
+          );
+
+          showProfileDisplay();
+        }
+      );
+
+      elements.profileForm.addEventListener(
+        "submit",
+        updateCustomerProfile
+      );
+
+      elements.exportHistoryButton.addEventListener(
+        "click",
+        exportPurchaseHistory
+      );
+
+      elements.signOutButton.addEventListener(
+        "click",
+        signOutCustomer
+      );
+
+      loadDashboard();
+    });
+  </script>
 </body>
 
 </html>
