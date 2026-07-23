@@ -436,10 +436,17 @@ button {
 .hero-nav-search-suggestion {
   display: grid;
   gap: 0.15rem;
+  width: 100%;
   padding: 0.7rem 0.9rem;
   color: var(--brand-charcoal);
   text-decoration: none;
+  text-align: left;
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  cursor: pointer;
 }
 
 .hero-nav-search-suggestion:hover,

@@ -103,15 +103,6 @@
     var seen = {};
 
     products.forEach(function (product) {
-      var brand = text(product.brand);
-      var brandKey = "brand:" + createSlug(brand);
-      if (brand && !seen[brandKey] && matches(brand, query)) {
-        seen[brandKey] = true;
-        records.push({ type: "Brand", title: brand, meta: "Browse brand", href: brandUrl(brand) });
-      }
-    });
-
-    products.forEach(function (product) {
       var name = text(product.productName);
       var key = "product:" + text(product.productId || product.slug || name);
       if (!name || seen[key] || !matches(searchableProduct(product), query)) return;
@@ -124,7 +115,24 @@
       });
     });
 
+    products.forEach(function (product) {
+      var brand = text(product.brand);
+      var brandKey = "brand:" + createSlug(brand);
+      if (brand && !seen[brandKey] && matches(brand, query)) {
+        seen[brandKey] = true;
+        records.push({ type: "Brand", title: brand, meta: "Browse brand", href: brandUrl(brand) });
+      }
+    });
+
     return records.slice(0, PLACEHOLDER_LIMIT);
+  }
+
+  function firstProductSuggestion(query) {
+    return loadProducts().then(function (products) {
+      return buildSuggestions(products, query).find(function (record) {
+        return record.type === "Product";
+      });
+    });
   }
 
   function ensureSuggestions(form, input) {
@@ -151,23 +159,23 @@
     list.innerHTML = records
       .map(function (record, index) {
         return (
-          '<a class="hero-nav-search-suggestion" role="option" data-nav-search-suggestion="true" id="heroNavSearchSuggestion' +
-          index +
-          '" href="' +
+          '<button type="button" class="hero-nav-search-suggestion" role="option" data-nav-search-suggestion="true" data-href="' +
           escapeHtml(record.href) +
+          '" id="heroNavSearchSuggestion' +
+          index +
           '"><span>' +
           escapeHtml(record.title) +
           '</span><small>' +
           escapeHtml(record.type + " - " + record.meta) +
-          "</small></a>"
+          "</small></button>"
         );
       })
       .join("") +
-      '<a class="hero-nav-search-suggestion hero-nav-search-submit" role="option" data-nav-search-suggestion="true" href="' +
+      '<button type="button" class="hero-nav-search-suggestion hero-nav-search-submit" role="option" data-nav-search-suggestion="true" data-href="' +
       escapeHtml(searchUrl(query)) +
       '"><span>Search for "' +
       escapeHtml(query) +
-      '"</span><small>Show matching products and brands</small></a>';
+      '"</span><small>Show matching products and brands</small></button>';
     list.hidden = false;
     input.setAttribute("aria-expanded", "true");
   }
@@ -195,7 +203,9 @@
       var query = text(input.value);
       if (!query) return;
       event.preventDefault();
-      window.location.href = searchUrl(query);
+      firstProductSuggestion(query).then(function (record) {
+        window.location.assign(record ? record.href : searchUrl(query));
+      });
     });
 
     input.addEventListener("input", function () {
@@ -236,7 +246,8 @@
       event.preventDefault();
       event.stopPropagation();
       delete form.dataset.navSearchSelecting;
-      window.location.href = link.href;
+      var href = text(link.dataset.href);
+      if (href) window.location.assign(href);
     });
 
     document.addEventListener("click", function (event) {
