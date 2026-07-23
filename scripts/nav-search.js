@@ -151,7 +151,7 @@
     list.innerHTML = records
       .map(function (record, index) {
         return (
-          '<a class="hero-nav-search-suggestion" role="option" id="heroNavSearchSuggestion' +
+          '<a class="hero-nav-search-suggestion" role="option" data-nav-search-suggestion="true" id="heroNavSearchSuggestion' +
           index +
           '" href="' +
           escapeHtml(record.href) +
@@ -163,7 +163,7 @@
         );
       })
       .join("") +
-      '<a class="hero-nav-search-suggestion hero-nav-search-submit" role="option" href="' +
+      '<a class="hero-nav-search-suggestion hero-nav-search-submit" role="option" data-nav-search-suggestion="true" href="' +
       escapeHtml(searchUrl(query)) +
       '"><span>Search for "' +
       escapeHtml(query) +
@@ -188,6 +188,10 @@
     var debounceTimer = null;
 
     form.addEventListener("submit", function (event) {
+      if (form.dataset.navSearchSelecting === "true") {
+        event.preventDefault();
+        return;
+      }
       var query = text(input.value);
       if (!query) return;
       event.preventDefault();
@@ -214,6 +218,25 @@
       loadProducts().then(function (products) {
         renderSuggestions(list, input, buildSuggestions(products, query), query);
       });
+    });
+
+    list.addEventListener("pointerdown", function (event) {
+      var link = event.target.closest("[data-nav-search-suggestion]");
+      if (!link) return;
+      form.dataset.navSearchSelecting = "true";
+      window.setTimeout(function () {
+        delete form.dataset.navSearchSelecting;
+      }, 700);
+    });
+
+    list.addEventListener("click", function (event) {
+      var link = event.target.closest("[data-nav-search-suggestion]");
+      if (!link) return;
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      event.stopPropagation();
+      delete form.dataset.navSearchSelecting;
+      window.location.href = link.href;
     });
 
     document.addEventListener("click", function (event) {
